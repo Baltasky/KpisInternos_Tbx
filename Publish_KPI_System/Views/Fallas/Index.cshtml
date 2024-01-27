@@ -1,0 +1,463 @@
+﻿
+@{
+    ViewBag.Title = "Fallas";
+}
+
+<div class="post d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+        <div id="">
+            <div class="card mb-5">
+                <div class="card p-5 mb-0" id="DivFiltros">
+                    <form id="FormFechas">
+                        <div class="row g-8 mb-5">
+                            <div class="col-lg-2 fv-row">
+                                <input value="1" name="TabPanel" type="hidden" />
+                                <label class="fs-7 form-label fw-bolder text-dark">
+                                    PERIODO:
+                                </label>
+                                <div class="fv-row">
+                                    <div class="position-relative d-flex align-items-center fv-row">
+                                        <span class="svg-icon svg-icon-2 position-absolute ms-2"><i class="fas fa-calendar-alt fs-3"></i></span>
+                                        <input name="RangoFechas" id="RangoFechas" onchange="GetEquipos()" class="form-control form-control-sm ps-8 p-2 fs-7" placeholder="Fecha Inicial - Fecha Fin" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 fv-row">
+                                @*<input value="1" name="TabPanel" type="hidden" />*@
+                                <label class="fs-7 form-label fw-bolder text-dark">
+                                    EQUIPOS:
+                                </label>
+                                <div class="input-group input-group-solid flex-nowrap">
+                                    <span class="input-group-text p-0">
+                                        <button type="button" class="btn p-2 fs-8  " onclick="selectAll()" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Seleccionar todos los equipos">
+                                            <i class="far fa-check-circle fs-1 text-success"></i>
+                                        </button>
+                                    </span>
+                                    <div class="overflow-hidden flex-grow-1">
+                                        <select id="S2_Equipos" name="S2_Equipos" multiple="multiple" class="form-select form-select-sm" data-control="select2" data-placeholder="Buscar equipos">
+                                            <option data-select2-id="select2-data-12-sodi"></option>
+                                        </select>
+                                    </div>
+                                    <span class="input-group-text p-0">
+                                        <button type="button" class="btn p-2 fs-8  " onclick="deselectAll()" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Deseleccionar todos los equipos">
+                                            <i class="far fa-times-circle fs-1 text-danger"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            @*<div class="col-lg-1 fv-row">
+                                    <input value="1" name="TabPanel" type="hidden" />
+                                    <label class="fs-7 form-label fw-bolder text-dark">
+                                        EQUIPOS:
+                                    </label>
+                                    <select id="S2_Equipos" name="S2_Equipos" class="form-select form-select-sm" data-control="select2" data-placeholder="---------" data-allow-clear="true">
+                                        <option></option>
+                                    </select>
+                                </div>*@
+                            <div class="col-lg-2 fv-row">
+                                <div class="position-relative d-flex align-items-center fv-row">
+                                    <button type="button" onclick="GetFallas()" id="Search" class="btn btn-primary p-2 fs-7 me-3 mt-8"><i class="fas fa-chart-line"></i>Generar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="post docs-content d-flex flex-column-fluid d-none" id="CardFiltros">
+            <!--begin::Container-->
+            <div class="container-fluid d-flex flex-column-fluid flex-lg-row ps-0 pe-0">
+                <!--begin::Card-->
+                <div class="card card-docs flex-row-fluid mb-2" id="kt_docs_content_card">
+                    <div class="card card-xl-stretch mb-5 mb-xl-5">
+                        <div class="card-header border-0 pt-5">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold fs-3 mb-1">
+                                    Dañadas y Perdidas Por Zona
+                                </span>
+                            </h3>
+                        </div>
+                        <div class="card-body py-3">
+                            <div class="tab-content">
+                                <div id="GraficaFallas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-5 mb-0">
+                        <div class="card card-flush h-md-100">
+                            <div class="card-header pt-7  mb-0 pb-0">
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-dark">
+                                        Dañadas y Perdidas por Equipo
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="card-body pt-1">
+                                <div class="my-5">
+                                    <div class="table-responsive">
+                                        <table id="TablaFallas" class="table table-bordered table-striped gy-3 gs-3">
+                                            <thead>
+                                                <tr class="fw-bold fs-7 text-uppercase text-dark">
+                                                    <th class="min-w-400px">Zona</th>
+                                                    <th class="min-w-100px">Equipo</th>
+                                                    <th class="min-w-100px">Dañadas</th>
+                                                    <th class="min-w-100px">Perdidas</th>
+                                                    <th class="min-w-100px ">Total</th>
+                                                    <th class="min-w-200px border-end">Tiempo de Reposición</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="ps-2 fs-7 ">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Card-->
+                <!--begin::Sidebar wrapper-->
+                <div class="ms-3  flex-row-auto w-lg-300px d-none" id="idFiltros">
+                    <!--begin::Sidebar nav-->
+                    <div class="card card-flush d-none d-lg-flex" data-kt-sticky="true" data-kt-sticky-name="sidebar-navs" data-kt-sticky-offset="{default: false, lg: 500}" data-kt-sticky-width="300px" data-kt-sticky-animation="false" data-kt-sticky-left="auto" data-kt-sticky-top="80px" data-kt-sticky-zindex="5" style="">
+                        <!--begin::Card body-->
+                        <div class="card-body px-0 px-3 py-6">
+
+
+                            <div class=" pe-2 ">
+                                @*scroll h-md-400px px-5*@
+                                <div class="mb-4">
+                                    <label class="fs-7 form-label fw-bolder text-dark me-4">ZONA:</label>
+                                    <div class="d-flex align-items-center position-relative ">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchDivision" class="form-control form-control-white form-control-sm ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary fs-8">
+                                            <input type="checkbox" id="IdDivisionTodo" name="IdDivisionTodo" class="form-check-input form-check-sm border border-dark me-2" />
+                                            <label for="IdDivisionTodo">Todos</label>
+                                        </div>
+                                        <div class="card-scroll  h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2 fs-8">
+                                                <tbody id="TablaFiltroDivision">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="  mb-4">
+                                    <label class="fs-7 form-label fw-bolder text-dark me-4">UNIDAD OPERATIVA:</label>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchZona" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary fs-8">
+                                            <input type="checkbox" id="IdZonaTodo" name="IdZonaTodo" class="form-check-input border border-dark me-2" />
+                                            <label for="IdZonaTodo">Todos</label>
+                                        </div>
+                                        <div class=" card-scroll h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2 fs-8">
+                                                <tbody id="TablaFiltroZona">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none mb-4">
+                                    <label class="fs-7 form-label fw-bolder text-dark me-4">UBICACIÓN:</label>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchUbicacion" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary fs-8">
+                                            <input type="checkbox" id="IdUbicacionTodo" name="IdUbicacionTodo" class="form-check-input border border-dark me-2" />
+                                            <label for="IdUbicacionTodo">Todos</label>
+                                        </div>
+                                        <div class=" card-scroll h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2 fs-8">
+                                                <tbody id="TablaFiltroUbicacion">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" mb-4">
+                                    <label class="fs-6 form-label fw-bolder text-dark me-4">EQUIPO:</label>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchEquipo" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                            <input type="checkbox" id="IdEquipoTodo" name="IdEquipoTodo" class="form-check-input border border-dark me-2" />
+                                            <label for="IdEquipoTodo">Todos</label>
+                                        </div>
+                                        <div class="card-scroll h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                <tbody id="TablaFiltroEquipo">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none mb-4">
+                                    <label class="fs-6 form-label fw-bolder text-dark me-4">CONTENEDOR:</label>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchContenedor" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                            <input type="checkbox" id="IdContenedorTodo" name="IdContenedorTodo" class="form-check-input border border-dark me-2" />
+                                            <label for="IdContenedorTodo">Todos</label>
+                                        </div>
+                                        <div class="card-scroll h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                <tbody id="TablaFiltroContenedor">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" d-none mb-4">
+                                    <label class="fs-6 form-label fw-bolder text-dark me-4">TIPO DE SERVICIO:</label>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                        <input type="text" id="SearchTipoServicio" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                    </div>
+                                    <div class="border">
+                                        <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                            <input type="checkbox" id="IdTipoServicioTodo" name="IdTipoServicioTodo" class="form-check-input border border-dark me-2" />
+                                            <label for="IdTipoServicioTodo">Todos</label>
+                                        </div>
+                                        <div class="card-scroll h-100px">
+                                            <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                <tbody id="TablaFiltroTipoServicio">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Sidebar nav-->
+                </div>
+                <!--end::Sidebar wrapper-->
+            </div>
+            <!--end::Container-->
+        </div>
+
+        <div class="d-none" id="CardFiltros">
+            <!-- Start Controles de Filtros -->
+            <div class="card mb-5" id="idFiltros">
+                <div class="card p-5 mb-0">
+                    <form id="FormFechas" asp-area="Asistencias" asp-controller="Asistencias" asp-action="Reporte" method="post">
+                        <div class="row">
+                            <div class="col-md-2 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">ZONA:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchDivision" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdDivisionTodo" name="IdDivisionTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdDivisionTodo">Todos</label>
+                                    </div>
+                                    <div class=" card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroDivision">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">UNIDAD OPERATIVA:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchZona" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdZonaTodo" name="IdZonaTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdZonaTodo">Todos</label>
+                                    </div>
+                                    <div class=" card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroZona">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">UBICACIÓN:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchUbicacion" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdUbicacionTodo" name="IdUbicacionTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdUbicacionTodo">Todos</label>
+                                    </div>
+                                    <div class=" card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroUbicacion">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">EQUIPO:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchEquipo" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdEquipoTodo" name="IdEquipoTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdEquipoTodo">Todos</label>
+                                    </div>
+                                    <div class="card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroEquipo">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">CONTENEDOR:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchContenedor" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdContenedorTodo" name="IdContenedorTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdContenedorTodo">Todos</label>
+                                    </div>
+                                    <div class="card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroContenedor">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">TIPO DE SERVICIO:</label>
+                                <div class="d-flex align-items-center position-relative">
+                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                    <input type="text" id="SearchTipoServicio" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                </div>
+                                <div class="border">
+                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                        <input type="checkbox" id="IdTipoServicioTodo" name="IdTipoServicioTodo" class="form-check-input border border-dark me-2" />
+                                        <label for="IdTipoServicioTodo">Todos</label>
+                                    </div>
+                                    <div class="card-scroll h-100px">
+                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                            <tbody id="TablaFiltroTipoServicio">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="ModalDanadasPerdidas" data-bs-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog mw-950px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="far fa-thumbs-down fs-1 text-primary me-3"></i><span>Partidas perdidas y Dañadas </span> </h3>
+                <a class="btn btn-icon ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="svg-icon svg-icon-2x svg-icon-light text-hover-danger"><i class="fas fa-times fs-3"></i></span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="TablaDanadasPerdidas" class="table table-bordered">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-300 bg-opacity-20 bg-primary ">
+                                <th class="text-middle min-w-100px">Condicion</th>
+                                <th class="text-middle min-w-50px">Partida</th>
+                                <th class="text-middle min-w-800px">Descripción</th>
+                                <th class="text-middle min-w-50px">Medida</th>
+                                <th class="text-middle min-w-50px">Clasificación</th>
+                                <th class="text-middle min-w-350px">Solicitante PMX</th>
+                                <th class="text-middle min-w-350px">Autorizador PMX</th>
+                                <th class="text-middle min-w-200px">Fecha</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light p-3 fs-7 me-3" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Styles grafica de barras -->
+<style>
+    #GraficaFallas {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+<!-- Styles -->
+
+
+@section scripts {
+
+    <!--AmChart5 Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Fallas/Fallas.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#S2_Equipos').select2();
+        });
+
+        function selectAll() {
+            // Seleccionar todas las opciones excepto la primera opción
+            $('#S2_Equipos option:not(:first-child)').prop('selected', true);
+            $('#S2_Equipos').trigger('change');
+        }
+
+        function deselectAll() {
+            // Deseleccionar todas las opciones excepto la primera opción
+            $('#S2_Equipos option:not(:first-child)').prop('selected', false);
+            $('#S2_Equipos').trigger('change');
+        }
+    </script>
+
+}

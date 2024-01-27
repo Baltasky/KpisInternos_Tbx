@@ -1,0 +1,276 @@
+﻿
+@{
+        ViewBag.Title = "Disponibilidad";
+}
+
+<div class="post d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+
+        <form id="FormReporteVentas" method="post">
+            <div class="row g-3 g-xl-8">
+                <div class="col-12">
+                    <div class="card card-xl-stretch mb-5 mb-xl-8">
+                        <div class="card-body py-3">
+                            <div class="tab-content">
+                                <div class="row">
+                                    <div class="col-lg-3 fv-row">
+                                        <div class="row">
+                                            <div class="col-lg-12 fv-row mb-6">
+                                                <label class="fs-7 form-label fw-bolder text-dark">PERIODO:</label>
+                                                <div class="position-relative d-flex align-items-center fv-row">
+                                                    <span class="svg-icon svg-icon-2 position-absolute ms-4"><i class="fas fa-calendar-alt fs-3"></i></span>
+                                                    <input name="RangoFechas" id="RangoFechas" class="form-control w-250px ps-13 p-2 fs-7" placeholder="Fecha Inicial - Fecha Fin" />
+                                                </div>
+                                            </div>
+                                            <input id="EquiposSelect" name="EquiposSelect" type="hidden" />
+                                            <div class="col-12 fv-row mb-2">
+                                                <button type="button" onclick="GetDisponibilidad()" id="Search" class="btn btn-primary p-2 fs-7 me-3 mt-8"><i class="fas fa-chart-line"></i>Generar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 fv-row">
+                                        <div class="row">
+                                            <div class="col-md-4 mb-4">
+                                                <label class="fs-6 form-label fw-bolder text-dark me-4">ZONA:</label>
+                                                <div class="d-flex align-items-center position-relative">
+                                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                                    <input type="text" id="SearchDivision" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                                </div>
+                                                <div class="border">
+                                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                        <input type="checkbox" id="IdDivisionTodo" name="IdDivisionTodo" class="form-check-input border border-dark me-2" />
+                                                        <label for="IdDivisionTodo">Todos</label>
+                                                    </div>
+                                                    <div class=" card-scroll h-100px">
+                                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                            <tbody id="TablaFiltroDivision">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-5 mb-4">
+                                                <label class="fs-6 form-label fw-bolder text-dark me-4">UNIDAD OPERATIVA:</label>
+                                                <div class="d-flex align-items-center position-relative">
+                                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                                    <input type="text" id="SearchZona" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                                </div>
+                                                <div class="border">
+                                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                        <input type="checkbox" id="IdZonaTodo" name="IdZonaTodo" class="form-check-input border border-dark me-2" />
+                                                        <label for="IdZonaTodo">Todos</label>
+                                                    </div>
+                                                    <div class=" card-scroll h-100px">
+                                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                            <tbody id="TablaFiltroZona">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 mb-4">
+                                                <label class="fs-6 form-label fw-bolder text-dark me-4">CONTENEDOR:</label>
+                                                <div class="d-flex align-items-center position-relative">
+                                                    <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                                    <input type="text" id="SearchContenedor" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                                </div>
+                                                <div class="border">
+                                                    <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                        <input type="checkbox" id="IdContenedorTodo" name="IdContenedorTodo" class="form-check-input border border-dark me-2" />
+                                                        <label for="IdContenedorTodo">Todos</label>
+                                                    </div>
+                                                    <div class="card-scroll h-100px">
+                                                        <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                            <tbody id="TablaFiltroContenedor">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="d-none" id="CardFiltros">
+            <div class="row g-3 g-xl-10 mb-5">
+                <div class="col-xl-6 me-0">
+                    <div class="card card-flush h-md-100">
+                        <div class="card-header pt-7  mb-0 pb-0">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold text-dark">
+                                    Consumibles y Herramientas
+                                </span>
+                            </h3>
+                        </div>
+                        <div class="card-body pt-1">
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Existencia Consumibles:
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="ExistenciaConsumibles" class="form-control form-control-solid border" disabled />
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Existencia Real Herramientas:
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="ExistenciaRealHerramientas" class="form-control form-control-solid border" disabled />
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Total Herramientas Disponibles:
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="TotalHerramientas" class="form-control form-control-solid border" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card card-flush h-md-100">
+                        <div class="card-header pt-7  mb-0 pb-0">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold text-dark">
+                                    Contenedores
+                                </span>
+                            </h3>
+                        </div>
+                        <div class="card-body pt-1">
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Total Contenedores:
+
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="ContenedoresProduccion" class="form-control form-control-solid border" value="61" disabled />
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Contenedores en Producción:
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="TotalContenedores" class="form-control form-control-solid border" value="61" disabled />
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <label class="col-7 fw-semibold text-muted pt-3">
+                                    Contenedores Disponibles:
+                                </label>
+                                <div class="col-lg-3">
+                                    <input id="ContenedoresDisponibles" class="form-control form-control-solid border" value="0" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card p-10">
+                <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link fs-3 active" data-bs-toggle="tab" href="#kt_tab_pane_4" aria-selected="true" role="tab">Existencia Consumibles</a>
+                    </li>
+                    @*<li class="nav-item" role="presentation">
+                        <a class="nav-link fs-3" data-bs-toggle="tab" href="#kt_tab_pane_5" aria-selected="false" tabindex="-1" role="tab">Contenedores</a>
+                    </li>*@
+
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active " id="kt_tab_pane_4" role="tabpanel">
+                        <div class="row g-3 g-xl-10 mb-5">
+                            <div class="col-xl-6  me-0">
+                                <div class="card card-flush h-md-100 border">
+                                    <div class="card-header pt-0  mb-0 pb-0">
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-dark">
+                                                Existencia Consumibles
+                                            </span>
+                                        </h3>
+                                    </div>
+                                    <div class="card-body pt-0 p-0">
+                                        <div id="chartdiv"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6  me-0">
+                                <div class="card card-flush h-md-100 border">
+                                    <div class="card-header pt-0  mb-0 pb-0">
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-dark">
+                                                Existencia Real Herramientas
+                                            </span>
+                                        </h3>
+                                    </div>
+                                    <div class="card-body pt-0 p-0">
+                                        <div id="chartdiv2"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="kt_tab_pane_5" role="tabpanel">
+                        <div id="chartdiv3"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Styles grafica de barras -->
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 400px;
+    }
+</style>
+<!-- Styles -->
+<style>
+    #chartdiv2 {
+        width: 100%;
+        height: 400px;
+    }
+</style>
+
+<style>
+    #chartdiv3 {
+        width: 100%;
+        height: 400px;
+    }
+</style>
+
+@section scripts {
+
+    <!--AmChart5 Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Material.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Disponibilidad/Disponibilidad.js"></script>
+
+}
+

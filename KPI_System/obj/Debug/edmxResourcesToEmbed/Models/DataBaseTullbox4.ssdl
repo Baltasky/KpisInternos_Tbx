@@ -1,0 +1,2658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACOTACIONES">
+    <Key>
+      <PropertyRef Name="AcoCod" />
+    </Key>
+    <Property Name="AcoCod" Type="smallint" Nullable="false" />
+    <Property Name="AcoDsc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="AcoAbr" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="AcoUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="AcoFchCre" Type="datetime" Nullable="false" />
+    <Property Name="AcoUsuCodMod" Type="smallint" />
+    <Property Name="AcoFchMod" Type="datetime" />
+    <Property Name="AcoCol" Type="smallint" Nullable="false" />
+    <Property Name="AcoCol3" Type="smallint" />
+    <Property Name="AcoCol2" Type="smallint" />
+    <Property Name="AcoCol1" Type="smallint" />
+    <Property Name="AcoMon" Type="money" />
+  </EntityType>
+  <EntityType Name="ACTIVOS">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+    </Key>
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+    <Property Name="UneCod" Type="smallint" Nullable="false" />
+    <Property Name="ActTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ActMod" Type="smallint" Nullable="false" />
+    <Property Name="ActPla" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ActSer" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="ActPol" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="ActUni" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ActDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="ActMarCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFot" Type="varbinary(max)" />
+    <Property Name="ActFotNom" Type="char" MaxLength="20" />
+    <Property Name="ActFotTip" Type="char" MaxLength="20" />
+    <Property Name="ActSfaCod" Type="smallint" />
+    <Property Name="ActFchAdq" Type="datetime" />
+    <Property Name="ActFac" Type="char" MaxLength="25" />
+    <Property Name="ActUneCod" Type="smallint" />
+    <Property Name="ActMoi" Type="money" />
+    <Property Name="EstCod" Type="smallint" />
+    <Property Name="ActCtaAct" Type="char" MaxLength="25" />
+    <Property Name="ActSAN" Type="char" MaxLength="20" />
+    <Property Name="ActPIN" Type="char" MaxLength="4" />
+    <Property Name="ActSITE" Type="char" MaxLength="20" />
+    <Property Name="ActAct" Type="smallint" />
+    <Property Name="ActDepCod" Type="smallint" Nullable="false" />
+    <Property Name="ActObs" Type="varchar" MaxLength="800" />
+    <Property Name="ActArcFac" Type="varbinary(max)" />
+    <Property Name="ActArcFacNom" Type="char" MaxLength="30" />
+    <Property Name="ActArcFacTip" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ACTIVOSLOC">
+    <Key>
+      <PropertyRef Name="ActiLocCod" />
+    </Key>
+    <Property Name="ActiLocCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActiLocNom" Type="char" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSPEMEX">
+    <Key>
+      <PropertyRef Name="ActPmx" />
+    </Key>
+    <Property Name="ActPmx" Type="smallint" Nullable="false" />
+    <Property Name="ActPmxAnt" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SubDirAnt" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ActActPmx" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SubSDirAct" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSPROGMANTTO">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ProgManPro" />
+    </Key>
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+    <Property Name="ProgManPro" Type="int" Nullable="false" />
+    <Property Name="ProgManDsc" Type="char" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSRESGUARDO">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ResgEmpCod" />
+    </Key>
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+    <Property Name="ResgEmpCod" Type="int" Nullable="false" />
+    <Property Name="ResgEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="ResgFch" Type="datetime" />
+    <Property Name="ResgAct" Type="smallint" Nullable="false" />
+    <Property Name="ResgArc" Type="varbinary(max)" />
+    <Property Name="ResgArcTip" Type="char" MaxLength="20" />
+    <Property Name="ResgArcNom" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ACTIVOSZONA">
+    <Key>
+      <PropertyRef Name="ActAntCod" />
+    </Key>
+    <Property Name="ActAntCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActAnt" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="ActSubAnt" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="ActSubAct" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="ActActu" Type="char" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADJUNTO_CAPA">
+    <Key>
+      <PropertyRef Name="AdCapCod" />
+      <PropertyRef Name="CapCod" />
+    </Key>
+    <Property Name="AdCapCod" Type="int" Nullable="false" />
+    <Property Name="CapCod" Type="int" Nullable="false" />
+    <Property Name="AdCapFch" Type="datetime" Nullable="false" />
+    <Property Name="AdCapArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AdCapArcTip" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="AdCapArcNom" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="AdCapTip" Type="smallint" Nullable="false" />
+    <Property Name="AdCapUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="AdCapFchCre" Type="datetime" Nullable="false" />
+    <Property Name="AdCapUsuCodMod" Type="smallint" />
+    <Property Name="AdCapFchMod" Type="datetime" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AFECTACIONES">
+    <Key>
+      <PropertyRef Name="AfeConCod" />
+      <PropertyRef Name="AfePedCod" />
+      <PropertyRef Name="AfeFch" />
+    </Key>
+    <Property Name="AfeConCod" Type="smallint" Nullable="false" />
+    <Property Name="AfePedCod" Type="int" Nullable="false" />
+    <Property Name="AfeFch" Type="datetime" Nullable="false" />
+    <Property Name="AfeIncCod" Type="smallint" />
+    <Property Name="AfeObs" Type="varchar(max)" />
+    <Property Name="AfeUsuCod" Type="smallint" />
+    <Property Name="AfeUsuFchCre" Type="datetime" />
+    <Property Name="AfeUsuMod" Type="smallint" />
+    <Property Name="AfeUsuFchMod" Type="datetime" />
+    <Property Name="AcoCod" Type="smallint" />
+    <Property Name="AfeEstCod" Type="smallint" Nullable="false" />
+    <Property Name="AfeProg" Type="smallint" />
+  </EntityType>
+  <EntityType Name="ALMACENES">
+    <Key>
+      <PropertyRef Name="AlmCod" />
+    </Key>
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="AlmNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="AlmTip" Type="smallint" Nullable="false" />
+    <Property Name="AlmSubAlmCod" Type="smallint" />
+    <Property Name="AlmFchCre" Type="datetime" Nullable="false" />
+    <Property Name="AlmUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="AlmFchMod" Type="datetime" />
+    <Property Name="AlmUsuCodMod" Type="smallint" />
+    <Property Name="AlmConcod" Type="smallint" Nullable="false" />
+    <Property Name="TConCod" Type="smallint" />
+    <Property Name="AlmBasCod" Type="smallint" />
+    <Property Name="AlmAli" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="AlmCla" Type="smallint" />
+  </EntityType>
+  <EntityType Name="ARTICULOSEDIS">
+    <Key>
+      <PropertyRef Name="EdyCod" />
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="EdyCod" Type="smallint" Nullable="false" />
+    <Property Name="ProCod" Type="int" Nullable="false" />
+    <Property Name="EdyDCan" Type="smallmoney" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTOMATICO">
+    <Key>
+      <PropertyRef Name="AutCod" />
+    </Key>
+    <Property Name="AutCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="AutFchCre" Type="datetime" Nullable="false" />
+    <Property Name="AutUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="AutFchMod" Type="datetime" />
+    <Property Name="AutUsuCodMod" Type="smallint" />
+    <Property Name="AutLin" Type="smallint" Nullable="false" />
+    <Property Name="AutTie" Type="smallint" Nullable="false" />
+    <Property Name="AutTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTOMATICOCORREOAUT">
+    <Key>
+      <PropertyRef Name="AutCod" />
+      <PropertyRef Name="AutCorCod" />
+    </Key>
+    <Property Name="AutCod" Type="smallint" Nullable="false" />
+    <Property Name="AutCorCod" Type="smallint" Nullable="false" />
+    <Property Name="AutCor" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="AutCorNom" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BANCO">
+    <Key>
+      <PropertyRef Name="BanCod" />
+    </Key>
+    <Property Name="BanCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BanNom" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="BanFchCre" Type="datetime" Nullable="false" />
+    <Property Name="BanUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="BanFchMod" Type="datetime" Nullable="false" />
+    <Property Name="BanUsuCodMod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BASE">
+    <Key>
+      <PropertyRef Name="BasCod" />
+    </Key>
+    <Property Name="BasCod" Type="smallint" Nullable="false" />
+    <Property Name="BasNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="BasFchCre" Type="datetime" Nullable="false" />
+    <Property Name="BasUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="BasFchMod" Type="datetime" Nullable="false" />
+    <Property Name="BasUsuCodMod" Type="smallint" Nullable="false" />
+    <Property Name="BasAbr" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="BasDim" Type="char" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="BASEBASECOORD">
+    <Key>
+      <PropertyRef Name="BasCod" />
+      <PropertyRef Name="BasEmpCod" />
+      <PropertyRef Name="BasEmpComCod" />
+    </Key>
+    <Property Name="BasCod" Type="smallint" Nullable="false" />
+    <Property Name="BasEmpCod" Type="int" Nullable="false" />
+    <Property Name="BasEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="BasFchIni" Type="datetime" Nullable="false" />
+    <Property Name="BasFchTer" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.BDRafs' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BDRafs">
+          <Property Name="RAF" Type="nvarchar" MaxLength="255" />
+          <Property Name="FECHARAF" Type="datetime" />
+          <Property Name="SUPERVISOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="CLASIFICACION" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="CAPACITACIONES">
+    <Key>
+      <PropertyRef Name="CapCod" />
+    </Key>
+    <Property Name="CapCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CapConCod" Type="smallint" Nullable="false" />
+    <Property Name="CapFol" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="CapFch" Type="datetime" />
+    <Property Name="CapEst" Type="smallint" />
+    <Property Name="CurCod" Type="int" />
+    <Property Name="CapProEmpCod" Type="int" />
+    <Property Name="CapRevEmpCod" Type="int" />
+    <Property Name="CapAutEmpCod" Type="int" />
+    <Property Name="CapInsEmpCod" Type="int" />
+    <Property Name="CapEqu" Type="smallint" />
+    <Property Name="CapLocCod" Type="int" />
+    <Property Name="CapFchIni" Type="datetime" />
+    <Property Name="CapFchTer" Type="datetime" />
+    <Property Name="CapNotPro" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="CapNot" Type="varchar" MaxLength="800" />
+    <Property Name="CapTecEmpCod" Type="int" />
+    <Property Name="CapFchNot" Type="datetime" Nullable="false" />
+    <Property Name="CapResEmpCod" Type="int" />
+    <Property Name="CapAteEmpCod" Type="int" />
+    <Property Name="CapAct" Type="varchar(max)" />
+    <Property Name="CapCon" Type="varchar(max)" />
+    <Property Name="CapFirEmpCod" Type="int" />
+    <Property Name="CapUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="CapFchCre" Type="datetime" Nullable="false" />
+    <Property Name="CapUsuCodMod" Type="smallint" />
+    <Property Name="CapFchMod" Type="datetime" />
+    <Property Name="CapProEmpComCod" Type="smallint" />
+    <Property Name="CapRevEmpComCod" Type="smallint" />
+    <Property Name="CapAutEmpComCod" Type="smallint" />
+    <Property Name="CapInsEmpComCod" Type="smallint" />
+    <Property Name="CapTecEmpComCod" Type="smallint" />
+    <Property Name="CapResEmpComCod" Type="smallint" />
+    <Property Name="CapAteEmpComCod" Type="smallint" />
+    <Property Name="CapFirEmpComCod" Type="smallint" />
+    <Property Name="CapaCod" Type="int" />
+  </EntityType>
+  <EntityType Name="CAPACITACIONESASISTENCIA">
+    <Key>
+      <PropertyRef Name="CapCod" />
+      <PropertyRef Name="AsiEmpCod" />
+      <PropertyRef Name="AsiEmpComCod" />
+    </Key>
+    <Property Name="CapCod" Type="int" Nullable="false" />
+    <Property Name="AsiEmpCod" Type="int" Nullable="false" />
+    <Property Name="AsiEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="AsiAsi" Type="smallint" Nullable="false" />
+    <Property Name="AsiApr" Type="smallint" Nullable="false" />
+    <Property Name="AsiNot" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPACITAR">
+    <Key>
+      <PropertyRef Name="CapaCod" />
+    </Key>
+    <Property Name="CapaCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CapaMes" Type="smallint" Nullable="false" />
+    <Property Name="CapaAno" Type="smallint" Nullable="false" />
+    <Property Name="CapaUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="CapaResEmpCod" Type="int" Nullable="false" />
+    <Property Name="CapaSupEmpCod" Type="int" Nullable="false" />
+    <Property Name="CapaRepEmpCod" Type="int" Nullable="false" />
+    <Property Name="CapaResComCod" Type="smallint" Nullable="false" />
+    <Property Name="CapaSupComCod" Type="smallint" Nullable="false" />
+    <Property Name="CapaRepComCod" Type="smallint" Nullable="false" />
+    <Property Name="CapaAct" Type="varchar(max)" Nullable="false" />
+    <Property Name="CapaCon" Type="varchar(max)" Nullable="false" />
+    <Property Name="CapaBasCod" Type="smallint" Nullable="false" />
+    <Property Name="CapaCurCod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPACITARPDAS">
+    <Key>
+      <PropertyRef Name="CapaCod" />
+      <PropertyRef Name="CapaDProCod" />
+    </Key>
+    <Property Name="CapaCod" Type="int" Nullable="false" />
+    <Property Name="CapaDProCod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPTURAPRESUPUESTO">
+    <Key>
+      <PropertyRef Name="PreCod" />
+    </Key>
+    <Property Name="PreCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PreFch" Type="datetime" Nullable="false" />
+    <Property Name="PreLocCod" Type="int" Nullable="false" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="PreMon" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAUSAS">
+    <Key>
+      <PropertyRef Name="CauCod" />
+    </Key>
+    <Property Name="CauCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CauDsc" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CIERRE">
+    <Key>
+      <PropertyRef Name="CieAno" />
+    </Key>
+    <Property Name="CieAno" Type="smallint" Nullable="false" />
+    <Property Name="CieEne" Type="smallint" />
+    <Property Name="CieFeb" Type="smallint" />
+    <Property Name="CieMar" Type="smallint" />
+    <Property Name="CieAbr" Type="smallint" />
+    <Property Name="CieMay" Type="smallint" />
+    <Property Name="CieJun" Type="smallint" />
+    <Property Name="CieJul" Type="smallint" />
+    <Property Name="CieAgo" Type="smallint" />
+    <Property Name="CieSep" Type="smallint" />
+    <Property Name="CieOct" Type="smallint" />
+    <Property Name="CieNov" Type="smallint" />
+    <Property Name="CieDic" Type="smallint" />
+  </EntityType>
+  <EntityType Name="CIUDADES">
+    <Key>
+      <PropertyRef Name="CiuCod" />
+    </Key>
+    <Property Name="CiuCod" Type="smallint" Nullable="false" />
+    <Property Name="CiuFchCre" Type="datetime" Nullable="false" />
+    <Property Name="CiuUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="CiuFchMod" Type="datetime" Nullable="false" />
+    <Property Name="CiuUsuCodMod" Type="smallint" Nullable="false" />
+    <Property Name="MunCod" Type="smallint" Nullable="false" />
+    <Property Name="CiuDsc" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLASIVTA">
+    <Key>
+      <PropertyRef Name="ClaVtaCod" />
+    </Key>
+    <Property Name="ClaVtaCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaVtaDsc" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPANIA">
+    <Key>
+      <PropertyRef Name="ComCod" />
+    </Key>
+    <Property Name="ComCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComDoc" Type="char" MaxLength="20" />
+    <Property Name="ComTip" Type="char" MaxLength="20" />
+    <Property Name="ComFchCre" Type="datetime" />
+    <Property Name="ComUsuCodCre" Type="smallint" />
+    <Property Name="ComFchMod" Type="datetime" />
+    <Property Name="ComUsuCodMod" Type="smallint" />
+    <Property Name="ComNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="ComLog" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="CONTENEDORES">
+    <Key>
+      <PropertyRef Name="ContCod" />
+    </Key>
+    <Property Name="ContCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegLocCod" Type="int" Nullable="false" />
+    <Property Name="UniLocCod" Type="int" Nullable="false" />
+    <Property Name="ContNum" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ContTbx" Type="smallint" Nullable="false" />
+    <Property Name="ContTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONTRATO">
+    <Key>
+      <PropertyRef Name="ConCod" />
+    </Key>
+    <Property Name="ConCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConNum" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ConDsc" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ConFchIni" Type="datetime" Nullable="false" />
+    <Property Name="ConFchTer" Type="datetime" Nullable="false" />
+    <Property Name="ConMon" Type="money" Nullable="false" />
+    <Property Name="ConFchCre" Type="datetime" />
+    <Property Name="ConUsuCodCre" Type="smallint" />
+    <Property Name="ConFchMod" Type="datetime" />
+    <Property Name="ConUsuCodMod" Type="smallint" />
+    <Property Name="ComCod" Type="smallint" Nullable="false" />
+    <Property Name="ConTipMon" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="ConAcrSAP" Type="int" Nullable="false" />
+    <Property Name="ConNumSAP" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONTRATOCONVENIO">
+    <Key>
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="ConvCod" />
+    </Key>
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="ConvCod" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ConvMon" Type="money" Nullable="false" />
+    <Property Name="ConvFchIni" Type="datetime" Nullable="false" />
+    <Property Name="ConvFchTer" Type="datetime" Nullable="false" />
+    <Property Name="ConvDsc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="ConvTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COORDINADORES">
+    <Key>
+      <PropertyRef Name="LocCod" />
+      <PropertyRef Name="CooAni" />
+      <PropertyRef Name="CooMes" />
+    </Key>
+    <Property Name="LocCod" Type="int" Nullable="false" />
+    <Property Name="CooAni" Type="smallint" Nullable="false" />
+    <Property Name="CooMes" Type="smallint" Nullable="false" />
+    <Property Name="CooNom" Type="char" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURSOS">
+    <Key>
+      <PropertyRef Name="CurCod" />
+    </Key>
+    <Property Name="CurCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurConCod" Type="smallint" Nullable="false" />
+    <Property Name="CurCve" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="CurNom" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="CurTip" Type="smallint" Nullable="false" />
+    <Property Name="CurObj" Type="varchar" MaxLength="800" />
+    <Property Name="CurAut" Type="smallint" Nullable="false" />
+    <Property Name="CurUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="CurFchCre" Type="datetime" Nullable="false" />
+    <Property Name="CurUsuCodMod" Type="smallint" />
+    <Property Name="CurFchMod" Type="datetime" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURSOSDETALLE">
+    <Key>
+      <PropertyRef Name="CurCod" />
+      <PropertyRef Name="CurDProCod" />
+    </Key>
+    <Property Name="CurCod" Type="int" Nullable="false" />
+    <Property Name="CurDProCod" Type="int" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.DatosGerencia' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DatosGerencia">
+          <Property Name="loccod" Type="float" />
+          <Property Name="gerfchcre" Type="datetime" />
+          <Property Name="gerabr" Type="nvarchar" MaxLength="255" />
+          <Property Name="gerDsc" Type="nvarchar" MaxLength="255" />
+          <Property Name="SubdCod" Type="float" />
+        </EntityType>-->
+  <EntityType Name="DEPARTAMENTO">
+    <Key>
+      <PropertyRef Name="DepCod" />
+    </Key>
+    <Property Name="DepCod" Type="smallint" Nullable="false" />
+    <Property Name="DepDsc" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="DepConCod" Type="smallint" Nullable="false" />
+    <Property Name="DepFchCre" Type="datetime" />
+    <Property Name="DepUsuCodCre" Type="smallint" />
+    <Property Name="DepFchMod" Type="datetime" />
+    <Property Name="DepUsuCodMod" Type="smallint" />
+    <Property Name="DepAbr" Type="char" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="DETALLELOG">
+    <Key>
+      <PropertyRef Name="DloCod" />
+    </Key>
+    <Property Name="DloCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogCod" Type="smallint" Nullable="false" />
+    <Property Name="LogMov" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="DloFch" Type="datetime" Nullable="false" />
+    <Property Name="LogConCod" Type="smallint" Nullable="false" />
+    <Property Name="LogAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="LogUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="LogFecIni" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.DeudaRaf' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DeudaRaf">
+          <Property Name="Estimacion" Type="float" />
+          <Property Name="REGION" Type="nvarchar" MaxLength="255" />
+          <Property Name="UO" Type="nvarchar" MaxLength="255" />
+          <Property Name="FACTURA" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="FECHA FACT" Type="datetime" />
+          <Property Name="MES" Type="datetime" />
+          <Property Name="AÑO" Type="nvarchar" MaxLength="255" />
+          <Property Name="FI" Type="float" />
+          <Property Name="FT" Type="float" />
+          <Property Name="DIAS PRE" Type="datetime" />
+          <Property Name="MESES" Type="datetime" />
+          <Property Name="DIAS PRE1" Type="float" />
+          <Property Name="MESES1" Type="float" />
+          <Property Name="POZO" Type="nvarchar" MaxLength="255" />
+          <Property Name="Equipo" Type="nvarchar" MaxLength="255" />
+          <Property Name="TIPO" Type="nvarchar" MaxLength="255" />
+          <Property Name="TIPO 2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATIENDE" Type="nvarchar" MaxLength="255" />
+          <Property Name="SUBTOTAL (ESTIMADO)" Type="money" />
+          <Property Name="NO DE COPADE" Type="nvarchar" MaxLength="255" />
+          <Property Name="PEDIDO SAP" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUSRAF" Type="nvarchar" MaxLength="255" />
+          <Property Name="OchoMil" Type="nvarchar" MaxLength="255" />
+          <Property Name="MontoOcho" Type="money" />
+          <Property Name="ESTATUS OI" Type="float" />
+          <Property Name="RAF" Type="nvarchar" MaxLength="255" />
+          <Property Name="MONTORAF " Type="money" />
+          <Property Name="ESTATUSRAF2 " Type="float" />
+          <Property Name="SUBD#ANTERIOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACTIVOANTERIOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="SUBD# ACTUAL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACTIVOACTUAL" Type="nvarchar" MaxLength="255" />
+          <Property Name="UNIDAD ACTUAL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProgramaPres" Type="float" />
+          <Property Name="ELEMENTO PEP" Type="float" />
+          <Property Name="CENTRO GESTOR" Type="float" />
+          <Property Name="POSICION FINANCIERA" Type="float" />
+          <Property Name="STATuSREGISTRO" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATUSDATOSPRE" Type="nvarchar" MaxLength="255" />
+          <Property Name="COPADE" Type="nvarchar" MaxLength="255" />
+          <Property Name="F42" Type="nvarchar" MaxLength="255" />
+          <Property Name="F43" Type="nvarchar" MaxLength="255" />
+          <Property Name="RAF1" Type="nvarchar" MaxLength="255" />
+          <Property Name="SUBDIRECCION " Type="nvarchar" MaxLength="255" />
+          <Property Name="ACTIVO" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATIENDE1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="COMENTARIOS" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="DIPLOMAS">
+    <Key>
+      <PropertyRef Name="DipCod" />
+    </Key>
+    <Property Name="DipCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="DipCom" Type="char" MaxLength="100" Nullable="false" />
+    <Property Name="DipDip" Type="varbinary(max)" />
+    <Property Name="DipDipNom" Type="char" MaxLength="40" />
+    <Property Name="DipDipTip" Type="char" MaxLength="20" />
+    <Property Name="DipFchCre" Type="datetime" Nullable="false" />
+    <Property Name="DipUsuCre" Type="smallint" Nullable="false" />
+    <Property Name="DipFchUpd" Type="datetime" />
+    <Property Name="DipUsuUpd" Type="smallint" />
+    <Property Name="DipCla" Type="smallint" Nullable="false" />
+    <Property Name="DipConCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DISTRIBUCIONCONVENIO">
+    <Key>
+      <PropertyRef Name="DisCod" />
+    </Key>
+    <Property Name="DisCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="ConvCod" Type="char" MaxLength="2" />
+    <Property Name="LocUniCod" Type="int" Nullable="false" />
+    <Property Name="DisMon" Type="money" />
+    <Property Name="DisFch" Type="datetime" Nullable="false" />
+    <Property Name="DisTip" Type="smallint" />
+    <Property Name="DisLocNom" Type="char" MaxLength="60" />
+    <Property Name="DisDisCod" Type="smallint" />
+    <Property Name="DisLocTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOCUMENTOS">
+    <Key>
+      <PropertyRef Name="DocCod" />
+    </Key>
+    <Property Name="DocCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocFch" Type="datetime" Nullable="false" />
+    <Property Name="DocDsc" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="DocArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="DocTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="DocNom" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="TidCod" Type="smallint" Nullable="false" />
+    <Property Name="DocDepCod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="DOCUMENTOSPERMISOS">
+    <Key>
+      <PropertyRef Name="DocCod" />
+      <PropertyRef Name="DocDepCodPer" />
+    </Key>
+    <Property Name="DocCod" Type="smallint" Nullable="false" />
+    <Property Name="DocDepCodPer" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EDI">
+    <Key>
+      <PropertyRef Name="EdyCod" />
+    </Key>
+    <Property Name="EdyCod" Type="smallint" Nullable="false" />
+    <Property Name="EdySer" Type="int" Nullable="false" />
+    <Property Name="EdyFchCre" Type="datetime" />
+    <Property Name="EdyUsuCodCre" Type="smallint" />
+    <Property Name="EdyFchMod" Type="datetime" />
+    <Property Name="EdyUsuCodMod" Type="smallint" />
+    <Property Name="EdyConCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPCONTRATOS">
+    <Key>
+      <PropertyRef Name="EmCCod" />
+    </Key>
+    <Property Name="EmCCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="EmCFchIni" Type="datetime" Nullable="false" />
+    <Property Name="EmCFchTer" Type="datetime" Nullable="false" />
+    <Property Name="EmCUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="EmCFchCre" Type="datetime" Nullable="false" />
+    <Property Name="EmCUsuCodMod" Type="smallint" />
+    <Property Name="EmCFchMod" Type="datetime" />
+    <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLEADOS">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+    </Key>
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="EmpFot" Type="varbinary(max)" />
+    <Property Name="EmpFotNom" Type="char" MaxLength="70" />
+    <Property Name="EmpFotTip" Type="char" MaxLength="20" />
+    <Property Name="EmpFic" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="EmpEst" Type="smallint" Nullable="false" />
+    <Property Name="EmpNom" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="EmpApePat" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="EmpApeMat" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="PueCod" Type="smallint" />
+    <Property Name="EmpCenCos" Type="smallint" />
+    <Property Name="EmpBasCod" Type="smallint" />
+    <Property Name="EmpSueMen" Type="smallmoney" />
+    <Property Name="EmpFchIng" Type="datetime" />
+    <Property Name="EmpFchBaj" Type="datetime" />
+    <Property Name="EmpMotBaj" Type="char" MaxLength="100" />
+    <Property Name="EmpNSSAlt" Type="smallint" />
+    <Property Name="EmpNSS" Type="char" MaxLength="15" />
+    <Property Name="EmpTipSan" Type="char" MaxLength="4" />
+    <Property Name="EmpAle" Type="char" MaxLength="20" />
+    <Property Name="EmpFchNac" Type="datetime" />
+    <Property Name="CiuCod" Type="smallint" />
+    <Property Name="EmpEstCiv" Type="smallint" />
+    <Property Name="EmpDom" Type="char" MaxLength="60" />
+    <Property Name="EmpNoExt" Type="char" MaxLength="6" />
+    <Property Name="EmpNoInt" Type="char" MaxLength="6" />
+    <Property Name="EmpCol" Type="char" MaxLength="15" />
+    <Property Name="EmprCP" Type="int" />
+    <Property Name="EmpCiuCod" Type="smallint" />
+    <Property Name="EmpSex" Type="smallint" />
+    <Property Name="EmpRFCHom" Type="char" MaxLength="3" />
+    <Property Name="EmpCurHom" Type="char" MaxLength="3" />
+    <Property Name="BanCod" Type="smallint" />
+    <Property Name="EmpNumTar" Type="char" MaxLength="20" />
+    <Property Name="EmpCtaBan" Type="char" MaxLength="25" />
+    <Property Name="EmpCLABE" Type="char" MaxLength="25" />
+    <Property Name="EmBen" Type="char" MaxLength="60" />
+    <Property Name="EmpTelCas" Type="char" MaxLength="15" />
+    <Property Name="EmpTelCel" Type="char" MaxLength="15" />
+    <Property Name="EmpTalBot" Type="smallmoney" />
+    <Property Name="EmpTalOve" Type="smallint" />
+    <Property Name="EmpTalCam" Type="char" MaxLength="2" />
+    <Property Name="EmpCorEle" Type="char" MaxLength="40" />
+    <Property Name="EmpGra" Type="smallint" />
+    <Property Name="EmpTit" Type="char" MaxLength="20" />
+    <Property Name="EmpCed" Type="char" MaxLength="15" />
+    <Property Name="EmpRefEmeNom" Type="char" MaxLength="60" />
+    <Property Name="EmpRefEmeTel" Type="char" MaxLength="15" />
+    <Property Name="EmpCreInf" Type="smallint" />
+    <Property Name="EmpCreDat" Type="char" MaxLength="40" />
+    <Property Name="EmpFchCre" Type="datetime" />
+    <Property Name="EmpUsuCod" Type="smallint" />
+    <Property Name="EmpFchMod" Type="datetime" />
+    <Property Name="EmpUsuCodMod" Type="smallint" />
+    <Property Name="EmpAut" Type="smallint" />
+    <Property Name="EmpSalDia" Type="smallmoney" />
+    <Property Name="EmpSalDiaInt" Type="smallmoney" />
+    <Property Name="EmpDepCod" Type="smallint" />
+    <Property Name="EmpComCodNom" Type="smallint" />
+    <Property Name="EmpIFE" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EMPLEADOSFAMILIA">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+      <PropertyRef Name="PerFamCod" />
+    </Key>
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="PerFamCod" Type="smallint" Nullable="false" />
+    <Property Name="PerFamSex" Type="smallint" Nullable="false" />
+    <Property Name="PerFamNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="PerFamFchNac" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ENVIARCORREOS">
+    <Key>
+      <PropertyRef Name="EnvCod" />
+    </Key>
+    <Property Name="EnvCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="EstaCod" />
+    </Key>
+    <Property Name="EstaCod" Type="smallint" Nullable="false" />
+    <Property Name="EstaNom" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="EstaFchCre" Type="datetime" Nullable="false" />
+    <Property Name="EstaUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="EstaFchMod" Type="datetime" Nullable="false" />
+    <Property Name="EstaUsuCodMod" Type="smallint" Nullable="false" />
+    <Property Name="EstaAbr" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTATUS">
+    <Key>
+      <PropertyRef Name="EstCod" />
+    </Key>
+    <Property Name="EstCod" Type="smallint" Nullable="false" />
+    <Property Name="EstDsc" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="EstFchCre" Type="datetime" />
+    <Property Name="EstUsuCodCre" Type="smallint" />
+    <Property Name="EstFchMod" Type="datetime" />
+    <Property Name="EstUsuCodMod" Type="smallint" />
+    <Property Name="EstMod" Type="char" MaxLength="3" />
+    <Property Name="EstConCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTIMACION">
+    <Key>
+      <PropertyRef Name="EstiCod" />
+    </Key>
+    <Property Name="EstiCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="EstiPedCod" Type="int" Nullable="false" />
+    <Property Name="EstFol" Type="money" Nullable="false" />
+    <Property Name="EstiTip" Type="smallint" Nullable="false" />
+    <Property Name="EstiCenGest" Type="int" />
+    <Property Name="EstiCenCost" Type="int" />
+    <Property Name="EstiCenBen" Type="int" />
+    <Property Name="EstiRes" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="EstiAvaFis" Type="smallmoney" />
+    <Property Name="EstiProp" Type="char" MaxLength="20" />
+    <Property Name="EstiFon" Type="char" MaxLength="20" />
+    <Property Name="EstiPosFin" Type="char" MaxLength="20" />
+    <Property Name="EstiPos" Type="smallint" />
+    <Property Name="EstiAvaFin" Type="smallmoney" />
+    <Property Name="EstiEPep" Type="char" MaxLength="30" />
+    <Property Name="EstiCtaMay" Type="char" MaxLength="20" />
+    <Property Name="EstiEmpCodRev" Type="int" />
+    <Property Name="EstiEmpComCodRev" Type="smallint" />
+    <Property Name="EstiEmpCodAut" Type="int" />
+    <Property Name="EstiEmpComCodAut" Type="smallint" />
+    <Property Name="EstiEmpCodEsti" Type="int" />
+    <Property Name="EstiEmpComCodEsti" Type="smallint" />
+    <Property Name="EstiPueCodEsti" Type="smallint" />
+    <Property Name="EstiEstCod" Type="smallint" Nullable="false" />
+    <Property Name="EstiFchCre" Type="datetime" Nullable="false" />
+    <Property Name="EstiFolReg" Type="char" MaxLength="5" />
+    <Property Name="EstiFchEst" Type="datetime" />
+    <Property Name="EstiFacFol" Type="char" MaxLength="40" />
+    <Property Name="EstiFchFac" Type="datetime" />
+    <Property Name="EstiFchIni" Type="datetime" Nullable="false" />
+    <Property Name="EstiFchTer" Type="datetime" Nullable="false" />
+    <Property Name="EstiNumOrdSer" Type="char" MaxLength="20" />
+    <Property Name="EstiPedSAP" Type="char" MaxLength="20" />
+    <Property Name="EstiSolGen" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="EstiCopNum" Type="char" MaxLength="60" />
+    <Property Name="EstiRaf" Type="char" MaxLength="60" />
+    <Property Name="EstFolOch" Type="char" MaxLength="60" />
+    <Property Name="EstiNotCre" Type="char" MaxLength="20" />
+    <Property Name="EstiSop" Type="smallint" />
+    <Property Name="EstiSopEst" Type="smallint" />
+    <Property Name="EstiVen" Type="smallint" />
+    <Property Name="EstiHojEnt" Type="smallint" />
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" />
+    <Property Name="EstiPueCodRev" Type="smallint" />
+    <Property Name="EstiPueCodAut" Type="smallint" />
+  </EntityType>
+  <EntityType Name="ESTIMACIONDETALLE">
+    <Key>
+      <PropertyRef Name="EstiCod" />
+      <PropertyRef Name="EstiDProCod" />
+    </Key>
+    <Property Name="EstiCod" Type="int" Nullable="false" />
+    <Property Name="EstiDProCod" Type="int" Nullable="false" />
+    <Property Name="EstiDEst" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="EstiDAcu" Type="int" Nullable="false" />
+    <Property Name="EstiDCos" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.ESTIMACIONESRAF' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ESTIMACIONESRAF">
+          <Property Name="ZONA" Type="nvarchar" MaxLength="255" />
+          <Property Name="Estimacion" Type="float" />
+          <Property Name="ESTIMACIONALTERNA" Type="nvarchar" MaxLength="255" />
+          <Property Name="FACTURA" Type="nvarchar" MaxLength="255" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="FECHA FACT" Type="datetime" />
+          <Property Name="MES" Type="nvarchar" MaxLength="255" />
+          <Property Name="AÑO" Type="float" />
+          <Property Name="FI" Type="datetime" />
+          <Property Name="FT" Type="datetime" />
+          <Property Name="POZO" Type="nvarchar" MaxLength="255" />
+          <Property Name="EQUIPO" Type="float" />
+          <Property Name="TIPO" Type="nvarchar" MaxLength="255" />
+          <Property Name="NOTA DE CREDITO" Type="money" />
+          <Property Name="ESTATUS" Type="nvarchar" MaxLength="255" />
+          <Property Name="PROGRAMA PRESUPUESTAL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ELEMENTO PEP" Type="nvarchar" MaxLength="255" />
+          <Property Name="NO DE COPADE" Type="float" />
+          <Property Name="PEDIDO SAP" Type="float" />
+          <Property Name="OCHOMIL" Type="nvarchar" MaxLength="255" />
+          <Property Name="RAF" Type="nvarchar" MaxLength="255" />
+          <Property Name="CENTRO GESTOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACTIVO" Type="nvarchar" MaxLength="255" />
+          <Property Name="SUPERVISOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="FICHA" Type="nvarchar" MaxLength="255" />
+          <Property Name="RESIDENTE / ADMINISTRADOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="FICHA1" Type="nvarchar" MaxLength="255" />
+          <Property Name="FECHA DE INICIO" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS DOCUMENTACION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTATUS SUPERVISION" Type="nvarchar" MaxLength="255" />
+          <Property Name="ATIENDE" Type="nvarchar" MaxLength="255" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="EVIDENCIAS">
+    <Key>
+      <PropertyRef Name="EviCod" />
+      <PropertyRef Name="EviConCod" />
+      <PropertyRef Name="EviAlmCod" />
+      <PropertyRef Name="EviFch" />
+    </Key>
+    <Property Name="EviCod" Type="int" Nullable="false" />
+    <Property Name="EviConCod" Type="smallint" Nullable="false" />
+    <Property Name="EviAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="EviFch" Type="datetime" Nullable="false" />
+    <Property Name="EviFol" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="EviEstCod" Type="smallint" Nullable="false" />
+    <Property Name="PedCod" Type="int" />
+    <Property Name="EviAutEmpCod" Type="int" Nullable="false" />
+    <Property Name="EviAutEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="EviTbx1EmpCod" Type="int" Nullable="false" />
+    <Property Name="EviTbx1EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="EviTbx2EmpCod" Type="int" Nullable="false" />
+    <Property Name="EviTbx2EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="EviTur" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="EviUsuCodCre" Type="smallint" />
+    <Property Name="EviFchCre" Type="datetime" Nullable="false" />
+    <Property Name="EviUsuCodMod" Type="smallint" />
+    <Property Name="EviFchMod" Type="datetime" />
+    <Property Name="EviArc" Type="varbinary(max)" />
+    <Property Name="EviArcTip" Type="char" MaxLength="20" />
+    <Property Name="EviArcNom" Type="char" MaxLength="20" />
+    <Property Name="EviEst" Type="smallint" />
+    <Property Name="EstiCod" Type="int" />
+    <Property Name="EviNoFacEst" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.FALTANTES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="FALTANTES">
+          <Property Name="BD" Type="float" />
+          <Property Name="PARTIDA" Type="float" />
+          <Property Name="CANT" Type="float" />
+        </EntityType>-->
+  <EntityType Name="FAMILIAS">
+    <Key>
+      <PropertyRef Name="FamCod" />
+    </Key>
+    <Property Name="FamCod" Type="smallint" Nullable="false" />
+    <Property Name="FamDsc" Type="char" MaxLength="180" Nullable="false" />
+    <Property Name="FamAbr" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="FamLin" Type="smallint" Nullable="false" />
+    <Property Name="FamConCod" Type="smallint" Nullable="false" />
+    <Property Name="FamFchCre" Type="datetime" />
+    <Property Name="FamUsuCodCre" Type="smallint" />
+    <Property Name="FamFchMod" Type="datetime" />
+    <Property Name="FamUsuCodMod" Type="smallint" />
+    <Property Name="FamPorDep" Type="smallint" />
+    <Property Name="FamCta" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FAMILIASSUBFAMILIA">
+    <Key>
+      <PropertyRef Name="FamCod" />
+      <PropertyRef Name="SFaCod" />
+    </Key>
+    <Property Name="FamCod" Type="smallint" Nullable="false" />
+    <Property Name="SFaCod" Type="smallint" Nullable="false" />
+    <Property Name="SFaDsc" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="SfaAbr" Type="char" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FINIQUITOS">
+    <Key>
+      <PropertyRef Name="FinCod" />
+    </Key>
+    <Property Name="FinCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="FinFch" Type="datetime" Nullable="false" />
+    <Property Name="FinArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="FinArcTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="FinArcNom" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GASOLINA">
+    <Key>
+      <PropertyRef Name="GasCod" />
+    </Key>
+    <Property Name="GasCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GasEmpCod" Type="int" Nullable="false" />
+    <Property Name="GasFch" Type="datetime" Nullable="false" />
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="GasKmAct" Type="int" Nullable="false" />
+    <Property Name="GasKmAnt" Type="int" Nullable="false" />
+    <Property Name="GasPreLt" Type="money" Nullable="false" />
+    <Property Name="GasLts" Type="smallmoney" Nullable="false" />
+    <Property Name="GasEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="GasArc" Type="varbinary(max)" />
+    <Property Name="GasArcNom" Type="char" MaxLength="20" />
+    <Property Name="GasArcTip" Type="char" MaxLength="20" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GERENCIAS">
+    <Key>
+      <PropertyRef Name="GerCod" />
+    </Key>
+    <Property Name="GerCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocCod" Type="int" Nullable="false" />
+    <Property Name="GerFchCre" Type="datetime" Nullable="false" />
+    <Property Name="GerAbr" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="GerDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="SubdCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GUARDIAS">
+    <Key>
+      <PropertyRef Name="GuaCod" />
+    </Key>
+    <Property Name="GuaCod" Type="smallint" Nullable="false" />
+    <Property Name="GuaDia" Type="smallint" Nullable="false" />
+    <Property Name="GuaEmpCod" Type="int" Nullable="false" />
+    <Property Name="GuaEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="GuaUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="GuaFchCre" Type="datetime" Nullable="false" />
+    <Property Name="GuaUsuMod" Type="smallint" />
+    <Property Name="GuaFchMod" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GUARDIASUBICACION">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+      <PropertyRef Name="GubFch" />
+    </Key>
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="GubFch" Type="datetime" Nullable="false" />
+    <Property Name="AcoCod" Type="smallint" Nullable="false" />
+    <Property Name="GubUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="GubFchCre" Type="smallint" Nullable="false" />
+    <Property Name="GubUsuCodMod" Type="smallint" Nullable="false" />
+    <Property Name="GubFchMod" Type="smallint" Nullable="false" />
+    <Property Name="GubDia" Type="smallint" Nullable="false" />
+    <Property Name="GubEqu" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INCIDENCIA">
+    <Key>
+      <PropertyRef Name="IncCod" />
+    </Key>
+    <Property Name="IncCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IncAbr" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="IncDsc" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INVENTARIO">
+    <Key>
+      <PropertyRef Name="InvCod" />
+    </Key>
+    <Property Name="InvCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ProCod" Type="int" Nullable="false" />
+    <Property Name="InvFch" Type="datetime" Nullable="false" />
+    <Property Name="SprCod" Type="smallint" />
+    <Property Name="InvConCod" Type="smallint" Nullable="false" />
+    <Property Name="InvSalAju" Type="money" />
+    <Property Name="InvEnt" Type="money" />
+    <Property Name="InvEntAju" Type="money" />
+    <Property Name="InvVen" Type="money" />
+    <Property Name="InvDan" Type="money" />
+    <Property Name="InvPer" Type="money" />
+    <Property Name="InvTra" Type="money" />
+    <Property Name="InvTraRec" Type="money" />
+    <Property Name="InvTrs" Type="money" />
+    <Property Name="InvPre" Type="money" />
+    <Property Name="InvCon" Type="money" />
+  </EntityType>
+  <EntityType Name="INVENTARIOTEMP">
+    <Key>
+      <PropertyRef Name="InvCod" />
+    </Key>
+    <Property Name="InvCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ProCod" Type="int" Nullable="false" />
+    <Property Name="InvFch" Type="datetime" Nullable="false" />
+    <Property Name="SprCod" Type="smallint" />
+    <Property Name="InvConCod" Type="smallint" Nullable="false" />
+    <Property Name="InvSalAju" Type="money" />
+    <Property Name="InvEnt" Type="money" />
+    <Property Name="InvEntAju" Type="money" />
+    <Property Name="InvVen" Type="money" />
+    <Property Name="InvDan" Type="money" />
+    <Property Name="InvPer" Type="money" />
+    <Property Name="InvTra" Type="money" />
+    <Property Name="InvTraRec" Type="money" />
+    <Property Name="InvTrs" Type="money" />
+    <Property Name="InvPre" Type="money" />
+    <Property Name="InvCon" Type="money" />
+  </EntityType>
+  <EntityType Name="LICENCIAS">
+    <Key>
+      <PropertyRef Name="LicCod" />
+    </Key>
+    <Property Name="LicCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PerVigLic" Type="datetime" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="PerConCod" Type="smallint" Nullable="false" />
+    <Property Name="PerTipLic" Type="smallint" Nullable="false" />
+    <Property Name="PerNoLic" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="LicEstaCod" Type="smallint" Nullable="false" />
+    <Property Name="LicTip" Type="smallint" />
+  </EntityType>
+  <EntityType Name="LOCALIZACIONES">
+    <Key>
+      <PropertyRef Name="LocCod" />
+    </Key>
+    <Property Name="LocCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="LocAbr" Type="char" MaxLength="6" />
+    <Property Name="LocLocCod" Type="int" />
+    <Property Name="LocConCod" Type="smallint" Nullable="false" />
+    <Property Name="LocFchCre" Type="datetime" />
+    <Property Name="LocUsuCodCre" Type="smallint" />
+    <Property Name="LocFchMod" Type="datetime" />
+    <Property Name="LocUsuCodMod" Type="smallint" />
+    <Property Name="LocTip" Type="smallint" Nullable="false" />
+    <Property Name="ActiLocCod" Type="smallint" />
+    <Property Name="LocDim" Type="char" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="LOG">
+    <Key>
+      <PropertyRef Name="LogCod" />
+      <PropertyRef Name="LogConCod" />
+      <PropertyRef Name="LogAlmCod" />
+      <PropertyRef Name="LogUsuCod" />
+    </Key>
+    <Property Name="LogCod" Type="smallint" Nullable="false" />
+    <Property Name="LogConCod" Type="smallint" Nullable="false" />
+    <Property Name="LogAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="LogUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="LogFecIni" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logers">
+    <Key>
+      <PropertyRef Name="LogeCod" />
+    </Key>
+    <Property Name="LogeCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogeFch" Type="datetime" Nullable="false" />
+    <Property Name="LogeUsuCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogersDetalle">
+    <Key>
+      <PropertyRef Name="LogeCod" />
+      <PropertyRef Name="LogDHor" />
+    </Key>
+    <Property Name="LogeCod" Type="int" Nullable="false" />
+    <Property Name="LogDHor" Type="datetime" Nullable="false" />
+    <Property Name="LogDMov" Type="varchar" MaxLength="800" Nullable="false" />
+    <Property Name="LogDApl" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="LogDTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="LogDAlmCod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="MANTTOEVIDENCIA">
+    <Key>
+      <PropertyRef Name="EmaCod" />
+    </Key>
+    <Property Name="EmaCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmaFol" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="EmaFch" Type="datetime" Nullable="false" />
+    <Property Name="PedCod" Type="int" Nullable="false" />
+    <Property Name="EmaObs" Type="varchar(max)" />
+    <Property Name="EmaCom" Type="varchar(max)" />
+    <Property Name="EmaAlmCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOEVIDENCIADETALLE">
+    <Key>
+      <PropertyRef Name="EmaCod" />
+      <PropertyRef Name="EmaFFamCod" />
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="EmaCod" Type="int" Nullable="false" />
+    <Property Name="EmaFFamCod" Type="smallint" Nullable="false" />
+    <Property Name="ProCod" Type="int" Nullable="false" />
+    <Property Name="EmaFFot" Type="varbinary(max)" Nullable="false" />
+    <Property Name="EmaFFotTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="EmaFFotNom" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOPROGRAMADAS">
+    <Key>
+      <PropertyRef Name="MproCod" />
+    </Key>
+    <Property Name="MproCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MproFch" Type="datetime" Nullable="false" />
+    <Property Name="PedCod" Type="int" Nullable="false" />
+    <Property Name="MproAte" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOREF">
+    <Key>
+      <PropertyRef Name="MreCod" />
+    </Key>
+    <Property Name="MreCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotCod" Type="int" Nullable="false" />
+    <Property Name="MreProCod" Type="int" Nullable="false" />
+    <Property Name="MreCos" Type="smallint" Nullable="false" />
+    <Property Name="MreCan" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="MarCod" />
+    </Key>
+    <Property Name="MarCod" Type="smallint" Nullable="false" />
+    <Property Name="MarDsc" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="MarFchCre" Type="datetime" />
+    <Property Name="MarUsuCodCre" Type="smallint" />
+    <Property Name="MarFchMod" Type="datetime" />
+    <Property Name="MarUsuCodMod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="MEDIDAS">
+    <Key>
+      <PropertyRef Name="UniCod" />
+    </Key>
+    <Property Name="UniCod" Type="smallint" Nullable="false" />
+    <Property Name="UniDsc" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="UniAbr" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="UniFchCre" Type="datetime" />
+    <Property Name="UniUsuCodCre" Type="smallint" />
+    <Property Name="UniFchMod" Type="datetime" />
+    <Property Name="UniUsuCodMod" Type="smallint" />
+    <Property Name="UniRed" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MENUS">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="smallint" Nullable="false" />
+    <Property Name="MenuDescription" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="MenuFatherId" Type="smallint" />
+    <Property Name="MenuIcon" Type="char" MaxLength="40" />
+    <Property Name="MenuUrl" Type="char" MaxLength="100" Nullable="false" />
+    <Property Name="MenuTarget" Type="smallint" Nullable="false" />
+    <Property Name="MenuOrd" Type="smallint" />
+    <Property Name="MenuUrl4" Type="char" MaxLength="30" />
+    <Property Name="MenuUrl2" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOS">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+    </Key>
+    <Property Name="MovCon" Type="int" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="MovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="MovFch" Type="datetime" Nullable="false" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="MovCod" Type="int" Nullable="false" />
+    <Property Name="MovFol" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="MovHr" Type="datetime" Nullable="false" />
+    <Property Name="MovFac" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="MovObs" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="POP10100PONUMBER2" Type="char" MaxLength="17" />
+    <Property Name="MovEmpCod" Type="int" />
+    <Property Name="MovEmpComCod" Type="smallint" />
+    <Property Name="MovEmpPueCod" Type="smallint" />
+    <Property Name="MovCliEmpCod" Type="int" />
+    <Property Name="MovCliEmpComCod" Type="smallint" />
+    <Property Name="MovCliEmpPueCod" Type="smallint" />
+    <Property Name="MovFchCre" Type="datetime" Nullable="false" />
+    <Property Name="MovUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="MovFchMod" Type="datetime" />
+    <Property Name="MovUsuCodMod" Type="smallint" />
+    <Property Name="EstCod" Type="smallint" />
+    <Property Name="MovAlmCod" Type="smallint" />
+    <Property Name="MovMovCon" Type="int" />
+    <Property Name="MovMovConCod" Type="smallint" />
+    <Property Name="MovMovAlmCod" Type="smallint" />
+    <Property Name="MovMovTipDoc" Type="smallint" />
+    <Property Name="MovMovFch" Type="datetime" />
+    <Property Name="MovVer" Type="smallint" />
+    <Property Name="MovEsp" Type="smallint" />
+    <Property Name="EstiCod" Type="int" />
+    <Property Name="MovMovTprCod" Type="smallint" />
+    <Property Name="MovFchMer" Type="char" MaxLength="2" />
+    <Property Name="MovExp" Type="smallint" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOSDETALLE">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+      <PropertyRef Name="MovDProCod" />
+    </Key>
+    <Property Name="MovCon" Type="int" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="MovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="MovFch" Type="datetime" Nullable="false" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="MovDProCod" Type="int" Nullable="false" />
+    <Property Name="MovDNumSer" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="MovdOrd" Type="int" />
+    <Property Name="MovdVNDITNUM" Type="char" MaxLength="31" />
+    <Property Name="MovdCan" Type="money" />
+    <Property Name="MovDCanCon" Type="money" />
+    <Property Name="MovDPer" Type="smallmoney" />
+    <Property Name="MovDDwg" Type="smallmoney" />
+    <Property Name="MovdCos" Type="money" />
+    <Property Name="MovdTra" Type="char" MaxLength="15" />
+    <Property Name="MovdNotEnv" Type="smallint" />
+    <Property Name="MovDTieUso" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOSDETALLESUBPDA">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+      <PropertyRef Name="MovDProCod" />
+      <PropertyRef Name="SprCod" />
+    </Key>
+    <Property Name="MovCon" Type="int" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="MovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="MovFch" Type="datetime" Nullable="false" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="MovDProCod" Type="int" Nullable="false" />
+    <Property Name="SprCod" Type="smallint" Nullable="false" />
+    <Property Name="MovSCanOk" Type="smallmoney" />
+    <Property Name="MovSCanPer" Type="smallmoney" />
+    <Property Name="MovSCanDwg" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="MUNICIPIOS">
+    <Key>
+      <PropertyRef Name="MunCod" />
+    </Key>
+    <Property Name="MunCod" Type="smallint" Nullable="false" />
+    <Property Name="MunDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="MunFchCre" Type="datetime" Nullable="false" />
+    <Property Name="MunUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="MunFchMod" Type="datetime" Nullable="false" />
+    <Property Name="MunUsuCodMod" Type="smallint" Nullable="false" />
+    <Property Name="EstaCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOMINA">
+    <Key>
+      <PropertyRef Name="NomCod" />
+    </Key>
+    <Property Name="NomCod" Type="smallint" Nullable="false" />
+    <Property Name="NomDsc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="NomFchIni" Type="datetime" Nullable="false" />
+    <Property Name="NomFchTer" Type="datetime" Nullable="false" />
+    <Property Name="NomCer" Type="smallint" />
+  </EntityType>
+  <EntityType Name="NOMINAEMPRESA">
+    <Key>
+      <PropertyRef Name="NomCod" />
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+    </Key>
+    <Property Name="NomCod" Type="smallint" Nullable="false" />
+    <Property Name="EmpCod" Type="int" Nullable="false" />
+    <Property Name="EmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="NoeBon" Type="money" />
+    <Property Name="NoeSDR" Type="money" Nullable="false" />
+    <Property Name="NoeSD" Type="money" Nullable="false" />
+    <Property Name="NoeSDI" Type="money" Nullable="false" />
+    <Property Name="NoeDiaQui" Type="smallint" Nullable="false" />
+    <Property Name="NoeSub" Type="money" Nullable="false" />
+    <Property Name="NoePriVac" Type="money" Nullable="false" />
+    <Property Name="NoeCreInf" Type="money" />
+    <Property Name="NoeRes" Type="money" Nullable="false" />
+    <Property Name="NoeCreFon" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVA">
+    <Key>
+      <PropertyRef Name="NotCod" />
+    </Key>
+    <Property Name="NotCod" Type="int" Nullable="false" />
+    <Property Name="NotConCod" Type="smallint" Nullable="false" />
+    <Property Name="NotAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="NotFchSol" Type="datetime" Nullable="false" />
+    <Property Name="NotFchRec" Type="datetime" />
+    <Property Name="NotTip" Type="smallint" Nullable="false" />
+    <Property Name="NotFol" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="NotFolNot" Type="char" MaxLength="25" />
+    <Property Name="PedCod" Type="int" Nullable="false" />
+    <Property Name="NotSupEmpCod" Type="int" />
+    <Property Name="NotSupEmpComCod" Type="smallint" />
+    <Property Name="NotAteEmpCod" Type="int" />
+    <Property Name="NotAteEmpComCod" Type="smallint" />
+    <Property Name="NotFchNot" Type="datetime" />
+    <Property Name="NotVal" Type="smallint" />
+    <Property Name="NotEstCod" Type="smallint" Nullable="false" />
+    <Property Name="NotObs" Type="varchar" MaxLength="800" />
+    <Property Name="NotMovCon" Type="int" Nullable="false" />
+    <Property Name="NotMovConCod" Type="smallint" Nullable="false" />
+    <Property Name="NotMovAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="NotMovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="NotMovTprCod" Type="smallint" Nullable="false" />
+    <Property Name="NotMovFch" Type="datetime" Nullable="false" />
+    <Property Name="NotVer" Type="smallint" Nullable="false" />
+    <Property Name="NotArcValPre" Type="varbinary(max)" />
+    <Property Name="NotArcValPreNom" Type="char" MaxLength="20" />
+    <Property Name="NotArcValPreTip" Type="char" MaxLength="20" />
+    <Property Name="NotArcValDev" Type="varbinary(max)" />
+    <Property Name="NotArcValDevNom" Type="char" MaxLength="20" />
+    <Property Name="NotArcValDevTip" Type="char" MaxLength="20" />
+    <Property Name="NotUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="NotFchCre" Type="datetime" Nullable="false" />
+    <Property Name="NotUsuCodMod" Type="smallint" />
+    <Property Name="NotFchMod" Type="datetime" />
+    <Property Name="NotNot" Type="varchar(max)" />
+    <Property Name="NotMovFolTra" Type="char" MaxLength="20" />
+    <Property Name="NotMovFolTraFch" Type="datetime" />
+    <Property Name="NotMovFolTraMan" Type="char" MaxLength="20" />
+    <Property Name="NotMovFolTraManFch" Type="datetime" />
+    <Property Name="NotMovFolSolRef" Type="char" MaxLength="20" />
+    <Property Name="NotMovFolSolRefFch" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVADETALLE">
+    <Key>
+      <PropertyRef Name="NotCod" />
+      <PropertyRef Name="NoDProCod" />
+    </Key>
+    <Property Name="NotCod" Type="int" Nullable="false" />
+    <Property Name="NoDProCod" Type="int" Nullable="false" />
+    <Property Name="NoDCan" Type="smallmoney" Nullable="false" />
+    <Property Name="NoDArc" Type="varbinary(max)" />
+    <Property Name="NoDArcTip" Type="char" MaxLength="20" />
+    <Property Name="NoDArcNom" Type="char" MaxLength="20" />
+    <Property Name="NoDCauDan" Type="smallint" />
+    <Property Name="CauCod" Type="smallint" />
+    <Property Name="NoDCauObs" Type="varchar" MaxLength="800" />
+    <Property Name="NoDDia" Type="smallint" />
+    <Property Name="NoDTipMan" Type="smallint" />
+    <Property Name="NoDOrdSusDes" Type="smallint" />
+    <Property Name="NoDOrdLub" Type="smallint" />
+    <Property Name="NoDOrdCal" Type="smallint" />
+    <Property Name="NoDOrdRef" Type="smallint" />
+    <Property Name="NodOrdSusDan" Type="smallint" />
+    <Property Name="NoDOrdRee" Type="smallint" />
+    <Property Name="NoDOrdPru" Type="smallint" />
+    <Property Name="NoDOrdAco" Type="smallint" />
+    <Property Name="NoDDscMan" Type="varchar" MaxLength="800" />
+    <Property Name="NoDObsMan" Type="varchar" MaxLength="800" />
+    <Property Name="NoDEviMan" Type="varbinary(max)" />
+    <Property Name="NoDEviManNom" Type="char" MaxLength="20" />
+    <Property Name="NoDEviManTip" Type="char" MaxLength="20" />
+    <Property Name="NodUsuCodMan" Type="smallint" />
+    <Property Name="NoDFchMan" Type="datetime" />
+    <Property Name="NoDEstCod" Type="smallint" />
+    <Property Name="NoDFol" Type="char" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVADETALLESUBPDA">
+    <Key>
+      <PropertyRef Name="NotCod" />
+      <PropertyRef Name="NoDProCod" />
+      <PropertyRef Name="SubSprCod" />
+    </Key>
+    <Property Name="NotCod" Type="int" Nullable="false" />
+    <Property Name="NoDProCod" Type="int" Nullable="false" />
+    <Property Name="SubSprCod" Type="smallint" Nullable="false" />
+    <Property Name="SubCan" Type="smallmoney" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OCUPACIONCONTENEDORES">
+    <Key>
+      <PropertyRef Name="OcuCont" />
+    </Key>
+    <Property Name="OcuCont" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OcuAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ContCod" Type="smallint" Nullable="false" />
+    <Property Name="OcuAct" Type="smallint" Nullable="false" />
+    <Property Name="OcuFch" Type="datetime" Nullable="false" />
+    <Property Name="OcuObsr" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OcuOpe" Type="smallint" Nullable="false" />
+    <Property Name="OcuFchPro" Type="datetime" />
+    <Property Name="OcuUsuCod" Type="smallint" />
+    <Property Name="OcuFchCre" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OPERATIVO">
+    <Key>
+      <PropertyRef Name="OpeCod" />
+    </Key>
+    <Property Name="OpeCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OpeConCod" Type="smallint" Nullable="false" />
+    <Property Name="OpeFch" Type="datetime" Nullable="false" />
+    <Property Name="OpeMsg" Type="varchar(max)" Nullable="false" />
+    <Property Name="OpeEqu" Type="smallint" Nullable="false" />
+    <Property Name="OpeFchCre" Type="datetime" Nullable="false" />
+    <Property Name="OpeFchHr" Type="datetime" Nullable="false" />
+    <Property Name="OpeUsuCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenServicio">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+    </Key>
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerFch" Type="datetime" Nullable="false" />
+    <Property Name="OrdSerLocCodUO" Type="int" Nullable="false" />
+    <Property Name="GerCod" Type="smallint" Nullable="false" />
+    <Property Name="OrdSerLocCod" Type="int" Nullable="false" />
+    <Property Name="OrdSerEqu" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="OrdSerProPre" Type="char" MaxLength="60" />
+    <Property Name="OrdSerElePep" Type="char" MaxLength="60" />
+    <Property Name="OrdSerCenGes" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="OrdSerCtaMay" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="OrdSerFchCre" Type="datetime" Nullable="false" />
+    <Property Name="OrdSerUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="OrdSerFchMod" Type="datetime" />
+    <Property Name="OrdSerUsuCodMod" Type="smallint" />
+    <Property Name="OrdSerNot" Type="varchar" MaxLength="80" />
+    <Property Name="OrdSerArc" Type="varbinary(max)" />
+    <Property Name="OrdSerArcTip" Type="char" MaxLength="20" />
+    <Property Name="OrdSerArcNom" Type="char" MaxLength="30" />
+    <Property Name="OrdSerPedVta" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="OrdSerLin" Type="smallint" />
+    <Property Name="OrdSerEstOch" Type="char" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="OrdenServicioDesglose">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerGProCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerGProCod" Type="int" Nullable="false" />
+    <Property Name="OrdSerGCan" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenServicioMonto">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="ClaVtaCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="ClaVtaCod" Type="smallint" Nullable="false" />
+    <Property Name="OrdSerMMon" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenServicioRaf">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerFolRaf" />
+    </Key>
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerFolRaf" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerFchRaf" Type="datetime" />
+    <Property Name="OrdSerRafMon" Type="money" />
+    <Property Name="OrdSerRafMonAct" Type="money" Nullable="false" />
+    <Property Name="OrdSerRafArc" Type="varbinary(max)" />
+    <Property Name="OrdSerRafArcTip" Type="char" MaxLength="20" />
+    <Property Name="OrdSerRafArcNom" Type="char" MaxLength="30" />
+    <Property Name="OrdSerRafSup" Type="char" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="OrdenServicioRafEstatus">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerFolRaf" />
+      <PropertyRef Name="OrdSerEstCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerFolRaf" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerEstCod" Type="smallint" Nullable="false" />
+    <Property Name="OrdSerEstClaRaf" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="OrdSerEstFch" Type="datetime" Nullable="false" />
+    <Property Name="OrdSerEstMon" Type="money" Nullable="false" />
+    <Property Name="OrdSerEst" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="PedCod" />
+    </Key>
+    <Property Name="PedCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PedFol" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="PedFch" Type="datetime" Nullable="false" />
+    <Property Name="PedFchIni" Type="datetime" Nullable="false" />
+    <Property Name="PedFchTer" Type="datetime" />
+    <Property Name="PedAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="PedTConCod" Type="smallint" Nullable="false" />
+    <Property Name="PedEdyCod" Type="smallint" Nullable="false" />
+    <Property Name="PedEqu" Type="smallint" />
+    <Property Name="PedLocCod" Type="int" Nullable="false" />
+    <Property Name="PedSolEmpCod" Type="int" Nullable="false" />
+    <Property Name="PedSolEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="PedAutEmpCod" Type="int" Nullable="false" />
+    <Property Name="PedAutEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="PedTbxEmpCod" Type="int" Nullable="false" />
+    <Property Name="PedTbxEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="PedUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="PedFchCre" Type="datetime" Nullable="false" />
+    <Property Name="PedUsuCodMod" Type="smallint" />
+    <Property Name="PedFchMod" Type="datetime" />
+    <Property Name="PedBasCod" Type="smallint" />
+    <Property Name="PedOrdSer" Type="char" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PERFILES">
+    <Key>
+      <PropertyRef Name="PerCod" />
+    </Key>
+    <Property Name="PerCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PerDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="PerMan" Type="smallint" Nullable="false" />
+    <Property Name="PerConCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERFILESAPLICATIVO">
+    <Key>
+      <PropertyRef Name="PerCod" />
+      <PropertyRef Name="AplCod" />
+    </Key>
+    <Property Name="PerCod" Type="int" Nullable="false" />
+    <Property Name="AplCod" Type="smallint" Nullable="false" />
+    <Property Name="AplDsc" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="PerUpd" Type="smallint" Nullable="false" />
+    <Property Name="PerDel" Type="smallint" Nullable="false" />
+    <Property Name="PerCon" Type="smallint" Nullable="false" />
+    <Property Name="PerIns" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERMISOSMENU">
+    <Key>
+      <PropertyRef Name="PmeCod" />
+    </Key>
+    <Property Name="PmeCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuId" Type="smallint" Nullable="false" />
+    <Property Name="UsuCod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="POLITICAS">
+    <Key>
+      <PropertyRef Name="PolCod" />
+    </Key>
+    <Property Name="PolCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PueCod" Type="smallint" Nullable="false" />
+    <Property Name="PolComCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POLITICASENTREGA">
+    <Key>
+      <PropertyRef Name="PolCod" />
+      <PropertyRef Name="FamCod" />
+      <PropertyRef Name="SFaCod" />
+    </Key>
+    <Property Name="PolCod" Type="int" Nullable="false" />
+    <Property Name="FamCod" Type="smallint" Nullable="false" />
+    <Property Name="SFaCod" Type="smallint" Nullable="false" />
+    <Property Name="PolEppCan" Type="smallint" Nullable="false" />
+    <Property Name="PolEppVig" Type="smallint" Nullable="false" />
+    <Property Name="PolEppFch" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="ProCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProTprCod" Type="smallint" Nullable="false" />
+    <Property Name="ProConCod" Type="smallint" Nullable="false" />
+    <Property Name="ProPda" Type="smallmoney" />
+    <Property Name="ProPdaInt" Type="char" MaxLength="25" />
+    <Property Name="ProCodPro" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="ProDsc" Type="varchar(max)" Nullable="false" />
+    <Property Name="UniCod" Type="smallint" />
+    <Property Name="MarCod" Type="smallint" />
+    <Property Name="ProvCod" Type="smallint" />
+    <Property Name="FamCod" Type="smallint" />
+    <Property Name="SFaCod" Type="smallint" />
+    <Property Name="ProMod" Type="char" MaxLength="20" />
+    <Property Name="ProVis" Type="smallint" />
+    <Property Name="ProNoSer" Type="char" MaxLength="20" />
+    <Property Name="ProFot" Type="varbinary(max)" />
+    <Property Name="ProFotNom" Type="char" MaxLength="20" />
+    <Property Name="ProFotTip" Type="char" MaxLength="20" />
+    <Property Name="ProLin" Type="smallint" Nullable="false" />
+    <Property Name="ProFchAlt" Type="datetime" />
+    <Property Name="ProUsuCodCre" Type="smallint" />
+    <Property Name="ProFchMod" Type="datetime" />
+    <Property Name="ProUsuCodMod" Type="smallint" />
+    <Property Name="ProComMin" Type="smallmoney" />
+    <Property Name="ProPreUni" Type="money" />
+    <Property Name="ProTipMon" Type="smallint" />
+    <Property Name="UbiCod" Type="smallint" />
+    <Property Name="ProAcu" Type="int" />
+    <Property Name="ProRefProCod" Type="int" />
+    <Property Name="ProMan" Type="smallint" />
+    <Property Name="ProCos" Type="money" />
+    <Property Name="ProTal" Type="smallmoney" />
+    <Property Name="ProComMax" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSSUBPRODUCTO">
+    <Key>
+      <PropertyRef Name="ProCod" />
+      <PropertyRef Name="SprCod" />
+    </Key>
+    <Property Name="ProCod" Type="int" Nullable="false" />
+    <Property Name="SprCod" Type="smallint" Nullable="false" />
+    <Property Name="SprDsc" Type="char" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSUBICACION">
+    <Key>
+      <PropertyRef Name="ProUbiCod" />
+    </Key>
+    <Property Name="ProUbiCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProUbiFch" Type="datetime" Nullable="false" />
+    <Property Name="ProUbiFolAct" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProUbiAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ProUbiFolAnt" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProUbiAlmCodAnt" Type="smallint" Nullable="false" />
+    <Property Name="ProUbiProCod" Type="int" Nullable="false" />
+    <Property Name="ProUbiFchAct" Type="datetime" Nullable="false" />
+    <Property Name="ProUbiFchAnt" Type="datetime" Nullable="false" />
+    <Property Name="ProUbiEstCod" Type="smallint" Nullable="false" />
+    <Property Name="ProUbiObs" Type="varchar(max)" Nullable="false" />
+    <Property Name="ProUbiMovDNumSer" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProUbiModelo" Type="char" MaxLength="31" Nullable="false" />
+    <Property Name="ProUbiOdo" Type="int" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSUBICACIONODOMETRO">
+    <Key>
+      <PropertyRef Name="ProUbiCod" />
+      <PropertyRef Name="OdoFch" />
+    </Key>
+    <Property Name="ProUbiCod" Type="int" Nullable="false" />
+    <Property Name="OdoFch" Type="datetime" Nullable="false" />
+    <Property Name="OdoMed" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ProvCod" />
+    </Key>
+    <Property Name="ProvCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="ProvDir" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="ProvRFC" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="ProvTel1" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ProvTel2" Type="char" MaxLength="20" />
+    <Property Name="ProvMail" Type="char" MaxLength="20" />
+    <Property Name="ProvHttp" Type="char" MaxLength="60" />
+    <Property Name="ProvPag" Type="smallint" Nullable="false" />
+    <Property Name="ProvMon" Type="smallint" Nullable="false" />
+    <Property Name="ProvCon" Type="char" MaxLength="60" />
+    <Property Name="ProvTelCon" Type="char" MaxLength="20" />
+    <Property Name="ProvMailCon" Type="char" MaxLength="20" />
+    <Property Name="ProvFchCre" Type="datetime" />
+    <Property Name="ProvUsuCodCre" Type="smallint" />
+    <Property Name="ProvFchMod" Type="datetime" />
+    <Property Name="ProvUsuCodMod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="PUESTO">
+    <Key>
+      <PropertyRef Name="PueCod" />
+    </Key>
+    <Property Name="PueCod" Type="smallint" Nullable="false" />
+    <Property Name="PueDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="PueFchCre" Type="datetime" Nullable="false" />
+    <Property Name="PueUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="PueFchMod" Type="datetime" />
+    <Property Name="PueUsuCodMod" Type="smallint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.RAFS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="RAFS">
+          <Property Name="ORDEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="RAF" Type="nvarchar" MaxLength="255" />
+          <Property Name="ESTIMACION" Type="float" />
+          <Property Name="MONTO" Type="money" />
+        </EntityType>-->
+  <EntityType Name="REGISTRO">
+    <Key>
+      <PropertyRef Name="RegCod" />
+    </Key>
+    <Property Name="RegCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegUsuCod" Type="smallint" Nullable="false" />
+    <Property Name="RegFch" Type="datetime" Nullable="false" />
+    <Property Name="RegAni" Type="smallint" Nullable="false" />
+    <Property Name="RegMes" Type="smallint" Nullable="false" />
+    <Property Name="RegCie" Type="smallint" Nullable="false" />
+    <Property Name="RegObs" Type="varchar" MaxLength="800" />
+    <Property Name="RegTip" Type="smallint" />
+  </EntityType>
+  <EntityType Name="REQUISICION">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+    </Key>
+    <Property Name="ReqCod" Type="int" Nullable="false" />
+    <Property Name="ReqConCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqFch" Type="datetime" Nullable="false" />
+    <Property Name="ReqTip" Type="smallint" Nullable="false" />
+    <Property Name="ReqFol" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqAlmCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqProvCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqObsCom" Type="varchar(max)" />
+    <Property Name="ReqObs" Type="varchar(max)" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="UsuFchMod" Type="datetime" />
+    <Property Name="UsuCodMod" Type="smallint" />
+    <Property Name="UsuFchCre" Type="datetime" />
+    <Property Name="UsuCodCre" Type="smallint" />
+    <Property Name="ReqFchOC" Type="datetime" />
+    <Property Name="NumCot" Type="decimal" Precision="11" Scale="0" />
+  </EntityType>
+  <EntityType Name="REQUISICIONDETALLE">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+      <PropertyRef Name="ReqDProCod" />
+    </Key>
+    <Property Name="ReqCod" Type="int" Nullable="false" />
+    <Property Name="ReqConCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqFch" Type="datetime" Nullable="false" />
+    <Property Name="ReqTip" Type="smallint" Nullable="false" />
+    <Property Name="ReqDProCod" Type="int" Nullable="false" />
+    <Property Name="ReqDCan" Type="smallmoney" Nullable="false" />
+    <Property Name="RedDCon" Type="varchar" MaxLength="80" />
+    <Property Name="ReqDITEMNMBR" Type="char" MaxLength="31" />
+    <Property Name="ReqDCanOC" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="REQUISICIONESTATUS">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+      <PropertyRef Name="EstCod" />
+    </Key>
+    <Property Name="ReqCod" Type="int" Nullable="false" />
+    <Property Name="ReqConCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqFch" Type="datetime" Nullable="false" />
+    <Property Name="ReqTip" Type="smallint" Nullable="false" />
+    <Property Name="EstCod" Type="smallint" Nullable="false" />
+    <Property Name="ReqEFch" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RES_ACTIVOS">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ResEmpCod" />
+      <PropertyRef Name="ResEmpComCod" />
+    </Key>
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+    <Property Name="ResEmpCod" Type="int" Nullable="false" />
+    <Property Name="ResEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="ResFch" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RESGUARDOS">
+    <Key>
+      <PropertyRef Name="RguCod" />
+    </Key>
+    <Property Name="RguCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RguFch" Type="datetime" Nullable="false" />
+    <Property Name="EdyCod" Type="smallint" />
+    <Property Name="RguEqu" Type="smallint" />
+    <Property Name="PedCod" Type="int" />
+    <Property Name="RguObs" Type="char" MaxLength="500" />
+    <Property Name="RguUsuCodAut" Type="smallint" />
+    <Property Name="RguUsuCodTec1" Type="smallint" />
+    <Property Name="RguUsuCodTec2" Type="smallint" />
+    <Property Name="RguTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RESGUARDOSDETALLERES">
+    <Key>
+      <PropertyRef Name="RguCod" />
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+    </Key>
+    <Property Name="RguCod" Type="int" Nullable="false" />
+    <Property Name="ActCod" Type="int" Nullable="false" />
+    <Property Name="ActConCod" Type="smallint" Nullable="false" />
+    <Property Name="ActFamCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEGURIDAD">
+    <Key>
+      <PropertyRef Name="SegCod" />
+    </Key>
+    <Property Name="SegCod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SegFch" Type="datetime" Nullable="false" />
+    <Property Name="PedCod" Type="int" Nullable="false" />
+    <Property Name="SegEviInsArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="SegEviInsArcTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SegEviInsArcNom" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SegEviDinArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="SegEviDInArcTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SegEviDInArcNom" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEGURIDADORDEN">
+    <Key>
+      <PropertyRef Name="SegCod" />
+      <PropertyRef Name="SegOrdFch" />
+    </Key>
+    <Property Name="SegCod" Type="int" Nullable="false" />
+    <Property Name="SegOrdFch" Type="datetime" Nullable="false" />
+    <Property Name="SegOrdObs" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SegOrdDsc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="SegOrdArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="SegOrdArcTip" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SegOrdArcNom" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="SegOrdTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLICITUDESPEMEX">
+    <Key>
+      <PropertyRef Name="SolCod" />
+    </Key>
+    <Property Name="SolCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SolUniOpe" Type="char" MaxLength="20" />
+    <Property Name="SolOfiRaf" Type="char" MaxLength="60" />
+    <Property Name="SolSup" Type="char" MaxLength="60" />
+    <Property Name="SiolSit" Type="char" MaxLength="20" />
+    <Property Name="SolMon" Type="smallmoney" />
+    <Property Name="SolFchPer" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TullboxV4.0.dbo.SOLICITUDESPEMEX1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SOLICITUDESPEMEX1">
+          <Property Name="Columna 0" Type="varchar" MaxLength="100" />
+          <Property Name="Columna 1" Type="varchar" MaxLength="100" />
+          <Property Name="Columna 2" Type="varchar" MaxLength="100" />
+          <Property Name="Columna 3" Type="varchar" MaxLength="50" />
+          <Property Name="Columna 4" Type="decimal" Precision="28" Scale="0" />
+          <Property Name="Columna 5" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="SOLICITUV">
+    <Key>
+      <PropertyRef Name="SvaCod" />
+    </Key>
+    <Property Name="SvaCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SvaConCod" Type="smallint" Nullable="false" />
+    <Property Name="SvaFch" Type="datetime" Nullable="false" />
+    <Property Name="SvaDiaSol" Type="smallint" Nullable="false" />
+    <Property Name="SvaFchIni" Type="datetime" Nullable="false" />
+    <Property Name="SvaFchFin" Type="datetime" Nullable="false" />
+    <Property Name="SvaFchRea" Type="datetime" Nullable="false" />
+    <Property Name="SvaFchPag" Type="datetime" Nullable="false" />
+    <Property Name="SvaCooEmpCod" Type="int" Nullable="false" />
+    <Property Name="SvaJefEmpCod" Type="int" Nullable="false" />
+    <Property Name="SvaCooComCod" Type="smallint" Nullable="false" />
+    <Property Name="SvaJefComCod" Type="smallint" Nullable="false" />
+    <Property Name="SvaObs" Type="varchar" MaxLength="800" />
+    <Property Name="SvaUsuCodCre" Type="smallint" Nullable="false" />
+    <Property Name="SvaUsuFchCre" Type="datetime" Nullable="false" />
+    <Property Name="SvaUsuCodUpd" Type="smallint" />
+    <Property Name="SvaUsuFchUpd" Type="datetime" />
+    <Property Name="SvaEmpCod" Type="int" Nullable="false" />
+    <Property Name="SvaEmpComCod" Type="smallint" Nullable="false" />
+    <Property Name="SvaArc" Type="varbinary(max)" Nullable="false" />
+    <Property Name="SvaArcNom" Type="char" MaxLength="20" />
+    <Property Name="SvaArcTip" Type="char" MaxLength="20" />
+    <Property Name="SvaPerFin" Type="smallint" />
+    <Property Name="SvaPerIni" Type="smallint" />
+  </EntityType>
+  <EntityType Name="STATUSRAF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoCon" Type="char" MaxLength="60" />
+    <Property Name="FchReg" Type="char" MaxLength="60" />
+    <Property Name="NumCtrInt" Type="char" MaxLength="100" />
+    <Property Name="EstAct" Type="char" MaxLength="50" />
+    <Property Name="PedSap" Type="char" MaxLength="60" />
+    <Property Name="ActGer" Type="char" MaxLength="70" />
+    <Property Name="Mont" Type="money" />
+    <Property Name="Paquete" Type="char" MaxLength="50" />
+    <Property Name="ClaRaf" Type="char" MaxLength="50" />
+    <Property Name="ClaGral" Type="char" MaxLength="50" />
+    <Property Name="Clasi" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Subdirecciones">
+    <Key>
+      <PropertyRef Name="SubdCod" />
+    </Key>
+    <Property Name="SubdCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubdDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="SubdAbr" Type="char" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TIPOCONDETALLE">
+    <Key>
+      <PropertyRef Name="TConCod" />
+      <PropertyRef Name="TDeProCod" />
+    </Key>
+    <Property Name="TConCod" Type="smallint" Nullable="false" />
+    <Property Name="TDeProCod" Type="int" Nullable="false" />
+    <Property Name="TDeCan" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPOCONT">
+    <Key>
+      <PropertyRef Name="TConCod" />
+    </Key>
+    <Property Name="TConCod" Type="smallint" Nullable="false" />
+    <Property Name="TconTip" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TConDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="TConMon" Type="money" Nullable="false" />
+    <Property Name="TConConCod" Type="smallint" Nullable="false" />
+    <Property Name="TConFchCre" Type="datetime" />
+    <Property Name="TConUsuCodCre" Type="smallint" />
+    <Property Name="TConFchMod" Type="datetime" />
+    <Property Name="TConUsuCodMod" Type="smallint" />
+    <Property Name="TConUniCod" Type="smallint" Nullable="false" />
+    <Property Name="TConProCod" Type="int" Nullable="false" />
+    <Property Name="TConCan" Type="smallint" />
+  </EntityType>
+  <EntityType Name="TIPODOC">
+    <Key>
+      <PropertyRef Name="TidCod" />
+    </Key>
+    <Property Name="TidCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TidDsc" Type="char" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPOPROD">
+    <Key>
+      <PropertyRef Name="TPrCod" />
+    </Key>
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="TPrDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="TPrFchCre" Type="datetime" />
+    <Property Name="TPrUsuCodCre" Type="smallint" />
+    <Property Name="TPrFchMod" Type="datetime" />
+    <Property Name="TPrUsuCodMod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="UBICACION">
+    <Key>
+      <PropertyRef Name="UbiCod" />
+    </Key>
+    <Property Name="UbiCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UbiConCod" Type="smallint" Nullable="false" />
+    <Property Name="UbiDsc" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="UbiDscCor" Type="char" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UNEGOCIO">
+    <Key>
+      <PropertyRef Name="UneCod" />
+    </Key>
+    <Property Name="UneCod" Type="smallint" Nullable="false" />
+    <Property Name="UneDsc" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="UneAbr" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="UneTip" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="UsuCod" />
+    </Key>
+    <Property Name="UsuCod" Type="smallint" Nullable="false" />
+    <Property Name="UsuNom" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="UsuUse" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="UsuPas" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="PerCod" Type="int" Nullable="false" />
+    <Property Name="UsuFchVig" Type="datetime" Nullable="false" />
+    <Property Name="UsuVer" Type="smallint" />
+    <Property Name="EmpCod" Type="int" />
+    <Property Name="UsuAut" Type="smallint" />
+    <Property Name="UsuAlmCod" Type="smallint" />
+    <Property Name="UsuConCod" Type="smallint" />
+    <Property Name="EmpComCod" Type="smallint" />
+  </EntityType>
+  <EntityType Name="USUARIOSCOMPONENTE">
+    <Key>
+      <PropertyRef Name="UsuCod" />
+      <PropertyRef Name="WCompNro" />
+    </Key>
+    <Property Name="UsuCod" Type="smallint" Nullable="false" />
+    <Property Name="WCompNro" Type="smallint" Nullable="false" />
+    <Property Name="DusOrd" Type="smallint" Nullable="false" />
+    <Property Name="DusIzq" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VALESAUTORIZADOS">
+    <Key>
+      <PropertyRef Name="ValCod" />
+    </Key>
+    <Property Name="ValCod" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovCon" Type="int" Nullable="false" />
+    <Property Name="ConCod" Type="smallint" Nullable="false" />
+    <Property Name="AlmCod" Type="smallint" Nullable="false" />
+    <Property Name="MovTipDoc" Type="smallint" Nullable="false" />
+    <Property Name="MovFch" Type="datetime" Nullable="false" />
+    <Property Name="TPrCod" Type="smallint" Nullable="false" />
+    <Property Name="ValFchSol" Type="datetime" Nullable="false" />
+    <Property Name="ValFchAut" Type="datetime" Nullable="false" />
+    <Property Name="UsuCod" Type="smallint" Nullable="false" />
+    <Property Name="ValAut" Type="smallint" Nullable="false" />
+    <Property Name="ValUsuCodSol" Type="smallint" Nullable="false" />
+    <Property Name="MovDProCod" Type="int" Nullable="false" />
+    <Property Name="ValArcAut" Type="varbinary(max)" />
+    <Property Name="ValArcTip" Type="char" MaxLength="20" />
+    <Property Name="ValArcNom" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="WEBCOMPONENTES">
+    <Key>
+      <PropertyRef Name="WCompNro" />
+    </Key>
+    <Property Name="WCompNro" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WCompDsc" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="WcompObj" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="WConCod" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="IENVIARCORREOS1">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="ENVIARCORREOS" Type="Self.ENVIARCORREOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="EmpCod" />
+        <PropertyRef Name="EmpComCod" />
+      </Principal>
+      <Dependent Role="ENVIARCORREOS">
+        <PropertyRef Name="EmpCod" />
+        <PropertyRef Name="EmpComCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IESTIMACION1">
+    <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+    <End Role="ESTIMACION" Type="Self.ESTIMACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRATO">
+        <PropertyRef Name="ConCod" />
+      </Principal>
+      <Dependent Role="ESTIMACION">
+        <PropertyRef Name="ConCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS4">
+    <End Role="ESTATUS" Type="Self.ESTATUS" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTATUS">
+        <PropertyRef Name="EstCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviEstCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS5">
+    <End Role="ALMACENES" Type="Self.ALMACENES" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS6">
+    <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRATO">
+        <PropertyRef Name="ConCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviConCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS9">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviUsuCodCre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IGERENCIAS1">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONES" Multiplicity="1" />
+    <End Role="GERENCIAS" Type="Self.GERENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="GERENCIAS">
+        <PropertyRef Name="LocCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IGERENCIAS2">
+    <End Role="Subdirecciones" Type="Self.Subdirecciones" Multiplicity="1" />
+    <End Role="GERENCIAS" Type="Self.GERENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subdirecciones">
+        <PropertyRef Name="SubdCod" />
+      </Principal>
+      <Dependent Role="GERENCIAS">
+        <PropertyRef Name="SubdCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERS1">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+    <End Role="Logers" Type="Self.Logers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="Logers">
+        <PropertyRef Name="LogeUsuCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERSDETALLE1">
+    <End Role="ALMACENES" Type="Self.ALMACENES" Multiplicity="0..1" />
+    <End Role="LogersDetalle" Type="Self.LogersDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="LogersDetalle">
+        <PropertyRef Name="LogDAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERSDETALLE2">
+    <End Role="Logers" Type="Self.Logers" Multiplicity="1" />
+    <End Role="LogersDetalle" Type="Self.LogersDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logers">
+        <PropertyRef Name="LogeCod" />
+      </Principal>
+      <Dependent Role="LogersDetalle">
+        <PropertyRef Name="LogeCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IMANTTOREF2">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="MANTTOREF" Type="Self.MANTTOREF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="MANTTOREF">
+        <PropertyRef Name="MreProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IMANTTOREF3">
+    <End Role="NOTAINFORMATIVA" Type="Self.NOTAINFORMATIVA" Multiplicity="1" />
+    <End Role="MANTTOREF" Type="Self.MANTTOREF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTAINFORMATIVA">
+        <PropertyRef Name="NotCod" />
+      </Principal>
+      <Dependent Role="MANTTOREF">
+        <PropertyRef Name="NotCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE1">
+    <End Role="ESTATUS" Type="Self.ESTATUS" Multiplicity="0..1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTATUS">
+        <PropertyRef Name="EstCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NoDEstCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE2">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NoDProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE3">
+    <End Role="CAUSAS" Type="Self.CAUSAS" Multiplicity="0..1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAUSAS">
+        <PropertyRef Name="CauCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="CauCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE4">
+    <End Role="NOTAINFORMATIVA" Type="Self.NOTAINFORMATIVA" Multiplicity="1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTAINFORMATIVA">
+        <PropertyRef Name="NotCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NotCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO">
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="1" />
+    <End Role="OrdenServicio1" Type="Self.OrdenServicio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenServicio">
+        <PropertyRef Name="OrdSerFol" />
+      </Principal>
+      <Dependent Role="OrdenServicio1">
+        <PropertyRef Name="OrdSerFol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO1">
+    <End Role="GERENCIAS" Type="Self.GERENCIAS" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GERENCIAS">
+        <PropertyRef Name="GerCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="GerCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO3">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONES" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerLocCodUO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO4">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONES" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerLocCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO5">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerUsuCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO6">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="0..1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerUsuCodMod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIODESGLOSE1">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="OrdenServicioDesglose" Type="Self.OrdenServicioDesglose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="OrdenServicioDesglose">
+        <PropertyRef Name="OrdSerGProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIOMONTO1">
+    <End Role="CLASIVTA" Type="Self.CLASIVTA" Multiplicity="1" />
+    <End Role="OrdenServicioMonto" Type="Self.OrdenServicioMonto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASIVTA">
+        <PropertyRef Name="ClaVtaCod" />
+      </Principal>
+      <Dependent Role="OrdenServicioMonto">
+        <PropertyRef Name="ClaVtaCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIORAFESTATUS1">
+    <End Role="OrdenServicioRaf" Type="Self.OrdenServicioRaf" Multiplicity="1" />
+    <End Role="OrdenServicioRafEstatus" Type="Self.OrdenServicioRafEstatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenServicioRaf">
+        <PropertyRef Name="OrdSerFol" />
+        <PropertyRef Name="OrdSerFolRaf" />
+      </Principal>
+      <Dependent Role="OrdenServicioRafEstatus">
+        <PropertyRef Name="OrdSerFol" />
+        <PropertyRef Name="OrdSerFolRaf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION1">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION2">
+    <End Role="ALMACENES" Type="Self.ALMACENES" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION3">
+    <End Role="ALMACENES" Type="Self.ALMACENES" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiAlmCodAnt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="ACOTACIONES" EntityType="Self.ACOTACIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOS" EntityType="Self.ACTIVOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOSLOC" EntityType="Self.ACTIVOSLOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOSPEMEX" EntityType="Self.ACTIVOSPEMEX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOSPROGMANTTO" EntityType="Self.ACTIVOSPROGMANTTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOSRESGUARDO" EntityType="Self.ACTIVOSRESGUARDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVOSZONA" EntityType="Self.ACTIVOSZONA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADJUNTO_CAPA" EntityType="Self.ADJUNTO_CAPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AFECTACIONES" EntityType="Self.AFECTACIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ALMACENES" EntityType="Self.ALMACENES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARTICULOSEDIS" EntityType="Self.ARTICULOSEDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTOMATICO" EntityType="Self.AUTOMATICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTOMATICOCORREOAUT" EntityType="Self.AUTOMATICOCORREOAUT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANCO" EntityType="Self.BANCO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE" EntityType="Self.BASE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASEBASECOORD" EntityType="Self.BASEBASECOORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAPACITACIONES" EntityType="Self.CAPACITACIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAPACITACIONESASISTENCIA" EntityType="Self.CAPACITACIONESASISTENCIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAPACITAR" EntityType="Self.CAPACITAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAPACITARPDAS" EntityType="Self.CAPACITARPDAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAPTURAPRESUPUESTO" EntityType="Self.CAPTURAPRESUPUESTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAUSAS" EntityType="Self.CAUSAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CIERRE" EntityType="Self.CIERRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CIUDADES" EntityType="Self.CIUDADES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLASIVTA" EntityType="Self.CLASIVTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANIA" EntityType="Self.COMPANIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTENEDORES" EntityType="Self.CONTENEDORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTRATOCONVENIO" EntityType="Self.CONTRATOCONVENIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COORDINADORES" EntityType="Self.COORDINADORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CURSOS" EntityType="Self.CURSOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CURSOSDETALLE" EntityType="Self.CURSOSDETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTAMENTO" EntityType="Self.DEPARTAMENTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLELOG" EntityType="Self.DETALLELOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIPLOMAS" EntityType="Self.DIPLOMAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DISTRIBUCIONCONVENIO" EntityType="Self.DISTRIBUCIONCONVENIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOCUMENTOS" EntityType="Self.DOCUMENTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOCUMENTOSPERMISOS" EntityType="Self.DOCUMENTOSPERMISOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDI" EntityType="Self.EDI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPCONTRATOS" EntityType="Self.EMPCONTRATOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLEADOSFAMILIA" EntityType="Self.EMPLEADOSFAMILIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENVIARCORREOS" EntityType="Self.ENVIARCORREOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTADO" EntityType="Self.ESTADO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTATUS" EntityType="Self.ESTATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTIMACION" EntityType="Self.ESTIMACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESTIMACIONDETALLE" EntityType="Self.ESTIMACIONDETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVIDENCIAS" EntityType="Self.EVIDENCIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FAMILIAS" EntityType="Self.FAMILIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FAMILIASSUBFAMILIA" EntityType="Self.FAMILIASSUBFAMILIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FINIQUITOS" EntityType="Self.FINIQUITOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GASOLINA" EntityType="Self.GASOLINA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GERENCIAS" EntityType="Self.GERENCIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GUARDIAS" EntityType="Self.GUARDIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GUARDIASUBICACION" EntityType="Self.GUARDIASUBICACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INCIDENCIA" EntityType="Self.INCIDENCIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVENTARIO" EntityType="Self.INVENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVENTARIOTEMP" EntityType="Self.INVENTARIOTEMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICENCIAS" EntityType="Self.LICENCIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOCALIZACIONES" EntityType="Self.LOCALIZACIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOG" EntityType="Self.LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logers" EntityType="Self.Logers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogersDetalle" EntityType="Self.LogersDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANTTOEVIDENCIA" EntityType="Self.MANTTOEVIDENCIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANTTOEVIDENCIADETALLE" EntityType="Self.MANTTOEVIDENCIADETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANTTOPROGRAMADAS" EntityType="Self.MANTTOPROGRAMADAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANTTOREF" EntityType="Self.MANTTOREF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MARCA" EntityType="Self.MARCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDIDAS" EntityType="Self.MEDIDAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MENUS" EntityType="Self.MENUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVIMIENTOS" EntityType="Self.MOVIMIENTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVIMIENTOSDETALLE" EntityType="Self.MOVIMIENTOSDETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVIMIENTOSDETALLESUBPDA" EntityType="Self.MOVIMIENTOSDETALLESUBPDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MUNICIPIOS" EntityType="Self.MUNICIPIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOMINA" EntityType="Self.NOMINA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOMINAEMPRESA" EntityType="Self.NOMINAEMPRESA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTAINFORMATIVA" EntityType="Self.NOTAINFORMATIVA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTAINFORMATIVADETALLE" EntityType="Self.NOTAINFORMATIVADETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTAINFORMATIVADETALLESUBPDA" EntityType="Self.NOTAINFORMATIVADETALLESUBPDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OCUPACIONCONTENEDORES" EntityType="Self.OCUPACIONCONTENEDORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPERATIVO" EntityType="Self.OPERATIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenServicio" EntityType="Self.OrdenServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenServicioDesglose" EntityType="Self.OrdenServicioDesglose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenServicioMonto" EntityType="Self.OrdenServicioMonto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenServicioRaf" EntityType="Self.OrdenServicioRaf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenServicioRafEstatus" EntityType="Self.OrdenServicioRafEstatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedidos" EntityType="Self.Pedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERFILES" EntityType="Self.PERFILES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERFILESAPLICATIVO" EntityType="Self.PERFILESAPLICATIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERMISOSMENU" EntityType="Self.PERMISOSMENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POLITICAS" EntityType="Self.POLITICAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POLITICASENTREGA" EntityType="Self.POLITICASENTREGA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOSSUBPRODUCTO" EntityType="Self.PRODUCTOSSUBPRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOSUBICACION" EntityType="Self.PRODUCTOSUBICACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOSUBICACIONODOMETRO" EntityType="Self.PRODUCTOSUBICACIONODOMETRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PUESTO" EntityType="Self.PUESTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REGISTRO" EntityType="Self.REGISTRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REQUISICION" EntityType="Self.REQUISICION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REQUISICIONDETALLE" EntityType="Self.REQUISICIONDETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REQUISICIONESTATUS" EntityType="Self.REQUISICIONESTATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RES_ACTIVOS" EntityType="Self.RES_ACTIVOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESGUARDOS" EntityType="Self.RESGUARDOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESGUARDOSDETALLERES" EntityType="Self.RESGUARDOSDETALLERES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEGURIDAD" EntityType="Self.SEGURIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEGURIDADORDEN" EntityType="Self.SEGURIDADORDEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOLICITUDESPEMEX" EntityType="Self.SOLICITUDESPEMEX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOLICITUV" EntityType="Self.SOLICITUV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STATUSRAF" EntityType="Self.STATUSRAF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subdirecciones" EntityType="Self.Subdirecciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOCONDETALLE" EntityType="Self.TIPOCONDETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOCONT" EntityType="Self.TIPOCONT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPODOC" EntityType="Self.TIPODOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOPROD" EntityType="Self.TIPOPROD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UBICACION" EntityType="Self.UBICACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UNEGOCIO" EntityType="Self.UNEGOCIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIOSCOMPONENTE" EntityType="Self.USUARIOSCOMPONENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VALESAUTORIZADOS" EntityType="Self.VALESAUTORIZADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEBCOMPONENTES" EntityType="Self.WEBCOMPONENTES" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="IENVIARCORREOS1" Association="Self.IENVIARCORREOS1">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="ENVIARCORREOS" EntitySet="ENVIARCORREOS" />
+    </AssociationSet>
+    <AssociationSet Name="IESTIMACION1" Association="Self.IESTIMACION1">
+      <End Role="CONTRATO" EntitySet="CONTRATO" />
+      <End Role="ESTIMACION" EntitySet="ESTIMACION" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS4" Association="Self.IEVIDENCIAS4">
+      <End Role="ESTATUS" EntitySet="ESTATUS" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS5" Association="Self.IEVIDENCIAS5">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS6" Association="Self.IEVIDENCIAS6">
+      <End Role="CONTRATO" EntitySet="CONTRATO" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS9" Association="Self.IEVIDENCIAS9">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IGERENCIAS1" Association="Self.IGERENCIAS1">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IGERENCIAS2" Association="Self.IGERENCIAS2">
+      <End Role="Subdirecciones" EntitySet="Subdirecciones" />
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERS1" Association="Self.ILOGERS1">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="Logers" EntitySet="Logers" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERSDETALLE1" Association="Self.ILOGERSDETALLE1">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="LogersDetalle" EntitySet="LogersDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERSDETALLE2" Association="Self.ILOGERSDETALLE2">
+      <End Role="Logers" EntitySet="Logers" />
+      <End Role="LogersDetalle" EntitySet="LogersDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="IMANTTOREF2" Association="Self.IMANTTOREF2">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="MANTTOREF" EntitySet="MANTTOREF" />
+    </AssociationSet>
+    <AssociationSet Name="IMANTTOREF3" Association="Self.IMANTTOREF3">
+      <End Role="NOTAINFORMATIVA" EntitySet="NOTAINFORMATIVA" />
+      <End Role="MANTTOREF" EntitySet="MANTTOREF" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE1" Association="Self.INOTAINFORMATIVADETALLE1">
+      <End Role="ESTATUS" EntitySet="ESTATUS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE2" Association="Self.INOTAINFORMATIVADETALLE2">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE3" Association="Self.INOTAINFORMATIVADETALLE3">
+      <End Role="CAUSAS" EntitySet="CAUSAS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE4" Association="Self.INOTAINFORMATIVADETALLE4">
+      <End Role="NOTAINFORMATIVA" EntitySet="NOTAINFORMATIVA" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO" Association="Self.IORDENSERVICIO">
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+      <End Role="OrdenServicio1" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO1" Association="Self.IORDENSERVICIO1">
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO3" Association="Self.IORDENSERVICIO3">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO4" Association="Self.IORDENSERVICIO4">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO5" Association="Self.IORDENSERVICIO5">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO6" Association="Self.IORDENSERVICIO6">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicio" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIODESGLOSE1" Association="Self.IORDENSERVICIODESGLOSE1">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="OrdenServicioDesglose" EntitySet="OrdenServicioDesglose" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIOMONTO1" Association="Self.IORDENSERVICIOMONTO1">
+      <End Role="CLASIVTA" EntitySet="CLASIVTA" />
+      <End Role="OrdenServicioMonto" EntitySet="OrdenServicioMonto" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIORAFESTATUS1" Association="Self.IORDENSERVICIORAFESTATUS1">
+      <End Role="OrdenServicioRaf" EntitySet="OrdenServicioRaf" />
+      <End Role="OrdenServicioRafEstatus" EntitySet="OrdenServicioRafEstatus" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION1" Association="Self.IPRODUCTOSUBICACION1">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACION" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION2" Association="Self.IPRODUCTOSUBICACION2">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACION" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION3" Association="Self.IPRODUCTOSUBICACION3">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACION" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

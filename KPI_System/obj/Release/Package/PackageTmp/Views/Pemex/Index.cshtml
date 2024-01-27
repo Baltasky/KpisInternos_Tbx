@@ -1,0 +1,352 @@
+﻿
+@{
+    ViewBag.Title = "Pemex";
+}
+
+<div class="post d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+        <div id="">
+            <div class="card mb-5">
+                <div class="card p-5 mb-0">
+                    <form id="FormFechas" asp-area="Asistencias" asp-controller="Asistencias" asp-action="Reporte" method="post">
+                        <div class="row">
+                            <label class="col-lg-1 fw-semibold text-muted pt-2 ">Fecha:</label>
+                            <div class="col-lg-2">
+                                <div class="position-relative d-flex align-items-center fv-row">
+                                    <span class="svg-icon svg-icon-2 position-absolute mx-4"><i class="fas fa-calendar-alt fs-3"></i></span>
+                                    <input name="RangoFechas" id="RangoFechas" class="form-control p-2 fs-7 ps-10" placeholder="Seleccionar Fecha" />
+                                </div>
+                            </div>
+                            <div class="col-lg-2 fv-row">
+                                <button type="button" onclick="GetFallas()" id="Search" class="btn btn-primary p-3 fs-8 me-3"><i class="fas fa-chart-line"></i>Generar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="" id="CardFiltros">
+            <!-- Start Controles de Filtros -->
+            <div class="card mb-5">
+                <div class="card p-5 mb-0">
+                    <form id="FormFechas" asp-area="Asistencias" asp-controller="Asistencias" asp-action="Reporte" method="post">
+                        <div class="row">
+                            <div class="col-md-3 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">ZONA:</label>
+                                <div class="form-check form-check-custom form-check-sm ps-2 mb-2">
+                                    <input type="checkbox" id="IdZonaTodo" name="IdZonaTodo" class="form-check-input border border-dark me-2" />
+                                    <label for="IdZonaTodo">Todos</label>
+                                </div>
+                                <div class="border card-scroll h-100px">
+                                    <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                        <tbody id="TablaFiltroZona">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-1 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">EQUIPO:</label>
+                                <div class="form-check form-check-custom form-check-sm ps-2 mb-2">
+                                    <input type="checkbox" id="IdEquipoTodo" name="IdEquipoTodo" class="form-check-input border border-dark me-2" />
+                                    <label for="IdEquipoTodo">Todos</label>
+                                </div>
+                                <div class="border card-scroll h-100px">
+                                    <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                        <tbody id="TablaFiltroEquipo">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">UBICACIÓN:</label>
+                                <div class="form-check form-check-custom form-check-sm ps-2 mb-2">
+                                    <input type="checkbox" id="IdUbicacionTodo" name="IdUbicacionTodo" class="form-check-input border border-dark me-2" />
+                                    <label for="IdUbicacionTodo">Todos</label>
+                                </div>
+                                <div class="border card-scroll h-100px">
+                                    <table class="table table-hover table-rounded   table-row-bordered gy-2 gs-2">
+                                        <tbody id="TablaFiltroUbicacion">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">TIPO DE SERVICIO:</label>
+                                <div class="form-check form-check-custom form-check-sm ps-2 mb-2">
+                                    <input type="checkbox" id="IdTipoServicioTodo" name="IdTipoServicioTodo" class="form-check-input border border-dark me-2" />
+                                    <label for="IdTipoServicioTodo">Todos</label>
+                                </div>
+                                <div class="border card-scroll h-100px">
+                                    <table class="table table-hover table-rounded   table-row-bordered gy-2 gs-2">
+                                        <tbody id="TablaFiltroTipoServicio">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-4">
+                                <label class="fs-6 form-label fw-bolder text-dark me-4">CONTENEDOR:</label>
+                                <div class="form-check form-check-custom form-check-sm ps-2 mb-2">
+                                    <input type="checkbox" id="IdContenedorTodo" name="IdContenedorTodo" class="form-check-input border border-dark me-2" />
+                                    <label for="IdContenedorTodo">Todos</label>
+                                </div>
+                                <div class="border card-scroll h-100px">
+                                    <table class="table table-hover table-rounded   table-row-bordered gy-2 gs-2">
+                                        <tbody id="TablaFiltroContenedor">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End controles de Filtros -->
+            <!-- Start de Grafias -->
+
+            <div class="card p-5 mb-0">
+                <div class="card card-flush h-md-100">
+                    <div class="card-header pt-7  mb-0 pb-0">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold text-dark">
+                                Pemex Indicators
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="card-body pt-1">
+
+                        <div class="my-5">
+                            <div class="table-responsive">
+                                <table id="kt_datatable_complex_header" class="table table-row-bordered gy-2 gs-2 border rounded w-100">
+                                    <tr class="fw-bold fs-7 text-uppercase text-dark">
+                                        <th class="min-w-50px"></th>
+                                        <th class="min-w-50px"></th>
+                                        <th class="text-center min-w-50px">Mes Actual</th>
+                                        <th class="text-center min-w-50px">Mes Anterior</th>
+                                        <th class="text-center min-w-50px">Var</th>
+                                        <th class="text-center min-w-50px">% Var</th>
+                                        <th class="text-center min-w-50px"></th>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="3" class="align-middle border-bottom border-end min-w-100px">1.- Ventas y Servicios  </th>
+                                        <th class="min-w-100px align-middle">Venta de Consumible</th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">Renta Contenedor</th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">Venta total</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+
+
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="3" class="align-middle border-bottom border-end min-w-100px">2.- Mantenimiento</th>
+                                        <th class="min-w-100px align-middle">Partidas programadas para Mtto</th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">
+                                            Partidas con Mtto:
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">% Cumplimiento Mtto</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="3" class="align-middle border-bottom border-end min-w-100px">3.- Calibración</th>
+                                        <th class="min-w-100px align-middle">Partidas programadas para Calibración</th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">
+                                            Partidas con Calibración:
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">% Cumplimiento Calibración</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="2" class="align-middle border-bottom border-end min-w-100px">4.- Capacitación</th>
+                                        <th class="min-w-100px align-middle">
+                                            Cursos Programadas
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">
+                                            Cantidad herramientas capacitadas:
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+                                    </tr>
+
+
+
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="3" class="align-middle border-bottom border-end min-w-100px">5.- Fallas en Herramientas y Equipos</th>
+                                        <th class="min-w-100px align-middle">Total Herramientas Dañadas</th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">
+                                            Tiempo de Respuesta en Reposición
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">Total Incidencias</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+
+
+
+                                    <tr class=" fs-6 ">
+                                        <th rowspan="5" class="align-middle border-bottom border-end min-w-100px">6.-Trazabilidad</th>
+                                        <th class="min-w-100px align-middle">Existencia de consumibles</th>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-success p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-up fs-1 text-success"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">
+                                            Total de contenedores por contrato
+                                        </th>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-warning p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><i class="far fa-arrow-alt-circle-down fs-1 text-danger"></i></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">Total de Contenedores Disponibles</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">Nivel minimo de consumibles</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+                                    <tr class=" fs-6 ">
+                                        <th class="min-w-100px align-middle">total de Herramientas Disonibles</th>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"><div class="bg-danger p-2">2000</div></td>
+                                        <td class="text-center min-w-50px"></td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- Styles grafica de barras -->
+<style>
+    #GraficaFallas {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+<!-- Styles -->
+
+
+@section scripts {
+
+    <!--AmChart5 Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Fallas/Fallas.js"></script>
+
+}
+

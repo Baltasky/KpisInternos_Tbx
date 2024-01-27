@@ -1,0 +1,296 @@
+﻿
+@{
+    ViewBag.Title = "Ingresos Tbx";
+}
+
+<div class="post d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+        <div id="">
+            <div class="card mb-5">
+                <div class="card p-5 mb-0">
+                    <form id="FormFechas" asp-area="Asistencias" asp-controller="Asistencias" asp-action="Reporte" method="post">
+                        <div class="row">
+                            <label class="col-lg-1 fw-semibold text-muted pt-2 ">Fecha:</label>
+                            <div class="col-lg-2">
+                                <div class="position-relative d-flex align-items-center fv-row">
+                                    <span class="svg-icon svg-icon-2 position-absolute mx-4"><i class="fas fa-calendar-alt fs-3"></i></span>
+                                    <input name="RangoFechas" id="RangoFechas" class="form-control p-2 fs-7 ps-10" placeholder="Seleccionar Fecha" />
+                                </div>
+                            </div>
+                            <div class="col-lg-2 fv-row">
+                                <button type="button" onclick="GetFallas()" id="Search" class="btn btn-primary p-3 fs-8 me-3"><i class="fas fa-chart-line"></i>Generar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="" id="CardFiltros">
+
+
+            <div class="card-body pt-2">
+                <!--begin::Table-->
+
+                <div class="table-responsive">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="fw-bold fs-6 text-gray-800 bg-light-primary">
+                                    <th></th>
+                                    <th>N</th>
+                                    <th>Concepto</th>
+                                    <th>Importe</th>
+                                    <th>VS Proyección (Ejecutado)</th>
+                                    <th>N</th>
+                                    <th>Concepto</th>
+                                    <th>Importe</th>
+                                    <th>VS Proyección (Ejecutado)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td> <a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Facturado No Cobrado</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>13</td>
+                                    <td> Deuda MNJ</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>2</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Vales despacho de Rentas</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>14.1</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">CXP Admin</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>3</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Remisiones Vtas Ads. S.C.</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>14.2</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">CXP Operativo</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a onclick="toggleRow(2)" class="btn btn-light-info me-5 p-1 pe-0"><i id="iconShow" class="fas fa-plus-circle fs-2 fw-bold"></i></a>
+                                    </td>
+                                    <td>4</td>
+                                    <td>
+                                        <a onclick="ShwoReport(this)" class="text-primary text-hover-primary"> Vales despacho  Por Contrato</a>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>14.3</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">CXP General</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr id="row1" class="d-none">
+                                    <td></td>
+                                    <td>4.1</td>
+                                    <td> <a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Aceites</a>    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr id="row2" class="d-none">
+                                    <td></td>
+                                    <td>4.2</td>
+                                    <td> <a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Consumibles</a>    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr id="row3" class="d-none">
+                                    <td></td>
+                                    <td>4.3</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Grasas</a>    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>5</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">BackOrder Vtas Ads.</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>15</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Costo B.O. Vtas Ads.</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>6</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">BackOrder Por Contrato</a></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>16</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Costo B.O. Por Contrato</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>7</td>
+                                    <td>Inventario en Tránsito</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>17</td>
+                                    <td>     Préstamo TBX 1</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>8</td>
+                                    <td>Ajuste de precios</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>9.1</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Recuperación Venta de TBX 1</a> </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>9.2</td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary">Recuperación Nóminas</a> </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a onclick="ShwoReport(this)" class="text-primary text-hover-primary"></a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>10</td>
+                                    <td>Total</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>18</td>
+                                    <td class="bg-light-primary fw-bold text-dark">Total Compromisos</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>11</td>
+                                    <td>IVA</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>19</td>
+                                    <td>Intereses</td>
+                                    <td class="fw-bold text-danger text-end">47,674	</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="bg-light-primary"></td>
+                                    <td class="bg-light-primary">12</td>
+                                    <td class="bg-light-primary fw-bold text-dark">Total de Ingresos</td>
+                                    <td class="bg-light-primary fw-bold text-dark"></td>
+                                    <td class="bg-light-primary fw-bold text-dark"></td>
+                                    <td class="bg-light-primary fw-bold text-dark">20</td>
+                                    <td class="bg-light-primary fw-bold text-dark ">   Aforo estimado   	</td>
+                                    <td class="bg-light-primary fw-bold text-dark text-end"></td>
+                                    <td class="bg-light-primary fw-bold text-dark text-end">    	</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!--end::Table-->
+            </div>
+            <!--end::Card body-->
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+@section scripts {
+
+    @*<script src="Metronic/plugins/custom/datatables/datatables.bundle.js"></script>*@
+
+    @*Date picker*@
+    <script>
+        $(document).ready(function () {
+            //Ocultar AsideMenu
+            $("#kt_body").attr("data-kt-aside-minimize", "on");
+
+            //Tablas flexibles
+            $('.dataTables_scrollHeadInner').css('max-width', '100%');
+            $('.dataTables_scrollHeadInner').css('min-width', '90%');
+        })
+
+
+        $("#kt_datatable_responsive").DataTable({
+            responsive: true
+        });
+
+
+        function toggleRow() {
+            const icon = document.getElementById('iconShow');
+            const rowToToggle = document.getElementById('row1');
+
+            if (rowToToggle.classList.contains('d-none')) {
+                $("#row1").removeClass('d-none');
+                $("#row2").removeClass('d-none');
+                $("#row3").removeClass('d-none');
+
+                $("#iconShow").removeClass('fa-plus-circle');
+                $("#iconShow").addClass('fa-minus-circle');
+            }
+            else {
+                $("#row1").addClass('d-none');
+                $("#row2").addClass('d-none');
+                $("#row3").addClass('d-none');
+
+                $("#iconShow").addClass('fa-plus-circle');
+                $("#iconShow").removeClass('fa-minus-circle');
+            }
+        }
+
+
+    </script>
+
+}

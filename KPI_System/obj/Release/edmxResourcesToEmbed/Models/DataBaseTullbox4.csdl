@@ -1,0 +1,2584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACOTACIONE">
+    <Key>
+      <PropertyRef Name="AcoCod" />
+    </Key>
+    <Property Name="AcoCod" Type="Int16" Nullable="false" />
+    <Property Name="AcoDsc" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AcoAbr" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AcoUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="AcoFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AcoUsuCodMod" Type="Int16" />
+    <Property Name="AcoFchMod" Type="DateTime" Precision="3" />
+    <Property Name="AcoCol" Type="Int16" Nullable="false" />
+    <Property Name="AcoCol3" Type="Int16" />
+    <Property Name="AcoCol2" Type="Int16" />
+    <Property Name="AcoCol1" Type="Int16" />
+    <Property Name="AcoMon" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="ACTIVO">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+    </Key>
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+    <Property Name="UneCod" Type="Int16" Nullable="false" />
+    <Property Name="ActTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActMod" Type="Int16" Nullable="false" />
+    <Property Name="ActPla" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActSer" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActPol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActUni" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActMarCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFot" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ActFotNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ActFotTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ActSfaCod" Type="Int16" />
+    <Property Name="ActFchAdq" Type="DateTime" Precision="3" />
+    <Property Name="ActFac" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="ActUneCod" Type="Int16" />
+    <Property Name="ActMoi" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EstCod" Type="Int16" />
+    <Property Name="ActCtaAct" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="ActSAN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ActPIN" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="ActSITE" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ActAct" Type="Int16" />
+    <Property Name="ActDepCod" Type="Int16" Nullable="false" />
+    <Property Name="ActObs" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="ActArcFac" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ActArcFacNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="ActArcFacTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSLOC">
+    <Key>
+      <PropertyRef Name="ActiLocCod" />
+    </Key>
+    <Property Name="ActiLocCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActiLocNom" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSPEMEX">
+    <Key>
+      <PropertyRef Name="ActPmx" />
+    </Key>
+    <Property Name="ActPmx" Type="Int16" Nullable="false" />
+    <Property Name="ActPmxAnt" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SubDirAnt" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActActPmx" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SubSDirAct" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSPROGMANTTO">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ProgManPro" />
+    </Key>
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+    <Property Name="ProgManPro" Type="Int32" Nullable="false" />
+    <Property Name="ProgManDsc" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSRESGUARDO">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ResgEmpCod" />
+    </Key>
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+    <Property Name="ResgEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="ResgEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="ResgFch" Type="DateTime" Precision="3" />
+    <Property Name="ResgAct" Type="Int16" Nullable="false" />
+    <Property Name="ResgArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ResgArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ResgArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ACTIVOSZONA">
+    <Key>
+      <PropertyRef Name="ActAntCod" />
+    </Key>
+    <Property Name="ActAntCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActAnt" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActSubAnt" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActSubAct" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ActActu" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADJUNTO_CAPA">
+    <Key>
+      <PropertyRef Name="AdCapCod" />
+      <PropertyRef Name="CapCod" />
+    </Key>
+    <Property Name="AdCapCod" Type="Int32" Nullable="false" />
+    <Property Name="CapCod" Type="Int32" Nullable="false" />
+    <Property Name="AdCapFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdCapArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AdCapArcTip" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AdCapArcNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AdCapTip" Type="Int16" Nullable="false" />
+    <Property Name="AdCapUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="AdCapFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdCapUsuCodMod" Type="Int16" />
+    <Property Name="AdCapFchMod" Type="DateTime" Precision="3" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AFECTACIONE">
+    <Key>
+      <PropertyRef Name="AfeConCod" />
+      <PropertyRef Name="AfePedCod" />
+      <PropertyRef Name="AfeFch" />
+    </Key>
+    <Property Name="AfeConCod" Type="Int16" Nullable="false" />
+    <Property Name="AfePedCod" Type="Int32" Nullable="false" />
+    <Property Name="AfeFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AfeIncCod" Type="Int16" />
+    <Property Name="AfeObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AfeUsuCod" Type="Int16" />
+    <Property Name="AfeUsuFchCre" Type="DateTime" Precision="3" />
+    <Property Name="AfeUsuMod" Type="Int16" />
+    <Property Name="AfeUsuFchMod" Type="DateTime" Precision="3" />
+    <Property Name="AcoCod" Type="Int16" />
+    <Property Name="AfeEstCod" Type="Int16" Nullable="false" />
+    <Property Name="AfeProg" Type="Int16" />
+  </EntityType>
+  <EntityType Name="ALMACENE">
+    <Key>
+      <PropertyRef Name="AlmCod" />
+    </Key>
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="AlmNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AlmTip" Type="Int16" Nullable="false" />
+    <Property Name="AlmSubAlmCod" Type="Int16" />
+    <Property Name="AlmFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AlmUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="AlmFchMod" Type="DateTime" Precision="3" />
+    <Property Name="AlmUsuCodMod" Type="Int16" />
+    <Property Name="AlmConcod" Type="Int16" Nullable="false" />
+    <Property Name="TConCod" Type="Int16" />
+    <Property Name="AlmBasCod" Type="Int16" />
+    <Property Name="AlmAli" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AlmCla" Type="Int16" />
+    <NavigationProperty Name="EVIDENCIAS" Relationship="Self.IEVIDENCIAS5" FromRole="ALMACENES" ToRole="EVIDENCIAS" />
+    <NavigationProperty Name="LogersDetalles" Relationship="Self.ILOGERSDETALLE1" FromRole="ALMACENES" ToRole="LogersDetalle" />
+    <NavigationProperty Name="PRODUCTOSUBICACIONs" Relationship="Self.IPRODUCTOSUBICACION2" FromRole="ALMACENES" ToRole="PRODUCTOSUBICACION" />
+    <NavigationProperty Name="PRODUCTOSUBICACIONs1" Relationship="Self.IPRODUCTOSUBICACION3" FromRole="ALMACENES" ToRole="PRODUCTOSUBICACION" />
+  </EntityType>
+  <EntityType Name="ARTICULOSEDI">
+    <Key>
+      <PropertyRef Name="EdyCod" />
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="EdyCod" Type="Int16" Nullable="false" />
+    <Property Name="ProCod" Type="Int32" Nullable="false" />
+    <Property Name="EdyDCan" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTOMATICO">
+    <Key>
+      <PropertyRef Name="AutCod" />
+    </Key>
+    <Property Name="AutCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="AutFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AutUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="AutFchMod" Type="DateTime" Precision="3" />
+    <Property Name="AutUsuCodMod" Type="Int16" />
+    <Property Name="AutLin" Type="Int16" Nullable="false" />
+    <Property Name="AutTie" Type="Int16" Nullable="false" />
+    <Property Name="AutTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTOMATICOCORREOAUT">
+    <Key>
+      <PropertyRef Name="AutCod" />
+      <PropertyRef Name="AutCorCod" />
+    </Key>
+    <Property Name="AutCod" Type="Int16" Nullable="false" />
+    <Property Name="AutCorCod" Type="Int16" Nullable="false" />
+    <Property Name="AutCor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AutCorNom" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BANCO">
+    <Key>
+      <PropertyRef Name="BanCod" />
+    </Key>
+    <Property Name="BanCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BanNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BanFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BanUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="BanFchMod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BanUsuCodMod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BASE">
+    <Key>
+      <PropertyRef Name="BasCod" />
+    </Key>
+    <Property Name="BasCod" Type="Int16" Nullable="false" />
+    <Property Name="BasNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BasFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BasUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="BasFchMod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BasUsuCodMod" Type="Int16" Nullable="false" />
+    <Property Name="BasAbr" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BasDim" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BASEBASECOORD">
+    <Key>
+      <PropertyRef Name="BasCod" />
+      <PropertyRef Name="BasEmpCod" />
+      <PropertyRef Name="BasEmpComCod" />
+    </Key>
+    <Property Name="BasCod" Type="Int16" Nullable="false" />
+    <Property Name="BasEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="BasEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="BasFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BasFchTer" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="CAPACITACIONE">
+    <Key>
+      <PropertyRef Name="CapCod" />
+    </Key>
+    <Property Name="CapCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CapConCod" Type="Int16" Nullable="false" />
+    <Property Name="CapFol" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CapFch" Type="DateTime" Precision="3" />
+    <Property Name="CapEst" Type="Int16" />
+    <Property Name="CurCod" Type="Int32" />
+    <Property Name="CapProEmpCod" Type="Int32" />
+    <Property Name="CapRevEmpCod" Type="Int32" />
+    <Property Name="CapAutEmpCod" Type="Int32" />
+    <Property Name="CapInsEmpCod" Type="Int32" />
+    <Property Name="CapEqu" Type="Int16" />
+    <Property Name="CapLocCod" Type="Int32" />
+    <Property Name="CapFchIni" Type="DateTime" Precision="3" />
+    <Property Name="CapFchTer" Type="DateTime" Precision="3" />
+    <Property Name="CapNotPro" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CapNot" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="CapTecEmpCod" Type="Int32" />
+    <Property Name="CapFchNot" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CapResEmpCod" Type="Int32" />
+    <Property Name="CapAteEmpCod" Type="Int32" />
+    <Property Name="CapAct" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapCon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CapFirEmpCod" Type="Int32" />
+    <Property Name="CapUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="CapFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CapUsuCodMod" Type="Int16" />
+    <Property Name="CapFchMod" Type="DateTime" Precision="3" />
+    <Property Name="CapProEmpComCod" Type="Int16" />
+    <Property Name="CapRevEmpComCod" Type="Int16" />
+    <Property Name="CapAutEmpComCod" Type="Int16" />
+    <Property Name="CapInsEmpComCod" Type="Int16" />
+    <Property Name="CapTecEmpComCod" Type="Int16" />
+    <Property Name="CapResEmpComCod" Type="Int16" />
+    <Property Name="CapAteEmpComCod" Type="Int16" />
+    <Property Name="CapFirEmpComCod" Type="Int16" />
+    <Property Name="CapaCod" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CAPACITACIONESASISTENCIA">
+    <Key>
+      <PropertyRef Name="CapCod" />
+      <PropertyRef Name="AsiEmpCod" />
+      <PropertyRef Name="AsiEmpComCod" />
+    </Key>
+    <Property Name="CapCod" Type="Int32" Nullable="false" />
+    <Property Name="AsiEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="AsiEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="AsiAsi" Type="Int16" Nullable="false" />
+    <Property Name="AsiApr" Type="Int16" Nullable="false" />
+    <Property Name="AsiNot" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPACITAR">
+    <Key>
+      <PropertyRef Name="CapaCod" />
+    </Key>
+    <Property Name="CapaCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CapaMes" Type="Int16" Nullable="false" />
+    <Property Name="CapaAno" Type="Int16" Nullable="false" />
+    <Property Name="CapaUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="CapaResEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="CapaSupEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="CapaRepEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="CapaResComCod" Type="Int16" Nullable="false" />
+    <Property Name="CapaSupComCod" Type="Int16" Nullable="false" />
+    <Property Name="CapaRepComCod" Type="Int16" Nullable="false" />
+    <Property Name="CapaAct" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CapaCon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CapaBasCod" Type="Int16" Nullable="false" />
+    <Property Name="CapaCurCod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPACITARPDA">
+    <Key>
+      <PropertyRef Name="CapaCod" />
+      <PropertyRef Name="CapaDProCod" />
+    </Key>
+    <Property Name="CapaCod" Type="Int32" Nullable="false" />
+    <Property Name="CapaDProCod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAPTURAPRESUPUESTO">
+    <Key>
+      <PropertyRef Name="PreCod" />
+    </Key>
+    <Property Name="PreCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PreFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreLocCod" Type="Int32" Nullable="false" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="PreMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAUSA">
+    <Key>
+      <PropertyRef Name="CauCod" />
+    </Key>
+    <Property Name="CauCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CauDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="NOTAINFORMATIVADETALLEs" Relationship="Self.INOTAINFORMATIVADETALLE3" FromRole="CAUSAS" ToRole="NOTAINFORMATIVADETALLE" />
+  </EntityType>
+  <EntityType Name="CIERRE">
+    <Key>
+      <PropertyRef Name="CieAno" />
+    </Key>
+    <Property Name="CieAno" Type="Int16" Nullable="false" />
+    <Property Name="CieEne" Type="Int16" />
+    <Property Name="CieFeb" Type="Int16" />
+    <Property Name="CieMar" Type="Int16" />
+    <Property Name="CieAbr" Type="Int16" />
+    <Property Name="CieMay" Type="Int16" />
+    <Property Name="CieJun" Type="Int16" />
+    <Property Name="CieJul" Type="Int16" />
+    <Property Name="CieAgo" Type="Int16" />
+    <Property Name="CieSep" Type="Int16" />
+    <Property Name="CieOct" Type="Int16" />
+    <Property Name="CieNov" Type="Int16" />
+    <Property Name="CieDic" Type="Int16" />
+  </EntityType>
+  <EntityType Name="CIUDADE">
+    <Key>
+      <PropertyRef Name="CiuCod" />
+    </Key>
+    <Property Name="CiuCod" Type="Int16" Nullable="false" />
+    <Property Name="CiuFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CiuUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="CiuFchMod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CiuUsuCodMod" Type="Int16" Nullable="false" />
+    <Property Name="MunCod" Type="Int16" Nullable="false" />
+    <Property Name="CiuDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLASIVTA">
+    <Key>
+      <PropertyRef Name="ClaVtaCod" />
+    </Key>
+    <Property Name="ClaVtaCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaVtaDsc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="OrdenServicioMontoes" Relationship="Self.IORDENSERVICIOMONTO1" FromRole="CLASIVTA" ToRole="OrdenServicioMonto" />
+  </EntityType>
+  <EntityType Name="COMPANIA">
+    <Key>
+      <PropertyRef Name="ComCod" />
+    </Key>
+    <Property Name="ComCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComDoc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ComTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ComFchCre" Type="DateTime" Precision="3" />
+    <Property Name="ComUsuCodCre" Type="Int16" />
+    <Property Name="ComFchMod" Type="DateTime" Precision="3" />
+    <Property Name="ComUsuCodMod" Type="Int16" />
+    <Property Name="ComNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ComLog" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CONTENEDORE">
+    <Key>
+      <PropertyRef Name="ContCod" />
+    </Key>
+    <Property Name="ContCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegLocCod" Type="Int32" Nullable="false" />
+    <Property Name="UniLocCod" Type="Int32" Nullable="false" />
+    <Property Name="ContNum" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ContTbx" Type="Int16" Nullable="false" />
+    <Property Name="ContTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONTRATO">
+    <Key>
+      <PropertyRef Name="ConCod" />
+    </Key>
+    <Property Name="ConCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConNum" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ConDsc" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConFchTer" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ConFchCre" Type="DateTime" Precision="3" />
+    <Property Name="ConUsuCodCre" Type="Int16" />
+    <Property Name="ConFchMod" Type="DateTime" Precision="3" />
+    <Property Name="ConUsuCodMod" Type="Int16" />
+    <Property Name="ComCod" Type="Int16" Nullable="false" />
+    <Property Name="ConTipMon" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ConAcrSAP" Type="Int32" Nullable="false" />
+    <Property Name="ConNumSAP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ESTIMACIONs" Relationship="Self.IESTIMACION1" FromRole="CONTRATO" ToRole="ESTIMACION" />
+    <NavigationProperty Name="EVIDENCIAS" Relationship="Self.IEVIDENCIAS6" FromRole="CONTRATO" ToRole="EVIDENCIAS" />
+  </EntityType>
+  <EntityType Name="CONTRATOCONVENIO">
+    <Key>
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="ConvCod" />
+    </Key>
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="ConvCod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ConvMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ConvFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConvFchTer" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConvDsc" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ConvTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COORDINADORE">
+    <Key>
+      <PropertyRef Name="LocCod" />
+      <PropertyRef Name="CooAni" />
+      <PropertyRef Name="CooMes" />
+    </Key>
+    <Property Name="LocCod" Type="Int32" Nullable="false" />
+    <Property Name="CooAni" Type="Int16" Nullable="false" />
+    <Property Name="CooMes" Type="Int16" Nullable="false" />
+    <Property Name="CooNom" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURSO">
+    <Key>
+      <PropertyRef Name="CurCod" />
+    </Key>
+    <Property Name="CurCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurConCod" Type="Int16" Nullable="false" />
+    <Property Name="CurCve" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CurNom" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CurTip" Type="Int16" Nullable="false" />
+    <Property Name="CurObj" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="CurAut" Type="Int16" Nullable="false" />
+    <Property Name="CurUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="CurFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CurUsuCodMod" Type="Int16" />
+    <Property Name="CurFchMod" Type="DateTime" Precision="3" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CURSOSDETALLE">
+    <Key>
+      <PropertyRef Name="CurCod" />
+      <PropertyRef Name="CurDProCod" />
+    </Key>
+    <Property Name="CurCod" Type="Int32" Nullable="false" />
+    <Property Name="CurDProCod" Type="Int32" Nullable="false" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTO">
+    <Key>
+      <PropertyRef Name="DepCod" />
+    </Key>
+    <Property Name="DepCod" Type="Int16" Nullable="false" />
+    <Property Name="DepDsc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DepConCod" Type="Int16" Nullable="false" />
+    <Property Name="DepFchCre" Type="DateTime" Precision="3" />
+    <Property Name="DepUsuCodCre" Type="Int16" />
+    <Property Name="DepFchMod" Type="DateTime" Precision="3" />
+    <Property Name="DepUsuCodMod" Type="Int16" />
+    <Property Name="DepAbr" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DETALLELOG">
+    <Key>
+      <PropertyRef Name="DloCod" />
+    </Key>
+    <Property Name="DloCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogCod" Type="Int16" Nullable="false" />
+    <Property Name="LogMov" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DloFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogConCod" Type="Int16" Nullable="false" />
+    <Property Name="LogAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="LogUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="LogFecIni" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DIPLOMA">
+    <Key>
+      <PropertyRef Name="DipCod" />
+    </Key>
+    <Property Name="DipCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="DipCom" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DipDip" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DipDipNom" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="DipDipTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="DipFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DipUsuCre" Type="Int16" Nullable="false" />
+    <Property Name="DipFchUpd" Type="DateTime" Precision="3" />
+    <Property Name="DipUsuUpd" Type="Int16" />
+    <Property Name="DipCla" Type="Int16" Nullable="false" />
+    <Property Name="DipConCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DISTRIBUCIONCONVENIO">
+    <Key>
+      <PropertyRef Name="DisCod" />
+    </Key>
+    <Property Name="DisCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="ConvCod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="LocUniCod" Type="Int32" Nullable="false" />
+    <Property Name="DisMon" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DisFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DisTip" Type="Int16" />
+    <Property Name="DisLocNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="DisDisCod" Type="Int16" />
+    <Property Name="DisLocTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOCUMENTO">
+    <Key>
+      <PropertyRef Name="DocCod" />
+    </Key>
+    <Property Name="DocCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DocDsc" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DocArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="DocTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DocNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TidCod" Type="Int16" Nullable="false" />
+    <Property Name="DocDepCod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="DOCUMENTOSPERMISO">
+    <Key>
+      <PropertyRef Name="DocCod" />
+      <PropertyRef Name="DocDepCodPer" />
+    </Key>
+    <Property Name="DocCod" Type="Int16" Nullable="false" />
+    <Property Name="DocDepCodPer" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EDI">
+    <Key>
+      <PropertyRef Name="EdyCod" />
+    </Key>
+    <Property Name="EdyCod" Type="Int16" Nullable="false" />
+    <Property Name="EdySer" Type="Int32" Nullable="false" />
+    <Property Name="EdyFchCre" Type="DateTime" Precision="3" />
+    <Property Name="EdyUsuCodCre" Type="Int16" />
+    <Property Name="EdyFchMod" Type="DateTime" Precision="3" />
+    <Property Name="EdyUsuCodMod" Type="Int16" />
+    <Property Name="EdyConCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPCONTRATO">
+    <Key>
+      <PropertyRef Name="EmCCod" />
+    </Key>
+    <Property Name="EmCCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="EmCFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmCFchTer" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmCUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="EmCFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmCUsuCodMod" Type="Int16" />
+    <Property Name="EmCFchMod" Type="DateTime" Precision="3" />
+    <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+    </Key>
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="EmpFot" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="EmpFotNom" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="EmpFotTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EmpFic" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpEst" Type="Int16" Nullable="false" />
+    <Property Name="EmpNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpApePat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmpApeMat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PueCod" Type="Int16" />
+    <Property Name="EmpCenCos" Type="Int16" />
+    <Property Name="EmpBasCod" Type="Int16" />
+    <Property Name="EmpSueMen" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EmpFchIng" Type="DateTime" Precision="3" />
+    <Property Name="EmpFchBaj" Type="DateTime" Precision="3" />
+    <Property Name="EmpMotBaj" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="EmpNSSAlt" Type="Int16" />
+    <Property Name="EmpNSS" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmpTipSan" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="EmpAle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EmpFchNac" Type="DateTime" Precision="3" />
+    <Property Name="CiuCod" Type="Int16" />
+    <Property Name="EmpEstCiv" Type="Int16" />
+    <Property Name="EmpDom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EmpNoExt" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="EmpNoInt" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCol" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmprCP" Type="Int32" />
+    <Property Name="EmpCiuCod" Type="Int16" />
+    <Property Name="EmpSex" Type="Int16" />
+    <Property Name="EmpRFCHom" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCurHom" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="BanCod" Type="Int16" />
+    <Property Name="EmpNumTar" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCtaBan" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCLABE" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="EmBen" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EmpTelCas" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmpTelCel" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmpTalBot" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EmpTalOve" Type="Int16" />
+    <Property Name="EmpTalCam" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCorEle" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="EmpGra" Type="Int16" />
+    <Property Name="EmpTit" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCed" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmpRefEmeNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EmpRefEmeTel" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="EmpCreInf" Type="Int16" />
+    <Property Name="EmpCreDat" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="EmpFchCre" Type="DateTime" Precision="3" />
+    <Property Name="EmpUsuCod" Type="Int16" />
+    <Property Name="EmpFchMod" Type="DateTime" Precision="3" />
+    <Property Name="EmpUsuCodMod" Type="Int16" />
+    <Property Name="EmpAut" Type="Int16" />
+    <Property Name="EmpSalDia" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EmpSalDiaInt" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EmpDepCod" Type="Int16" />
+    <Property Name="EmpComCodNom" Type="Int16" />
+    <Property Name="EmpIFE" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="ENVIARCORREOS" Relationship="Self.IENVIARCORREOS1" FromRole="EMPLEADOS" ToRole="ENVIARCORREOS" />
+  </EntityType>
+  <EntityType Name="EMPLEADOSFAMILIA">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+      <PropertyRef Name="PerFamCod" />
+    </Key>
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="PerFamCod" Type="Int16" Nullable="false" />
+    <Property Name="PerFamSex" Type="Int16" Nullable="false" />
+    <Property Name="PerFamNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PerFamFchNac" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ENVIARCORREO">
+    <Key>
+      <PropertyRef Name="EnvCod" />
+    </Key>
+    <Property Name="EnvCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.IENVIARCORREOS1" FromRole="ENVIARCORREOS" ToRole="EMPLEADOS" />
+  </EntityType>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="EstaCod" />
+    </Key>
+    <Property Name="EstaCod" Type="Int16" Nullable="false" />
+    <Property Name="EstaNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EstaFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstaUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="EstaFchMod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstaUsuCodMod" Type="Int16" Nullable="false" />
+    <Property Name="EstaAbr" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTATU">
+    <Key>
+      <PropertyRef Name="EstCod" />
+    </Key>
+    <Property Name="EstCod" Type="Int16" Nullable="false" />
+    <Property Name="EstDsc" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EstFchCre" Type="DateTime" Precision="3" />
+    <Property Name="EstUsuCodCre" Type="Int16" />
+    <Property Name="EstFchMod" Type="DateTime" Precision="3" />
+    <Property Name="EstUsuCodMod" Type="Int16" />
+    <Property Name="EstMod" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="EstConCod" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="EVIDENCIAS" Relationship="Self.IEVIDENCIAS4" FromRole="ESTATUS" ToRole="EVIDENCIAS" />
+    <NavigationProperty Name="NOTAINFORMATIVADETALLEs" Relationship="Self.INOTAINFORMATIVADETALLE1" FromRole="ESTATUS" ToRole="NOTAINFORMATIVADETALLE" />
+  </EntityType>
+  <EntityType Name="ESTIMACION">
+    <Key>
+      <PropertyRef Name="EstiCod" />
+    </Key>
+    <Property Name="EstiCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="EstiPedCod" Type="Int32" Nullable="false" />
+    <Property Name="EstFol" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="EstiTip" Type="Int16" Nullable="false" />
+    <Property Name="EstiCenGest" Type="Int32" />
+    <Property Name="EstiCenCost" Type="Int32" />
+    <Property Name="EstiCenBen" Type="Int32" />
+    <Property Name="EstiRes" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="EstiAvaFis" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EstiProp" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiFon" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiPosFin" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiPos" Type="Int16" />
+    <Property Name="EstiAvaFin" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="EstiEPep" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="EstiCtaMay" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiEmpCodRev" Type="Int32" />
+    <Property Name="EstiEmpComCodRev" Type="Int16" />
+    <Property Name="EstiEmpCodAut" Type="Int32" />
+    <Property Name="EstiEmpComCodAut" Type="Int16" />
+    <Property Name="EstiEmpCodEsti" Type="Int32" />
+    <Property Name="EstiEmpComCodEsti" Type="Int16" />
+    <Property Name="EstiPueCodEsti" Type="Int16" />
+    <Property Name="EstiEstCod" Type="Int16" Nullable="false" />
+    <Property Name="EstiFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstiFolReg" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="EstiFchEst" Type="DateTime" Precision="3" />
+    <Property Name="EstiFacFol" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="EstiFchFac" Type="DateTime" Precision="3" />
+    <Property Name="EstiFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstiFchTer" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EstiNumOrdSer" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiPedSAP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiSolGen" Type="Decimal" Precision="10" Scale="0" />
+    <Property Name="EstiCopNum" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EstiRaf" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EstFolOch" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EstiNotCre" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EstiSop" Type="Int16" />
+    <Property Name="EstiSopEst" Type="Int16" />
+    <Property Name="EstiVen" Type="Int16" />
+    <Property Name="EstiHojEnt" Type="Int16" />
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="EstiPueCodRev" Type="Int16" />
+    <Property Name="EstiPueCodAut" Type="Int16" />
+    <NavigationProperty Name="CONTRATO" Relationship="Self.IESTIMACION1" FromRole="ESTIMACION" ToRole="CONTRATO" />
+  </EntityType>
+  <EntityType Name="ESTIMACIONDETALLE">
+    <Key>
+      <PropertyRef Name="EstiCod" />
+      <PropertyRef Name="EstiDProCod" />
+    </Key>
+    <Property Name="EstiCod" Type="Int32" Nullable="false" />
+    <Property Name="EstiDProCod" Type="Int32" Nullable="false" />
+    <Property Name="EstiDEst" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="EstiDAcu" Type="Int32" Nullable="false" />
+    <Property Name="EstiDCos" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="EVIDENCIA">
+    <Key>
+      <PropertyRef Name="EviCod" />
+      <PropertyRef Name="EviConCod" />
+      <PropertyRef Name="EviAlmCod" />
+      <PropertyRef Name="EviFch" />
+    </Key>
+    <Property Name="EviCod" Type="Int32" Nullable="false" />
+    <Property Name="EviConCod" Type="Int16" Nullable="false" />
+    <Property Name="EviAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="EviFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EviFol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EviEstCod" Type="Int16" Nullable="false" />
+    <Property Name="PedCod" Type="Int32" />
+    <Property Name="EviAutEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EviAutEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="EviTbx1EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EviTbx1EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="EviTbx2EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EviTbx2EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="EviTur" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EviUsuCodCre" Type="Int16" />
+    <Property Name="EviFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EviUsuCodMod" Type="Int16" />
+    <Property Name="EviFchMod" Type="DateTime" Precision="3" />
+    <Property Name="EviArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="EviArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EviArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="EviEst" Type="Int16" />
+    <Property Name="EstiCod" Type="Int32" />
+    <Property Name="EviNoFacEst" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="ALMACENE" Relationship="Self.IEVIDENCIAS5" FromRole="EVIDENCIAS" ToRole="ALMACENES" />
+    <NavigationProperty Name="CONTRATO" Relationship="Self.IEVIDENCIAS6" FromRole="EVIDENCIAS" ToRole="CONTRATO" />
+    <NavigationProperty Name="ESTATU" Relationship="Self.IEVIDENCIAS4" FromRole="EVIDENCIAS" ToRole="ESTATUS" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.IEVIDENCIAS9" FromRole="EVIDENCIAS" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="FAMILIA">
+    <Key>
+      <PropertyRef Name="FamCod" />
+    </Key>
+    <Property Name="FamCod" Type="Int16" Nullable="false" />
+    <Property Name="FamDsc" Type="String" MaxLength="180" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FamAbr" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FamLin" Type="Int16" Nullable="false" />
+    <Property Name="FamConCod" Type="Int16" Nullable="false" />
+    <Property Name="FamFchCre" Type="DateTime" Precision="3" />
+    <Property Name="FamUsuCodCre" Type="Int16" />
+    <Property Name="FamFchMod" Type="DateTime" Precision="3" />
+    <Property Name="FamUsuCodMod" Type="Int16" />
+    <Property Name="FamPorDep" Type="Int16" />
+    <Property Name="FamCta" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FAMILIASSUBFAMILIA">
+    <Key>
+      <PropertyRef Name="FamCod" />
+      <PropertyRef Name="SFaCod" />
+    </Key>
+    <Property Name="FamCod" Type="Int16" Nullable="false" />
+    <Property Name="SFaCod" Type="Int16" Nullable="false" />
+    <Property Name="SFaDsc" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SfaAbr" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FINIQUITO">
+    <Key>
+      <PropertyRef Name="FinCod" />
+    </Key>
+    <Property Name="FinCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="FinFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FinArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="FinArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FinArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GASOLINA">
+    <Key>
+      <PropertyRef Name="GasCod" />
+    </Key>
+    <Property Name="GasCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GasEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="GasFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="GasKmAct" Type="Int32" Nullable="false" />
+    <Property Name="GasKmAnt" Type="Int32" Nullable="false" />
+    <Property Name="GasPreLt" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GasLts" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="GasEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="GasArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="GasArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="GasArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GERENCIA">
+    <Key>
+      <PropertyRef Name="GerCod" />
+    </Key>
+    <Property Name="GerCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocCod" Type="Int32" Nullable="false" />
+    <Property Name="GerFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GerAbr" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="GerDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SubdCod" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="LOCALIZACIONE" Relationship="Self.IGERENCIAS1" FromRole="GERENCIAS" ToRole="LOCALIZACIONES" />
+    <NavigationProperty Name="Subdireccione" Relationship="Self.IGERENCIAS2" FromRole="GERENCIAS" ToRole="Subdirecciones" />
+    <NavigationProperty Name="OrdenServicios" Relationship="Self.IORDENSERVICIO1" FromRole="GERENCIAS" ToRole="OrdenServicio" />
+  </EntityType>
+  <EntityType Name="GUARDIA">
+    <Key>
+      <PropertyRef Name="GuaCod" />
+    </Key>
+    <Property Name="GuaCod" Type="Int16" Nullable="false" />
+    <Property Name="GuaDia" Type="Int16" Nullable="false" />
+    <Property Name="GuaEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="GuaEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="GuaUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="GuaFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GuaUsuMod" Type="Int16" />
+    <Property Name="GuaFchMod" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="GUARDIASUBICACION">
+    <Key>
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+      <PropertyRef Name="GubFch" />
+    </Key>
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="GubFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AcoCod" Type="Int16" Nullable="false" />
+    <Property Name="GubUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="GubFchCre" Type="Int16" Nullable="false" />
+    <Property Name="GubUsuCodMod" Type="Int16" Nullable="false" />
+    <Property Name="GubFchMod" Type="Int16" Nullable="false" />
+    <Property Name="GubDia" Type="Int16" Nullable="false" />
+    <Property Name="GubEqu" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INCIDENCIA">
+    <Key>
+      <PropertyRef Name="IncCod" />
+    </Key>
+    <Property Name="IncCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IncAbr" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IncDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INVENTARIO">
+    <Key>
+      <PropertyRef Name="InvCod" />
+    </Key>
+    <Property Name="InvCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ProCod" Type="Int32" Nullable="false" />
+    <Property Name="InvFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SprCod" Type="Int16" />
+    <Property Name="InvConCod" Type="Int16" Nullable="false" />
+    <Property Name="InvSalAju" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvEnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvEntAju" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvVen" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvDan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvPer" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTra" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTraRec" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTrs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvPre" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvCon" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="INVENTARIOTEMP">
+    <Key>
+      <PropertyRef Name="InvCod" />
+    </Key>
+    <Property Name="InvCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ProCod" Type="Int32" Nullable="false" />
+    <Property Name="InvFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SprCod" Type="Int16" />
+    <Property Name="InvConCod" Type="Int16" Nullable="false" />
+    <Property Name="InvSalAju" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvEnt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvEntAju" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvVen" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvDan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvPer" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTra" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTraRec" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvTrs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvPre" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvCon" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="LICENCIA">
+    <Key>
+      <PropertyRef Name="LicCod" />
+    </Key>
+    <Property Name="LicCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PerVigLic" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="PerConCod" Type="Int16" Nullable="false" />
+    <Property Name="PerTipLic" Type="Int16" Nullable="false" />
+    <Property Name="PerNoLic" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LicEstaCod" Type="Int16" Nullable="false" />
+    <Property Name="LicTip" Type="Int16" />
+  </EntityType>
+  <EntityType Name="LOCALIZACIONE">
+    <Key>
+      <PropertyRef Name="LocCod" />
+    </Key>
+    <Property Name="LocCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LocAbr" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="LocLocCod" Type="Int32" />
+    <Property Name="LocConCod" Type="Int16" Nullable="false" />
+    <Property Name="LocFchCre" Type="DateTime" Precision="3" />
+    <Property Name="LocUsuCodCre" Type="Int16" />
+    <Property Name="LocFchMod" Type="DateTime" Precision="3" />
+    <Property Name="LocUsuCodMod" Type="Int16" />
+    <Property Name="LocTip" Type="Int16" Nullable="false" />
+    <Property Name="ActiLocCod" Type="Int16" />
+    <Property Name="LocDim" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="GERENCIAS" Relationship="Self.IGERENCIAS1" FromRole="LOCALIZACIONES" ToRole="GERENCIAS" />
+    <NavigationProperty Name="OrdenServicios" Relationship="Self.IORDENSERVICIO3" FromRole="LOCALIZACIONES" ToRole="OrdenServicio" />
+    <NavigationProperty Name="OrdenServicios1" Relationship="Self.IORDENSERVICIO4" FromRole="LOCALIZACIONES" ToRole="OrdenServicio" />
+  </EntityType>
+  <EntityType Name="LOG">
+    <Key>
+      <PropertyRef Name="LogCod" />
+      <PropertyRef Name="LogConCod" />
+      <PropertyRef Name="LogAlmCod" />
+      <PropertyRef Name="LogUsuCod" />
+    </Key>
+    <Property Name="LogCod" Type="Int16" Nullable="false" />
+    <Property Name="LogConCod" Type="Int16" Nullable="false" />
+    <Property Name="LogAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="LogUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="LogFecIni" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Loger">
+    <Key>
+      <PropertyRef Name="LogeCod" />
+    </Key>
+    <Property Name="LogeCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogeFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogeUsuCod" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.ILOGERS1" FromRole="Logers" ToRole="USUARIOS" />
+    <NavigationProperty Name="LogersDetalles" Relationship="Self.ILOGERSDETALLE2" FromRole="Logers" ToRole="LogersDetalle" />
+  </EntityType>
+  <EntityType Name="LogersDetalle">
+    <Key>
+      <PropertyRef Name="LogeCod" />
+      <PropertyRef Name="LogDHor" />
+    </Key>
+    <Property Name="LogeCod" Type="Int32" Nullable="false" />
+    <Property Name="LogDHor" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogDMov" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LogDApl" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LogDTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LogDAlmCod" Type="Int16" />
+    <NavigationProperty Name="ALMACENE" Relationship="Self.ILOGERSDETALLE1" FromRole="LogersDetalle" ToRole="ALMACENES" />
+    <NavigationProperty Name="Loger" Relationship="Self.ILOGERSDETALLE2" FromRole="LogersDetalle" ToRole="Logers" />
+  </EntityType>
+  <EntityType Name="MANTTOEVIDENCIA">
+    <Key>
+      <PropertyRef Name="EmaCod" />
+    </Key>
+    <Property Name="EmaCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmaFol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmaFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedCod" Type="Int32" Nullable="false" />
+    <Property Name="EmaObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmaCom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmaAlmCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOEVIDENCIADETALLE">
+    <Key>
+      <PropertyRef Name="EmaCod" />
+      <PropertyRef Name="EmaFFamCod" />
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="EmaCod" Type="Int32" Nullable="false" />
+    <Property Name="EmaFFamCod" Type="Int16" Nullable="false" />
+    <Property Name="ProCod" Type="Int32" Nullable="false" />
+    <Property Name="EmaFFot" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="EmaFFotTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmaFFotNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOPROGRAMADA">
+    <Key>
+      <PropertyRef Name="MproCod" />
+    </Key>
+    <Property Name="MproCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MproFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedCod" Type="Int32" Nullable="false" />
+    <Property Name="MproAte" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANTTOREF">
+    <Key>
+      <PropertyRef Name="MreCod" />
+    </Key>
+    <Property Name="MreCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NotCod" Type="Int32" Nullable="false" />
+    <Property Name="MreProCod" Type="Int32" Nullable="false" />
+    <Property Name="MreCos" Type="Int16" Nullable="false" />
+    <Property Name="MreCan" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.IMANTTOREF2" FromRole="MANTTOREF" ToRole="PRODUCTOS" />
+    <NavigationProperty Name="NOTAINFORMATIVA" Relationship="Self.IMANTTOREF3" FromRole="MANTTOREF" ToRole="NOTAINFORMATIVA" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="MarCod" />
+    </Key>
+    <Property Name="MarCod" Type="Int16" Nullable="false" />
+    <Property Name="MarDsc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MarFchCre" Type="DateTime" Precision="3" />
+    <Property Name="MarUsuCodCre" Type="Int16" />
+    <Property Name="MarFchMod" Type="DateTime" Precision="3" />
+    <Property Name="MarUsuCodMod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="MEDIDA">
+    <Key>
+      <PropertyRef Name="UniCod" />
+    </Key>
+    <Property Name="UniCod" Type="Int16" Nullable="false" />
+    <Property Name="UniDsc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UniAbr" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UniFchCre" Type="DateTime" Precision="3" />
+    <Property Name="UniUsuCodCre" Type="Int16" />
+    <Property Name="UniFchMod" Type="DateTime" Precision="3" />
+    <Property Name="UniUsuCodMod" Type="Int16" />
+    <Property Name="UniRed" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int16" Nullable="false" />
+    <Property Name="MenuDescription" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MenuFatherId" Type="Int16" />
+    <Property Name="MenuIcon" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="MenuUrl" Type="String" MaxLength="100" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MenuTarget" Type="Int16" Nullable="false" />
+    <Property Name="MenuOrd" Type="Int16" />
+    <Property Name="MenuUrl4" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="MenuUrl2" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTO">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+    </Key>
+    <Property Name="MovCon" Type="Int32" Nullable="false" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="MovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="MovFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="MovCod" Type="Int32" Nullable="false" />
+    <Property Name="MovFol" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MovHr" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MovFac" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MovObs" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POP10100PONUMBER2" Type="String" MaxLength="17" FixedLength="true" Unicode="false" />
+    <Property Name="MovEmpCod" Type="Int32" />
+    <Property Name="MovEmpComCod" Type="Int16" />
+    <Property Name="MovEmpPueCod" Type="Int16" />
+    <Property Name="MovCliEmpCod" Type="Int32" />
+    <Property Name="MovCliEmpComCod" Type="Int16" />
+    <Property Name="MovCliEmpPueCod" Type="Int16" />
+    <Property Name="MovFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MovUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="MovFchMod" Type="DateTime" Precision="3" />
+    <Property Name="MovUsuCodMod" Type="Int16" />
+    <Property Name="EstCod" Type="Int16" />
+    <Property Name="MovAlmCod" Type="Int16" />
+    <Property Name="MovMovCon" Type="Int32" />
+    <Property Name="MovMovConCod" Type="Int16" />
+    <Property Name="MovMovAlmCod" Type="Int16" />
+    <Property Name="MovMovTipDoc" Type="Int16" />
+    <Property Name="MovMovFch" Type="DateTime" Precision="3" />
+    <Property Name="MovVer" Type="Int16" />
+    <Property Name="MovEsp" Type="Int16" />
+    <Property Name="EstiCod" Type="Int32" />
+    <Property Name="MovMovTprCod" Type="Int16" />
+    <Property Name="MovFchMer" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="MovExp" Type="Int16" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOSDETALLE">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+      <PropertyRef Name="MovDProCod" />
+    </Key>
+    <Property Name="MovCon" Type="Int32" Nullable="false" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="MovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="MovFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="MovDProCod" Type="Int32" Nullable="false" />
+    <Property Name="MovDNumSer" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MovdOrd" Type="Int32" />
+    <Property Name="MovdVNDITNUM" Type="String" MaxLength="31" FixedLength="true" Unicode="false" />
+    <Property Name="MovdCan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MovDCanCon" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MovDPer" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="MovDDwg" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="MovdCos" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MovdTra" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="MovdNotEnv" Type="Int16" />
+    <Property Name="MovDTieUso" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="MOVIMIENTOSDETALLESUBPDA">
+    <Key>
+      <PropertyRef Name="MovCon" />
+      <PropertyRef Name="ConCod" />
+      <PropertyRef Name="AlmCod" />
+      <PropertyRef Name="MovTipDoc" />
+      <PropertyRef Name="MovFch" />
+      <PropertyRef Name="TPrCod" />
+      <PropertyRef Name="MovDProCod" />
+      <PropertyRef Name="SprCod" />
+    </Key>
+    <Property Name="MovCon" Type="Int32" Nullable="false" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="MovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="MovFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="MovDProCod" Type="Int32" Nullable="false" />
+    <Property Name="SprCod" Type="Int16" Nullable="false" />
+    <Property Name="MovSCanOk" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="MovSCanPer" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="MovSCanDwg" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="MUNICIPIO">
+    <Key>
+      <PropertyRef Name="MunCod" />
+    </Key>
+    <Property Name="MunCod" Type="Int16" Nullable="false" />
+    <Property Name="MunDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MunFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MunUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="MunFchMod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MunUsuCodMod" Type="Int16" Nullable="false" />
+    <Property Name="EstaCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOMINA">
+    <Key>
+      <PropertyRef Name="NomCod" />
+    </Key>
+    <Property Name="NomCod" Type="Int16" Nullable="false" />
+    <Property Name="NomDsc" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NomFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NomFchTer" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NomCer" Type="Int16" />
+  </EntityType>
+  <EntityType Name="NOMINAEMPRESA">
+    <Key>
+      <PropertyRef Name="NomCod" />
+      <PropertyRef Name="EmpCod" />
+      <PropertyRef Name="EmpComCod" />
+    </Key>
+    <Property Name="NomCod" Type="Int16" Nullable="false" />
+    <Property Name="EmpCod" Type="Int32" Nullable="false" />
+    <Property Name="EmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="NoeBon" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NoeSDR" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoeSD" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoeSDI" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoeDiaQui" Type="Int16" Nullable="false" />
+    <Property Name="NoeSub" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoePriVac" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoeCreInf" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NoeRes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NoeCreFon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVA">
+    <Key>
+      <PropertyRef Name="NotCod" />
+    </Key>
+    <Property Name="NotCod" Type="Int32" Nullable="false" />
+    <Property Name="NotConCod" Type="Int16" Nullable="false" />
+    <Property Name="NotAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="NotFchSol" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NotFchRec" Type="DateTime" Precision="3" />
+    <Property Name="NotTip" Type="Int16" Nullable="false" />
+    <Property Name="NotFol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NotFolNot" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="PedCod" Type="Int32" Nullable="false" />
+    <Property Name="NotSupEmpCod" Type="Int32" />
+    <Property Name="NotSupEmpComCod" Type="Int16" />
+    <Property Name="NotAteEmpCod" Type="Int32" />
+    <Property Name="NotAteEmpComCod" Type="Int16" />
+    <Property Name="NotFchNot" Type="DateTime" Precision="3" />
+    <Property Name="NotVal" Type="Int16" />
+    <Property Name="NotEstCod" Type="Int16" Nullable="false" />
+    <Property Name="NotObs" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="NotMovCon" Type="Int32" Nullable="false" />
+    <Property Name="NotMovConCod" Type="Int16" Nullable="false" />
+    <Property Name="NotMovAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="NotMovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="NotMovTprCod" Type="Int16" Nullable="false" />
+    <Property Name="NotMovFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NotVer" Type="Int16" Nullable="false" />
+    <Property Name="NotArcValPre" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NotArcValPreNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotArcValPreTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotArcValDev" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NotArcValDevNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotArcValDevTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="NotFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NotUsuCodMod" Type="Int16" />
+    <Property Name="NotFchMod" Type="DateTime" Precision="3" />
+    <Property Name="NotNot" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotMovFolTra" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotMovFolTraFch" Type="DateTime" Precision="3" />
+    <Property Name="NotMovFolTraMan" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotMovFolTraManFch" Type="DateTime" Precision="3" />
+    <Property Name="NotMovFolSolRef" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NotMovFolSolRefFch" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MANTTOREFs" Relationship="Self.IMANTTOREF3" FromRole="NOTAINFORMATIVA" ToRole="MANTTOREF" />
+    <NavigationProperty Name="NOTAINFORMATIVADETALLEs" Relationship="Self.INOTAINFORMATIVADETALLE4" FromRole="NOTAINFORMATIVA" ToRole="NOTAINFORMATIVADETALLE" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVADETALLE">
+    <Key>
+      <PropertyRef Name="NotCod" />
+      <PropertyRef Name="NoDProCod" />
+    </Key>
+    <Property Name="NotCod" Type="Int32" Nullable="false" />
+    <Property Name="NoDProCod" Type="Int32" Nullable="false" />
+    <Property Name="NoDCan" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="NoDArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NoDArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NoDArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NoDCauDan" Type="Int16" />
+    <Property Name="CauCod" Type="Int16" />
+    <Property Name="NoDCauObs" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="NoDDia" Type="Int16" />
+    <Property Name="NoDTipMan" Type="Int16" />
+    <Property Name="NoDOrdSusDes" Type="Int16" />
+    <Property Name="NoDOrdLub" Type="Int16" />
+    <Property Name="NoDOrdCal" Type="Int16" />
+    <Property Name="NoDOrdRef" Type="Int16" />
+    <Property Name="NodOrdSusDan" Type="Int16" />
+    <Property Name="NoDOrdRee" Type="Int16" />
+    <Property Name="NoDOrdPru" Type="Int16" />
+    <Property Name="NoDOrdAco" Type="Int16" />
+    <Property Name="NoDDscMan" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="NoDObsMan" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="NoDEviMan" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NoDEviManNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NoDEviManTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="NodUsuCodMan" Type="Int16" />
+    <Property Name="NoDFchMan" Type="DateTime" Precision="3" />
+    <Property Name="NoDEstCod" Type="Int16" />
+    <Property Name="NoDFol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="CAUSA" Relationship="Self.INOTAINFORMATIVADETALLE3" FromRole="NOTAINFORMATIVADETALLE" ToRole="CAUSAS" />
+    <NavigationProperty Name="ESTATU" Relationship="Self.INOTAINFORMATIVADETALLE1" FromRole="NOTAINFORMATIVADETALLE" ToRole="ESTATUS" />
+    <NavigationProperty Name="NOTAINFORMATIVA" Relationship="Self.INOTAINFORMATIVADETALLE4" FromRole="NOTAINFORMATIVADETALLE" ToRole="NOTAINFORMATIVA" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.INOTAINFORMATIVADETALLE2" FromRole="NOTAINFORMATIVADETALLE" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="NOTAINFORMATIVADETALLESUBPDA">
+    <Key>
+      <PropertyRef Name="NotCod" />
+      <PropertyRef Name="NoDProCod" />
+      <PropertyRef Name="SubSprCod" />
+    </Key>
+    <Property Name="NotCod" Type="Int32" Nullable="false" />
+    <Property Name="NoDProCod" Type="Int32" Nullable="false" />
+    <Property Name="SubSprCod" Type="Int16" Nullable="false" />
+    <Property Name="SubCan" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OCUPACIONCONTENEDORE">
+    <Key>
+      <PropertyRef Name="OcuCont" />
+    </Key>
+    <Property Name="OcuCont" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OcuAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ContCod" Type="Int16" Nullable="false" />
+    <Property Name="OcuAct" Type="Int16" Nullable="false" />
+    <Property Name="OcuFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OcuObsr" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OcuOpe" Type="Int16" Nullable="false" />
+    <Property Name="OcuFchPro" Type="DateTime" Precision="3" />
+    <Property Name="OcuUsuCod" Type="Int16" />
+    <Property Name="OcuFchCre" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="OPERATIVO">
+    <Key>
+      <PropertyRef Name="OpeCod" />
+    </Key>
+    <Property Name="OpeCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpeConCod" Type="Int16" Nullable="false" />
+    <Property Name="OpeFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpeMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OpeEqu" Type="Int16" Nullable="false" />
+    <Property Name="OpeFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpeFchHr" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpeUsuCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenServicio">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+    </Key>
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrdSerLocCodUO" Type="Int32" Nullable="false" />
+    <Property Name="GerCod" Type="Int16" Nullable="false" />
+    <Property Name="OrdSerLocCod" Type="Int32" Nullable="false" />
+    <Property Name="OrdSerEqu" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerProPre" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerElePep" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerCenGes" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerCtaMay" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrdSerUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="OrdSerFchMod" Type="DateTime" Precision="3" />
+    <Property Name="OrdSerUsuCodMod" Type="Int16" />
+    <Property Name="OrdSerNot" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="OrdSerArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OrdSerArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerArcNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerPedVta" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerLin" Type="Int16" />
+    <Property Name="OrdSerEstOch" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="GERENCIA" Relationship="Self.IORDENSERVICIO1" FromRole="OrdenServicio" ToRole="GERENCIAS" />
+    <NavigationProperty Name="LOCALIZACIONE" Relationship="Self.IORDENSERVICIO3" FromRole="OrdenServicio" ToRole="LOCALIZACIONES" />
+    <NavigationProperty Name="LOCALIZACIONE1" Relationship="Self.IORDENSERVICIO4" FromRole="OrdenServicio" ToRole="LOCALIZACIONES" />
+    <NavigationProperty Name="OrdenServicio1" Relationship="Self.IORDENSERVICIO" FromRole="OrdenServicio" ToRole="OrdenServicio1" />
+    <NavigationProperty Name="OrdenServicio2" Relationship="Self.IORDENSERVICIO" FromRole="OrdenServicio1" ToRole="OrdenServicio" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.IORDENSERVICIO5" FromRole="OrdenServicio" ToRole="USUARIOS" />
+    <NavigationProperty Name="USUARIO1" Relationship="Self.IORDENSERVICIO6" FromRole="OrdenServicio" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="OrdenServicioDesglose">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerGProCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerGProCod" Type="Int32" Nullable="false" />
+    <Property Name="OrdSerGCan" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.IORDENSERVICIODESGLOSE1" FromRole="OrdenServicioDesglose" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="OrdenServicioMonto">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="ClaVtaCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ClaVtaCod" Type="Int16" Nullable="false" />
+    <Property Name="OrdSerMMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="CLASIVTA" Relationship="Self.IORDENSERVICIOMONTO1" FromRole="OrdenServicioMonto" ToRole="CLASIVTA" />
+  </EntityType>
+  <EntityType Name="OrdenServicioRaf">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerFolRaf" />
+    </Key>
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerFolRaf" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerFchRaf" Type="DateTime" Precision="3" />
+    <Property Name="OrdSerRafMon" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrdSerRafMonAct" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OrdSerRafArc" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OrdSerRafArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerRafArcNom" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="OrdSerRafSup" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="OrdenServicioRafEstatus" Relationship="Self.IORDENSERVICIORAFESTATUS1" FromRole="OrdenServicioRaf" ToRole="OrdenServicioRafEstatus" />
+  </EntityType>
+  <EntityType Name="OrdenServicioRafEstatu">
+    <Key>
+      <PropertyRef Name="OrdSerFol" />
+      <PropertyRef Name="OrdSerFolRaf" />
+      <PropertyRef Name="OrdSerEstCod" />
+    </Key>
+    <Property Name="OrdSerFol" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerFolRaf" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerEstCod" Type="Int16" Nullable="false" />
+    <Property Name="OrdSerEstClaRaf" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrdSerEstFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrdSerEstMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OrdSerEst" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="OrdenServicioRaf" Relationship="Self.IORDENSERVICIORAFESTATUS1" FromRole="OrdenServicioRafEstatus" ToRole="OrdenServicioRaf" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="PedCod" />
+    </Key>
+    <Property Name="PedCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PedFol" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PedFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedFchTer" Type="DateTime" Precision="3" />
+    <Property Name="PedAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="PedTConCod" Type="Int16" Nullable="false" />
+    <Property Name="PedEdyCod" Type="Int16" Nullable="false" />
+    <Property Name="PedEqu" Type="Int16" />
+    <Property Name="PedLocCod" Type="Int32" Nullable="false" />
+    <Property Name="PedSolEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="PedSolEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="PedAutEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="PedAutEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="PedTbxEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="PedTbxEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="PedUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="PedFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedUsuCodMod" Type="Int16" />
+    <Property Name="PedFchMod" Type="DateTime" Precision="3" />
+    <Property Name="PedBasCod" Type="Int16" />
+    <Property Name="PedOrdSer" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PERFILE">
+    <Key>
+      <PropertyRef Name="PerCod" />
+    </Key>
+    <Property Name="PerCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PerDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PerMan" Type="Int16" Nullable="false" />
+    <Property Name="PerConCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERFILESAPLICATIVO">
+    <Key>
+      <PropertyRef Name="PerCod" />
+      <PropertyRef Name="AplCod" />
+    </Key>
+    <Property Name="PerCod" Type="Int32" Nullable="false" />
+    <Property Name="AplCod" Type="Int16" Nullable="false" />
+    <Property Name="AplDsc" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PerUpd" Type="Int16" Nullable="false" />
+    <Property Name="PerDel" Type="Int16" Nullable="false" />
+    <Property Name="PerCon" Type="Int16" Nullable="false" />
+    <Property Name="PerIns" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERMISOSMENU">
+    <Key>
+      <PropertyRef Name="PmeCod" />
+    </Key>
+    <Property Name="PmeCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuId" Type="Int16" Nullable="false" />
+    <Property Name="UsuCod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="POLITICA">
+    <Key>
+      <PropertyRef Name="PolCod" />
+    </Key>
+    <Property Name="PolCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PueCod" Type="Int16" Nullable="false" />
+    <Property Name="PolComCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POLITICASENTREGA">
+    <Key>
+      <PropertyRef Name="PolCod" />
+      <PropertyRef Name="FamCod" />
+      <PropertyRef Name="SFaCod" />
+    </Key>
+    <Property Name="PolCod" Type="Int32" Nullable="false" />
+    <Property Name="FamCod" Type="Int16" Nullable="false" />
+    <Property Name="SFaCod" Type="Int16" Nullable="false" />
+    <Property Name="PolEppCan" Type="Int16" Nullable="false" />
+    <Property Name="PolEppVig" Type="Int16" Nullable="false" />
+    <Property Name="PolEppFch" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ProCod" />
+    </Key>
+    <Property Name="ProCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProTprCod" Type="Int16" Nullable="false" />
+    <Property Name="ProConCod" Type="Int16" Nullable="false" />
+    <Property Name="ProPda" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ProPdaInt" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+    <Property Name="ProCodPro" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProDsc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UniCod" Type="Int16" />
+    <Property Name="MarCod" Type="Int16" />
+    <Property Name="ProvCod" Type="Int16" />
+    <Property Name="FamCod" Type="Int16" />
+    <Property Name="SFaCod" Type="Int16" />
+    <Property Name="ProMod" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProVis" Type="Int16" />
+    <Property Name="ProNoSer" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProFot" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProFotNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProFotTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProLin" Type="Int16" Nullable="false" />
+    <Property Name="ProFchAlt" Type="DateTime" Precision="3" />
+    <Property Name="ProUsuCodCre" Type="Int16" />
+    <Property Name="ProFchMod" Type="DateTime" Precision="3" />
+    <Property Name="ProUsuCodMod" Type="Int16" />
+    <Property Name="ProComMin" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ProPreUni" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProTipMon" Type="Int16" />
+    <Property Name="UbiCod" Type="Int16" />
+    <Property Name="ProAcu" Type="Int32" />
+    <Property Name="ProRefProCod" Type="Int32" />
+    <Property Name="ProMan" Type="Int16" />
+    <Property Name="ProCos" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProTal" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ProComMax" Type="Decimal" Precision="10" Scale="4" />
+    <NavigationProperty Name="MANTTOREFs" Relationship="Self.IMANTTOREF2" FromRole="PRODUCTOS" ToRole="MANTTOREF" />
+    <NavigationProperty Name="NOTAINFORMATIVADETALLEs" Relationship="Self.INOTAINFORMATIVADETALLE2" FromRole="PRODUCTOS" ToRole="NOTAINFORMATIVADETALLE" />
+    <NavigationProperty Name="OrdenServicioDesgloses" Relationship="Self.IORDENSERVICIODESGLOSE1" FromRole="PRODUCTOS" ToRole="OrdenServicioDesglose" />
+    <NavigationProperty Name="PRODUCTOSUBICACIONs" Relationship="Self.IPRODUCTOSUBICACION1" FromRole="PRODUCTOS" ToRole="PRODUCTOSUBICACION" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSSUBPRODUCTO">
+    <Key>
+      <PropertyRef Name="ProCod" />
+      <PropertyRef Name="SprCod" />
+    </Key>
+    <Property Name="ProCod" Type="Int32" Nullable="false" />
+    <Property Name="SprCod" Type="Int16" Nullable="false" />
+    <Property Name="SprDsc" Type="String" MaxLength="80" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSUBICACION">
+    <Key>
+      <PropertyRef Name="ProUbiCod" />
+    </Key>
+    <Property Name="ProUbiCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProUbiFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProUbiFolAct" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProUbiAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ProUbiFolAnt" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProUbiAlmCodAnt" Type="Int16" Nullable="false" />
+    <Property Name="ProUbiProCod" Type="Int32" Nullable="false" />
+    <Property Name="ProUbiFchAct" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProUbiFchAnt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProUbiEstCod" Type="Int16" Nullable="false" />
+    <Property Name="ProUbiObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProUbiMovDNumSer" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProUbiModelo" Type="String" MaxLength="31" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProUbiOdo" Type="Int32" />
+    <NavigationProperty Name="ALMACENE" Relationship="Self.IPRODUCTOSUBICACION2" FromRole="PRODUCTOSUBICACION" ToRole="ALMACENES" />
+    <NavigationProperty Name="ALMACENE1" Relationship="Self.IPRODUCTOSUBICACION3" FromRole="PRODUCTOSUBICACION" ToRole="ALMACENES" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.IPRODUCTOSUBICACION1" FromRole="PRODUCTOSUBICACION" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="PRODUCTOSUBICACIONODOMETRO">
+    <Key>
+      <PropertyRef Name="ProUbiCod" />
+      <PropertyRef Name="OdoFch" />
+    </Key>
+    <Property Name="ProUbiCod" Type="Int32" Nullable="false" />
+    <Property Name="OdoFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OdoMed" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ProvCod" />
+    </Key>
+    <Property Name="ProvCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProvDir" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProvRFC" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProvTel1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProvTel2" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProvMail" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProvHttp" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="ProvPag" Type="Int16" Nullable="false" />
+    <Property Name="ProvMon" Type="Int16" Nullable="false" />
+    <Property Name="ProvCon" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="ProvTelCon" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProvMailCon" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ProvFchCre" Type="DateTime" Precision="3" />
+    <Property Name="ProvUsuCodCre" Type="Int16" />
+    <Property Name="ProvFchMod" Type="DateTime" Precision="3" />
+    <Property Name="ProvUsuCodMod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="PUESTO">
+    <Key>
+      <PropertyRef Name="PueCod" />
+    </Key>
+    <Property Name="PueCod" Type="Int16" Nullable="false" />
+    <Property Name="PueDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PueFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PueUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="PueFchMod" Type="DateTime" Precision="3" />
+    <Property Name="PueUsuCodMod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="REGISTRO">
+    <Key>
+      <PropertyRef Name="RegCod" />
+    </Key>
+    <Property Name="RegCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegUsuCod" Type="Int16" Nullable="false" />
+    <Property Name="RegFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RegAni" Type="Int16" Nullable="false" />
+    <Property Name="RegMes" Type="Int16" Nullable="false" />
+    <Property Name="RegCie" Type="Int16" Nullable="false" />
+    <Property Name="RegObs" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="RegTip" Type="Int16" />
+  </EntityType>
+  <EntityType Name="REQUISICION">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+    </Key>
+    <Property Name="ReqCod" Type="Int32" Nullable="false" />
+    <Property Name="ReqConCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReqTip" Type="Int16" Nullable="false" />
+    <Property Name="ReqFol" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqAlmCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqProvCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqObsCom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReqObs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="UsuFchMod" Type="DateTime" Precision="3" />
+    <Property Name="UsuCodMod" Type="Int16" />
+    <Property Name="UsuFchCre" Type="DateTime" Precision="3" />
+    <Property Name="UsuCodCre" Type="Int16" />
+    <Property Name="ReqFchOC" Type="DateTime" Precision="3" />
+    <Property Name="NumCot" Type="Decimal" Precision="11" Scale="0" />
+  </EntityType>
+  <EntityType Name="REQUISICIONDETALLE">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+      <PropertyRef Name="ReqDProCod" />
+    </Key>
+    <Property Name="ReqCod" Type="Int32" Nullable="false" />
+    <Property Name="ReqConCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReqTip" Type="Int16" Nullable="false" />
+    <Property Name="ReqDProCod" Type="Int32" Nullable="false" />
+    <Property Name="ReqDCan" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="RedDCon" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ReqDITEMNMBR" Type="String" MaxLength="31" FixedLength="true" Unicode="false" />
+    <Property Name="ReqDCanOC" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="REQUISICIONESTATU">
+    <Key>
+      <PropertyRef Name="ReqCod" />
+      <PropertyRef Name="ReqConCod" />
+      <PropertyRef Name="ReqFch" />
+      <PropertyRef Name="ReqTip" />
+      <PropertyRef Name="EstCod" />
+    </Key>
+    <Property Name="ReqCod" Type="Int32" Nullable="false" />
+    <Property Name="ReqConCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReqTip" Type="Int16" Nullable="false" />
+    <Property Name="EstCod" Type="Int16" Nullable="false" />
+    <Property Name="ReqEFch" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="RES_ACTIVOS">
+    <Key>
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+      <PropertyRef Name="ResEmpCod" />
+      <PropertyRef Name="ResEmpComCod" />
+    </Key>
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+    <Property Name="ResEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="ResEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="ResFch" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="RESGUARDO">
+    <Key>
+      <PropertyRef Name="RguCod" />
+    </Key>
+    <Property Name="RguCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RguFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EdyCod" Type="Int16" />
+    <Property Name="RguEqu" Type="Int16" />
+    <Property Name="PedCod" Type="Int32" />
+    <Property Name="RguObs" Type="String" MaxLength="500" FixedLength="true" Unicode="false" />
+    <Property Name="RguUsuCodAut" Type="Int16" />
+    <Property Name="RguUsuCodTec1" Type="Int16" />
+    <Property Name="RguUsuCodTec2" Type="Int16" />
+    <Property Name="RguTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RESGUARDOSDETALLERE">
+    <Key>
+      <PropertyRef Name="RguCod" />
+      <PropertyRef Name="ActCod" />
+      <PropertyRef Name="ActConCod" />
+      <PropertyRef Name="ActFamCod" />
+    </Key>
+    <Property Name="RguCod" Type="Int32" Nullable="false" />
+    <Property Name="ActCod" Type="Int32" Nullable="false" />
+    <Property Name="ActConCod" Type="Int16" Nullable="false" />
+    <Property Name="ActFamCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEGURIDAD">
+    <Key>
+      <PropertyRef Name="SegCod" />
+    </Key>
+    <Property Name="SegCod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SegFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PedCod" Type="Int32" Nullable="false" />
+    <Property Name="SegEviInsArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="SegEviInsArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegEviInsArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegEviDinArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="SegEviDInArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegEviDInArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEGURIDADORDEN">
+    <Key>
+      <PropertyRef Name="SegCod" />
+      <PropertyRef Name="SegOrdFch" />
+    </Key>
+    <Property Name="SegCod" Type="Int32" Nullable="false" />
+    <Property Name="SegOrdFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SegOrdObs" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegOrdDsc" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegOrdArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="SegOrdArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegOrdArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SegOrdTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLICITUDESPEMEX">
+    <Key>
+      <PropertyRef Name="SolCod" />
+    </Key>
+    <Property Name="SolCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SolUniOpe" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="SolOfiRaf" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="SolSup" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="SiolSit" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="SolMon" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="SolFchPer" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SOLICITUV">
+    <Key>
+      <PropertyRef Name="SvaCod" />
+    </Key>
+    <Property Name="SvaCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SvaConCod" Type="Int16" Nullable="false" />
+    <Property Name="SvaFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaDiaSol" Type="Int16" Nullable="false" />
+    <Property Name="SvaFchIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaFchFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaFchRea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaFchPag" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaCooEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="SvaJefEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="SvaCooComCod" Type="Int16" Nullable="false" />
+    <Property Name="SvaJefComCod" Type="Int16" Nullable="false" />
+    <Property Name="SvaObs" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="SvaUsuCodCre" Type="Int16" Nullable="false" />
+    <Property Name="SvaUsuFchCre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SvaUsuCodUpd" Type="Int16" />
+    <Property Name="SvaUsuFchUpd" Type="DateTime" Precision="3" />
+    <Property Name="SvaEmpCod" Type="Int32" Nullable="false" />
+    <Property Name="SvaEmpComCod" Type="Int16" Nullable="false" />
+    <Property Name="SvaArc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="SvaArcNom" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="SvaArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="SvaPerFin" Type="Int16" />
+    <Property Name="SvaPerIni" Type="Int16" />
+  </EntityType>
+  <EntityType Name="STATUSRAF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoCon" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="FchReg" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="NumCtrInt" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="EstAct" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="PedSap" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
+    <Property Name="ActGer" Type="String" MaxLength="70" FixedLength="true" Unicode="false" />
+    <Property Name="Mont" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paquete" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ClaRaf" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ClaGral" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Clasi" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Subdireccione">
+    <Key>
+      <PropertyRef Name="SubdCod" />
+    </Key>
+    <Property Name="SubdCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubdDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SubdAbr" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="GERENCIAS" Relationship="Self.IGERENCIAS2" FromRole="Subdirecciones" ToRole="GERENCIAS" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TIPOCONDETALLE">
+    <Key>
+      <PropertyRef Name="TConCod" />
+      <PropertyRef Name="TDeProCod" />
+    </Key>
+    <Property Name="TConCod" Type="Int16" Nullable="false" />
+    <Property Name="TDeProCod" Type="Int32" Nullable="false" />
+    <Property Name="TDeCan" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPOCONT">
+    <Key>
+      <PropertyRef Name="TConCod" />
+    </Key>
+    <Property Name="TConCod" Type="Int16" Nullable="false" />
+    <Property Name="TconTip" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TConDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TConMon" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TConConCod" Type="Int16" Nullable="false" />
+    <Property Name="TConFchCre" Type="DateTime" Precision="3" />
+    <Property Name="TConUsuCodCre" Type="Int16" />
+    <Property Name="TConFchMod" Type="DateTime" Precision="3" />
+    <Property Name="TConUsuCodMod" Type="Int16" />
+    <Property Name="TConUniCod" Type="Int16" Nullable="false" />
+    <Property Name="TConProCod" Type="Int32" Nullable="false" />
+    <Property Name="TConCan" Type="Int16" />
+  </EntityType>
+  <EntityType Name="TIPODOC">
+    <Key>
+      <PropertyRef Name="TidCod" />
+    </Key>
+    <Property Name="TidCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TidDsc" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPOPROD">
+    <Key>
+      <PropertyRef Name="TPrCod" />
+    </Key>
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="TPrDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TPrFchCre" Type="DateTime" Precision="3" />
+    <Property Name="TPrUsuCodCre" Type="Int16" />
+    <Property Name="TPrFchMod" Type="DateTime" Precision="3" />
+    <Property Name="TPrUsuCodMod" Type="Int16" />
+  </EntityType>
+  <EntityType Name="UBICACION">
+    <Key>
+      <PropertyRef Name="UbiCod" />
+    </Key>
+    <Property Name="UbiCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UbiConCod" Type="Int16" Nullable="false" />
+    <Property Name="UbiDsc" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UbiDscCor" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UNEGOCIO">
+    <Key>
+      <PropertyRef Name="UneCod" />
+    </Key>
+    <Property Name="UneCod" Type="Int16" Nullable="false" />
+    <Property Name="UneDsc" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UneAbr" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UneTip" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="UsuCod" />
+    </Key>
+    <Property Name="UsuCod" Type="Int16" Nullable="false" />
+    <Property Name="UsuNom" Type="String" MaxLength="60" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UsuUse" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UsuPas" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PerCod" Type="Int32" Nullable="false" />
+    <Property Name="UsuFchVig" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuVer" Type="Int16" />
+    <Property Name="EmpCod" Type="Int32" />
+    <Property Name="UsuAut" Type="Int16" />
+    <Property Name="UsuAlmCod" Type="Int16" />
+    <Property Name="UsuConCod" Type="Int16" />
+    <Property Name="EmpComCod" Type="Int16" />
+    <NavigationProperty Name="EVIDENCIAS" Relationship="Self.IEVIDENCIAS9" FromRole="USUARIOS" ToRole="EVIDENCIAS" />
+    <NavigationProperty Name="Logers" Relationship="Self.ILOGERS1" FromRole="USUARIOS" ToRole="Logers" />
+    <NavigationProperty Name="OrdenServicios" Relationship="Self.IORDENSERVICIO5" FromRole="USUARIOS" ToRole="OrdenServicio" />
+    <NavigationProperty Name="OrdenServicios1" Relationship="Self.IORDENSERVICIO6" FromRole="USUARIOS" ToRole="OrdenServicio" />
+  </EntityType>
+  <EntityType Name="USUARIOSCOMPONENTE">
+    <Key>
+      <PropertyRef Name="UsuCod" />
+      <PropertyRef Name="WCompNro" />
+    </Key>
+    <Property Name="UsuCod" Type="Int16" Nullable="false" />
+    <Property Name="WCompNro" Type="Int16" Nullable="false" />
+    <Property Name="DusOrd" Type="Int16" Nullable="false" />
+    <Property Name="DusIzq" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VALESAUTORIZADO">
+    <Key>
+      <PropertyRef Name="ValCod" />
+    </Key>
+    <Property Name="ValCod" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovCon" Type="Int32" Nullable="false" />
+    <Property Name="ConCod" Type="Int16" Nullable="false" />
+    <Property Name="AlmCod" Type="Int16" Nullable="false" />
+    <Property Name="MovTipDoc" Type="Int16" Nullable="false" />
+    <Property Name="MovFch" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TPrCod" Type="Int16" Nullable="false" />
+    <Property Name="ValFchSol" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ValFchAut" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuCod" Type="Int16" Nullable="false" />
+    <Property Name="ValAut" Type="Int16" Nullable="false" />
+    <Property Name="ValUsuCodSol" Type="Int16" Nullable="false" />
+    <Property Name="MovDProCod" Type="Int32" Nullable="false" />
+    <Property Name="ValArcAut" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ValArcTip" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ValArcNom" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WEBCOMPONENTE">
+    <Key>
+      <PropertyRef Name="WCompNro" />
+    </Key>
+    <Property Name="WCompNro" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WCompDsc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WcompObj" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WConCod" Type="Int16" Nullable="false" />
+  </EntityType>
+  <Association Name="IEVIDENCIAS5">
+    <End Role="ALMACENES" Type="Self.ALMACENE" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERSDETALLE1">
+    <End Role="ALMACENES" Type="Self.ALMACENE" Multiplicity="0..1" />
+    <End Role="LogersDetalle" Type="Self.LogersDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="LogersDetalle">
+        <PropertyRef Name="LogDAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION2">
+    <End Role="ALMACENES" Type="Self.ALMACENE" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiAlmCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION3">
+    <End Role="ALMACENES" Type="Self.ALMACENE" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALMACENES">
+        <PropertyRef Name="AlmCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiAlmCodAnt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE3">
+    <End Role="CAUSAS" Type="Self.CAUSA" Multiplicity="0..1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAUSAS">
+        <PropertyRef Name="CauCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="CauCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIOMONTO1">
+    <End Role="CLASIVTA" Type="Self.CLASIVTA" Multiplicity="1" />
+    <End Role="OrdenServicioMonto" Type="Self.OrdenServicioMonto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASIVTA">
+        <PropertyRef Name="ClaVtaCod" />
+      </Principal>
+      <Dependent Role="OrdenServicioMonto">
+        <PropertyRef Name="ClaVtaCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IESTIMACION1">
+    <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+    <End Role="ESTIMACION" Type="Self.ESTIMACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRATO">
+        <PropertyRef Name="ConCod" />
+      </Principal>
+      <Dependent Role="ESTIMACION">
+        <PropertyRef Name="ConCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS6">
+    <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRATO">
+        <PropertyRef Name="ConCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviConCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IENVIARCORREOS1">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADO" Multiplicity="1" />
+    <End Role="ENVIARCORREOS" Type="Self.ENVIARCORREO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="EmpCod" />
+        <PropertyRef Name="EmpComCod" />
+      </Principal>
+      <Dependent Role="ENVIARCORREOS">
+        <PropertyRef Name="EmpCod" />
+        <PropertyRef Name="EmpComCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS4">
+    <End Role="ESTATUS" Type="Self.ESTATU" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTATUS">
+        <PropertyRef Name="EstCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviEstCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE1">
+    <End Role="ESTATUS" Type="Self.ESTATU" Multiplicity="0..1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTATUS">
+        <PropertyRef Name="EstCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NoDEstCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IEVIDENCIAS9">
+    <End Role="USUARIOS" Type="Self.USUARIO" Multiplicity="0..1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="EviUsuCodCre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IGERENCIAS1">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONE" Multiplicity="1" />
+    <End Role="GERENCIAS" Type="Self.GERENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="GERENCIAS">
+        <PropertyRef Name="LocCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IGERENCIAS2">
+    <End Role="Subdirecciones" Type="Self.Subdireccione" Multiplicity="1" />
+    <End Role="GERENCIAS" Type="Self.GERENCIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subdirecciones">
+        <PropertyRef Name="SubdCod" />
+      </Principal>
+      <Dependent Role="GERENCIAS">
+        <PropertyRef Name="SubdCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO1">
+    <End Role="GERENCIAS" Type="Self.GERENCIA" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GERENCIAS">
+        <PropertyRef Name="GerCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="GerCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO3">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONE" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerLocCodUO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO4">
+    <End Role="LOCALIZACIONES" Type="Self.LOCALIZACIONE" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIZACIONES">
+        <PropertyRef Name="LocCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerLocCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERS1">
+    <End Role="USUARIOS" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="Logers" Type="Self.Loger" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="Logers">
+        <PropertyRef Name="LogeUsuCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ILOGERSDETALLE2">
+    <End Role="Logers" Type="Self.Loger" Multiplicity="1" />
+    <End Role="LogersDetalle" Type="Self.LogersDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logers">
+        <PropertyRef Name="LogeCod" />
+      </Principal>
+      <Dependent Role="LogersDetalle">
+        <PropertyRef Name="LogeCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IMANTTOREF2">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="MANTTOREF" Type="Self.MANTTOREF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="MANTTOREF">
+        <PropertyRef Name="MreProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IMANTTOREF3">
+    <End Role="NOTAINFORMATIVA" Type="Self.NOTAINFORMATIVA" Multiplicity="1" />
+    <End Role="MANTTOREF" Type="Self.MANTTOREF" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTAINFORMATIVA">
+        <PropertyRef Name="NotCod" />
+      </Principal>
+      <Dependent Role="MANTTOREF">
+        <PropertyRef Name="NotCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE4">
+    <End Role="NOTAINFORMATIVA" Type="Self.NOTAINFORMATIVA" Multiplicity="1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTAINFORMATIVA">
+        <PropertyRef Name="NotCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NotCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="INOTAINFORMATIVADETALLE2">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="NOTAINFORMATIVADETALLE" Type="Self.NOTAINFORMATIVADETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="NOTAINFORMATIVADETALLE">
+        <PropertyRef Name="NoDProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO">
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="1" />
+    <End Role="OrdenServicio1" Type="Self.OrdenServicio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenServicio">
+        <PropertyRef Name="OrdSerFol" />
+      </Principal>
+      <Dependent Role="OrdenServicio1">
+        <PropertyRef Name="OrdSerFol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO5">
+    <End Role="USUARIOS" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerUsuCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIO6">
+    <End Role="USUARIOS" Type="Self.USUARIO" Multiplicity="0..1" />
+    <End Role="OrdenServicio" Type="Self.OrdenServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="UsuCod" />
+      </Principal>
+      <Dependent Role="OrdenServicio">
+        <PropertyRef Name="OrdSerUsuCodMod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIODESGLOSE1">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="OrdenServicioDesglose" Type="Self.OrdenServicioDesglose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="OrdenServicioDesglose">
+        <PropertyRef Name="OrdSerGProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IORDENSERVICIORAFESTATUS1">
+    <End Role="OrdenServicioRaf" Type="Self.OrdenServicioRaf" Multiplicity="1" />
+    <End Role="OrdenServicioRafEstatus" Type="Self.OrdenServicioRafEstatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenServicioRaf">
+        <PropertyRef Name="OrdSerFol" />
+        <PropertyRef Name="OrdSerFolRaf" />
+      </Principal>
+      <Dependent Role="OrdenServicioRafEstatus">
+        <PropertyRef Name="OrdSerFol" />
+        <PropertyRef Name="OrdSerFolRaf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IPRODUCTOSUBICACION1">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODUCTOSUBICACION" Type="Self.PRODUCTOSUBICACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ProCod" />
+      </Principal>
+      <Dependent Role="PRODUCTOSUBICACION">
+        <PropertyRef Name="ProUbiProCod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACOTACIONES" EntityType="Self.ACOTACIONE" />
+    <EntitySet Name="ACTIVOS" EntityType="Self.ACTIVO" />
+    <EntitySet Name="ACTIVOSLOCs" EntityType="Self.ACTIVOSLOC" />
+    <EntitySet Name="ACTIVOSPEMEXes" EntityType="Self.ACTIVOSPEMEX" />
+    <EntitySet Name="ACTIVOSPROGMANTTOes" EntityType="Self.ACTIVOSPROGMANTTO" />
+    <EntitySet Name="ACTIVOSRESGUARDOes" EntityType="Self.ACTIVOSRESGUARDO" />
+    <EntitySet Name="ACTIVOSZONAs" EntityType="Self.ACTIVOSZONA" />
+    <EntitySet Name="ADJUNTO_CAPA" EntityType="Self.ADJUNTO_CAPA" />
+    <EntitySet Name="AFECTACIONES" EntityType="Self.AFECTACIONE" />
+    <EntitySet Name="ALMACENES" EntityType="Self.ALMACENE" />
+    <EntitySet Name="ARTICULOSEDIS" EntityType="Self.ARTICULOSEDI" />
+    <EntitySet Name="AUTOMATICOes" EntityType="Self.AUTOMATICO" />
+    <EntitySet Name="AUTOMATICOCORREOAUTs" EntityType="Self.AUTOMATICOCORREOAUT" />
+    <EntitySet Name="BANCOes" EntityType="Self.BANCO" />
+    <EntitySet Name="BASEs" EntityType="Self.BASE" />
+    <EntitySet Name="BASEBASECOORDs" EntityType="Self.BASEBASECOORD" />
+    <EntitySet Name="CAPACITACIONES" EntityType="Self.CAPACITACIONE" />
+    <EntitySet Name="CAPACITACIONESASISTENCIAs" EntityType="Self.CAPACITACIONESASISTENCIA" />
+    <EntitySet Name="CAPACITARs" EntityType="Self.CAPACITAR" />
+    <EntitySet Name="CAPACITARPDAS" EntityType="Self.CAPACITARPDA" />
+    <EntitySet Name="CAPTURAPRESUPUESTOes" EntityType="Self.CAPTURAPRESUPUESTO" />
+    <EntitySet Name="CAUSAS" EntityType="Self.CAUSA" />
+    <EntitySet Name="CIERREs" EntityType="Self.CIERRE" />
+    <EntitySet Name="CIUDADES" EntityType="Self.CIUDADE" />
+    <EntitySet Name="CLASIVTAs" EntityType="Self.CLASIVTA" />
+    <EntitySet Name="COMPANIAs" EntityType="Self.COMPANIA" />
+    <EntitySet Name="CONTENEDORES" EntityType="Self.CONTENEDORE" />
+    <EntitySet Name="CONTRATOes" EntityType="Self.CONTRATO" />
+    <EntitySet Name="CONTRATOCONVENIOs" EntityType="Self.CONTRATOCONVENIO" />
+    <EntitySet Name="COORDINADORES" EntityType="Self.COORDINADORE" />
+    <EntitySet Name="CURSOS" EntityType="Self.CURSO" />
+    <EntitySet Name="CURSOSDETALLEs" EntityType="Self.CURSOSDETALLE" />
+    <EntitySet Name="DEPARTAMENTOes" EntityType="Self.DEPARTAMENTO" />
+    <EntitySet Name="DETALLELOGs" EntityType="Self.DETALLELOG" />
+    <EntitySet Name="DIPLOMAS" EntityType="Self.DIPLOMA" />
+    <EntitySet Name="DISTRIBUCIONCONVENIOs" EntityType="Self.DISTRIBUCIONCONVENIO" />
+    <EntitySet Name="DOCUMENTOS" EntityType="Self.DOCUMENTO" />
+    <EntitySet Name="DOCUMENTOSPERMISOS" EntityType="Self.DOCUMENTOSPERMISO" />
+    <EntitySet Name="EDIs" EntityType="Self.EDI" />
+    <EntitySet Name="EMPCONTRATOS" EntityType="Self.EMPCONTRATO" />
+    <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADO" />
+    <EntitySet Name="EMPLEADOSFAMILIAs" EntityType="Self.EMPLEADOSFAMILIA" />
+    <EntitySet Name="ENVIARCORREOS" EntityType="Self.ENVIARCORREO" />
+    <EntitySet Name="ESTADOes" EntityType="Self.ESTADO" />
+    <EntitySet Name="ESTATUS" EntityType="Self.ESTATU" />
+    <EntitySet Name="ESTIMACIONs" EntityType="Self.ESTIMACION" />
+    <EntitySet Name="ESTIMACIONDETALLEs" EntityType="Self.ESTIMACIONDETALLE" />
+    <EntitySet Name="EVIDENCIAS" EntityType="Self.EVIDENCIA" />
+    <EntitySet Name="FAMILIAS" EntityType="Self.FAMILIA" />
+    <EntitySet Name="FAMILIASSUBFAMILIAs" EntityType="Self.FAMILIASSUBFAMILIA" />
+    <EntitySet Name="FINIQUITOS" EntityType="Self.FINIQUITO" />
+    <EntitySet Name="GASOLINAs" EntityType="Self.GASOLINA" />
+    <EntitySet Name="GERENCIAS" EntityType="Self.GERENCIA" />
+    <EntitySet Name="GUARDIAS" EntityType="Self.GUARDIA" />
+    <EntitySet Name="GUARDIASUBICACIONs" EntityType="Self.GUARDIASUBICACION" />
+    <EntitySet Name="INCIDENCIAs" EntityType="Self.INCIDENCIA" />
+    <EntitySet Name="INVENTARIOs" EntityType="Self.INVENTARIO" />
+    <EntitySet Name="INVENTARIOTEMPs" EntityType="Self.INVENTARIOTEMP" />
+    <EntitySet Name="LICENCIAS" EntityType="Self.LICENCIA" />
+    <EntitySet Name="LOCALIZACIONES" EntityType="Self.LOCALIZACIONE" />
+    <EntitySet Name="LOGs" EntityType="Self.LOG" />
+    <EntitySet Name="Logers" EntityType="Self.Loger" />
+    <EntitySet Name="LogersDetalles" EntityType="Self.LogersDetalle" />
+    <EntitySet Name="MANTTOEVIDENCIAs" EntityType="Self.MANTTOEVIDENCIA" />
+    <EntitySet Name="MANTTOEVIDENCIADETALLEs" EntityType="Self.MANTTOEVIDENCIADETALLE" />
+    <EntitySet Name="MANTTOPROGRAMADAS" EntityType="Self.MANTTOPROGRAMADA" />
+    <EntitySet Name="MANTTOREFs" EntityType="Self.MANTTOREF" />
+    <EntitySet Name="MARCAs" EntityType="Self.MARCA" />
+    <EntitySet Name="MEDIDAS" EntityType="Self.MEDIDA" />
+    <EntitySet Name="MENUS" EntityType="Self.MENU" />
+    <EntitySet Name="MOVIMIENTOS" EntityType="Self.MOVIMIENTO" />
+    <EntitySet Name="MOVIMIENTOSDETALLEs" EntityType="Self.MOVIMIENTOSDETALLE" />
+    <EntitySet Name="MOVIMIENTOSDETALLESUBPDAs" EntityType="Self.MOVIMIENTOSDETALLESUBPDA" />
+    <EntitySet Name="MUNICIPIOS" EntityType="Self.MUNICIPIO" />
+    <EntitySet Name="NOMINAs" EntityType="Self.NOMINA" />
+    <EntitySet Name="NOMINAEMPRESAs" EntityType="Self.NOMINAEMPRESA" />
+    <EntitySet Name="NOTAINFORMATIVAs" EntityType="Self.NOTAINFORMATIVA" />
+    <EntitySet Name="NOTAINFORMATIVADETALLEs" EntityType="Self.NOTAINFORMATIVADETALLE" />
+    <EntitySet Name="NOTAINFORMATIVADETALLESUBPDAs" EntityType="Self.NOTAINFORMATIVADETALLESUBPDA" />
+    <EntitySet Name="OCUPACIONCONTENEDORES" EntityType="Self.OCUPACIONCONTENEDORE" />
+    <EntitySet Name="OPERATIVOes" EntityType="Self.OPERATIVO" />
+    <EntitySet Name="OrdenServicios" EntityType="Self.OrdenServicio" />
+    <EntitySet Name="OrdenServicioDesgloses" EntityType="Self.OrdenServicioDesglose" />
+    <EntitySet Name="OrdenServicioMontoes" EntityType="Self.OrdenServicioMonto" />
+    <EntitySet Name="OrdenServicioRafs" EntityType="Self.OrdenServicioRaf" />
+    <EntitySet Name="OrdenServicioRafEstatus" EntityType="Self.OrdenServicioRafEstatu" />
+    <EntitySet Name="Pedidos" EntityType="Self.Pedido" />
+    <EntitySet Name="PERFILES" EntityType="Self.PERFILE" />
+    <EntitySet Name="PERFILESAPLICATIVOes" EntityType="Self.PERFILESAPLICATIVO" />
+    <EntitySet Name="PERMISOSMENUs" EntityType="Self.PERMISOSMENU" />
+    <EntitySet Name="POLITICAS" EntityType="Self.POLITICA" />
+    <EntitySet Name="POLITICASENTREGAs" EntityType="Self.POLITICASENTREGA" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="PRODUCTOSSUBPRODUCTOes" EntityType="Self.PRODUCTOSSUBPRODUCTO" />
+    <EntitySet Name="PRODUCTOSUBICACIONs" EntityType="Self.PRODUCTOSUBICACION" />
+    <EntitySet Name="PRODUCTOSUBICACIONODOMETROes" EntityType="Self.PRODUCTOSUBICACIONODOMETRO" />
+    <EntitySet Name="PROVEEDORs" EntityType="Self.PROVEEDOR" />
+    <EntitySet Name="PUESTOes" EntityType="Self.PUESTO" />
+    <EntitySet Name="REGISTROes" EntityType="Self.REGISTRO" />
+    <EntitySet Name="REQUISICIONs" EntityType="Self.REQUISICION" />
+    <EntitySet Name="REQUISICIONDETALLEs" EntityType="Self.REQUISICIONDETALLE" />
+    <EntitySet Name="REQUISICIONESTATUS" EntityType="Self.REQUISICIONESTATU" />
+    <EntitySet Name="RES_ACTIVOS" EntityType="Self.RES_ACTIVOS" />
+    <EntitySet Name="RESGUARDOS" EntityType="Self.RESGUARDO" />
+    <EntitySet Name="RESGUARDOSDETALLERES" EntityType="Self.RESGUARDOSDETALLERE" />
+    <EntitySet Name="SEGURIDADs" EntityType="Self.SEGURIDAD" />
+    <EntitySet Name="SEGURIDADORDENs" EntityType="Self.SEGURIDADORDEN" />
+    <EntitySet Name="SOLICITUDESPEMEXes" EntityType="Self.SOLICITUDESPEMEX" />
+    <EntitySet Name="SOLICITUVs" EntityType="Self.SOLICITUV" />
+    <EntitySet Name="STATUSRAFs" EntityType="Self.STATUSRAF" />
+    <EntitySet Name="Subdirecciones" EntityType="Self.Subdireccione" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TIPOCONDETALLEs" EntityType="Self.TIPOCONDETALLE" />
+    <EntitySet Name="TIPOCONTs" EntityType="Self.TIPOCONT" />
+    <EntitySet Name="TIPODOCs" EntityType="Self.TIPODOC" />
+    <EntitySet Name="TIPOPRODs" EntityType="Self.TIPOPROD" />
+    <EntitySet Name="UBICACIONs" EntityType="Self.UBICACION" />
+    <EntitySet Name="UNEGOCIOs" EntityType="Self.UNEGOCIO" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIO" />
+    <EntitySet Name="USUARIOSCOMPONENTEs" EntityType="Self.USUARIOSCOMPONENTE" />
+    <EntitySet Name="VALESAUTORIZADOS" EntityType="Self.VALESAUTORIZADO" />
+    <EntitySet Name="WEBCOMPONENTES" EntityType="Self.WEBCOMPONENTE" />
+    <AssociationSet Name="IEVIDENCIAS5" Association="Self.IEVIDENCIAS5">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERSDETALLE1" Association="Self.ILOGERSDETALLE1">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="LogersDetalle" EntitySet="LogersDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION2" Association="Self.IPRODUCTOSUBICACION2">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACIONs" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION3" Association="Self.IPRODUCTOSUBICACION3">
+      <End Role="ALMACENES" EntitySet="ALMACENES" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACIONs" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE3" Association="Self.INOTAINFORMATIVADETALLE3">
+      <End Role="CAUSAS" EntitySet="CAUSAS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLEs" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIOMONTO1" Association="Self.IORDENSERVICIOMONTO1">
+      <End Role="CLASIVTA" EntitySet="CLASIVTAs" />
+      <End Role="OrdenServicioMonto" EntitySet="OrdenServicioMontoes" />
+    </AssociationSet>
+    <AssociationSet Name="IESTIMACION1" Association="Self.IESTIMACION1">
+      <End Role="CONTRATO" EntitySet="CONTRATOes" />
+      <End Role="ESTIMACION" EntitySet="ESTIMACIONs" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS6" Association="Self.IEVIDENCIAS6">
+      <End Role="CONTRATO" EntitySet="CONTRATOes" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IENVIARCORREOS1" Association="Self.IENVIARCORREOS1">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="ENVIARCORREOS" EntitySet="ENVIARCORREOS" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS4" Association="Self.IEVIDENCIAS4">
+      <End Role="ESTATUS" EntitySet="ESTATUS" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE1" Association="Self.INOTAINFORMATIVADETALLE1">
+      <End Role="ESTATUS" EntitySet="ESTATUS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLEs" />
+    </AssociationSet>
+    <AssociationSet Name="IEVIDENCIAS9" Association="Self.IEVIDENCIAS9">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IGERENCIAS1" Association="Self.IGERENCIAS1">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IGERENCIAS2" Association="Self.IGERENCIAS2">
+      <End Role="Subdirecciones" EntitySet="Subdirecciones" />
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO1" Association="Self.IORDENSERVICIO1">
+      <End Role="GERENCIAS" EntitySet="GERENCIAS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO3" Association="Self.IORDENSERVICIO3">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO4" Association="Self.IORDENSERVICIO4">
+      <End Role="LOCALIZACIONES" EntitySet="LOCALIZACIONES" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERS1" Association="Self.ILOGERS1">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="Logers" EntitySet="Logers" />
+    </AssociationSet>
+    <AssociationSet Name="ILOGERSDETALLE2" Association="Self.ILOGERSDETALLE2">
+      <End Role="Logers" EntitySet="Logers" />
+      <End Role="LogersDetalle" EntitySet="LogersDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="IMANTTOREF2" Association="Self.IMANTTOREF2">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="MANTTOREF" EntitySet="MANTTOREFs" />
+    </AssociationSet>
+    <AssociationSet Name="IMANTTOREF3" Association="Self.IMANTTOREF3">
+      <End Role="NOTAINFORMATIVA" EntitySet="NOTAINFORMATIVAs" />
+      <End Role="MANTTOREF" EntitySet="MANTTOREFs" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE4" Association="Self.INOTAINFORMATIVADETALLE4">
+      <End Role="NOTAINFORMATIVA" EntitySet="NOTAINFORMATIVAs" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLEs" />
+    </AssociationSet>
+    <AssociationSet Name="INOTAINFORMATIVADETALLE2" Association="Self.INOTAINFORMATIVADETALLE2">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="NOTAINFORMATIVADETALLE" EntitySet="NOTAINFORMATIVADETALLEs" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO" Association="Self.IORDENSERVICIO">
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+      <End Role="OrdenServicio1" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO5" Association="Self.IORDENSERVICIO5">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIO6" Association="Self.IORDENSERVICIO6">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="OrdenServicio" EntitySet="OrdenServicios" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIODESGLOSE1" Association="Self.IORDENSERVICIODESGLOSE1">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="OrdenServicioDesglose" EntitySet="OrdenServicioDesgloses" />
+    </AssociationSet>
+    <AssociationSet Name="IORDENSERVICIORAFESTATUS1" Association="Self.IORDENSERVICIORAFESTATUS1">
+      <End Role="OrdenServicioRaf" EntitySet="OrdenServicioRafs" />
+      <End Role="OrdenServicioRafEstatus" EntitySet="OrdenServicioRafEstatus" />
+    </AssociationSet>
+    <AssociationSet Name="IPRODUCTOSUBICACION1" Association="Self.IPRODUCTOSUBICACION1">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="PRODUCTOSUBICACION" EntitySet="PRODUCTOSUBICACIONs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

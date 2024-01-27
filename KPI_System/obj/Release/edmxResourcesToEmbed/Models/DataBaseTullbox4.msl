@@ -1,0 +1,1965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ACOTACIONES">
+      <EntityTypeMapping TypeName="Model.ACOTACIONE">
+        <MappingFragment StoreEntitySet="ACOTACIONES">
+          <ScalarProperty Name="AcoCod" ColumnName="AcoCod" />
+          <ScalarProperty Name="AcoDsc" ColumnName="AcoDsc" />
+          <ScalarProperty Name="AcoAbr" ColumnName="AcoAbr" />
+          <ScalarProperty Name="AcoUsuCodCre" ColumnName="AcoUsuCodCre" />
+          <ScalarProperty Name="AcoFchCre" ColumnName="AcoFchCre" />
+          <ScalarProperty Name="AcoUsuCodMod" ColumnName="AcoUsuCodMod" />
+          <ScalarProperty Name="AcoFchMod" ColumnName="AcoFchMod" />
+          <ScalarProperty Name="AcoCol" ColumnName="AcoCol" />
+          <ScalarProperty Name="AcoCol3" ColumnName="AcoCol3" />
+          <ScalarProperty Name="AcoCol2" ColumnName="AcoCol2" />
+          <ScalarProperty Name="AcoCol1" ColumnName="AcoCol1" />
+          <ScalarProperty Name="AcoMon" ColumnName="AcoMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOS">
+      <EntityTypeMapping TypeName="Model.ACTIVO">
+        <MappingFragment StoreEntitySet="ACTIVOS">
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+          <ScalarProperty Name="UneCod" ColumnName="UneCod" />
+          <ScalarProperty Name="ActTip" ColumnName="ActTip" />
+          <ScalarProperty Name="ActMod" ColumnName="ActMod" />
+          <ScalarProperty Name="ActPla" ColumnName="ActPla" />
+          <ScalarProperty Name="ActSer" ColumnName="ActSer" />
+          <ScalarProperty Name="ActPol" ColumnName="ActPol" />
+          <ScalarProperty Name="ActUni" ColumnName="ActUni" />
+          <ScalarProperty Name="ActDsc" ColumnName="ActDsc" />
+          <ScalarProperty Name="ActMarCod" ColumnName="ActMarCod" />
+          <ScalarProperty Name="ActFot" ColumnName="ActFot" />
+          <ScalarProperty Name="ActFotNom" ColumnName="ActFotNom" />
+          <ScalarProperty Name="ActFotTip" ColumnName="ActFotTip" />
+          <ScalarProperty Name="ActSfaCod" ColumnName="ActSfaCod" />
+          <ScalarProperty Name="ActFchAdq" ColumnName="ActFchAdq" />
+          <ScalarProperty Name="ActFac" ColumnName="ActFac" />
+          <ScalarProperty Name="ActUneCod" ColumnName="ActUneCod" />
+          <ScalarProperty Name="ActMoi" ColumnName="ActMoi" />
+          <ScalarProperty Name="EstCod" ColumnName="EstCod" />
+          <ScalarProperty Name="ActCtaAct" ColumnName="ActCtaAct" />
+          <ScalarProperty Name="ActSAN" ColumnName="ActSAN" />
+          <ScalarProperty Name="ActPIN" ColumnName="ActPIN" />
+          <ScalarProperty Name="ActSITE" ColumnName="ActSITE" />
+          <ScalarProperty Name="ActAct" ColumnName="ActAct" />
+          <ScalarProperty Name="ActDepCod" ColumnName="ActDepCod" />
+          <ScalarProperty Name="ActObs" ColumnName="ActObs" />
+          <ScalarProperty Name="ActArcFac" ColumnName="ActArcFac" />
+          <ScalarProperty Name="ActArcFacNom" ColumnName="ActArcFacNom" />
+          <ScalarProperty Name="ActArcFacTip" ColumnName="ActArcFacTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOSLOCs">
+      <EntityTypeMapping TypeName="Model.ACTIVOSLOC">
+        <MappingFragment StoreEntitySet="ACTIVOSLOC">
+          <ScalarProperty Name="ActiLocCod" ColumnName="ActiLocCod" />
+          <ScalarProperty Name="ActiLocNom" ColumnName="ActiLocNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOSPEMEXes">
+      <EntityTypeMapping TypeName="Model.ACTIVOSPEMEX">
+        <MappingFragment StoreEntitySet="ACTIVOSPEMEX">
+          <ScalarProperty Name="ActPmx" ColumnName="ActPmx" />
+          <ScalarProperty Name="ActPmxAnt" ColumnName="ActPmxAnt" />
+          <ScalarProperty Name="SubDirAnt" ColumnName="SubDirAnt" />
+          <ScalarProperty Name="ActActPmx" ColumnName="ActActPmx" />
+          <ScalarProperty Name="SubSDirAct" ColumnName="SubSDirAct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOSPROGMANTTOes">
+      <EntityTypeMapping TypeName="Model.ACTIVOSPROGMANTTO">
+        <MappingFragment StoreEntitySet="ACTIVOSPROGMANTTO">
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+          <ScalarProperty Name="ProgManPro" ColumnName="ProgManPro" />
+          <ScalarProperty Name="ProgManDsc" ColumnName="ProgManDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOSRESGUARDOes">
+      <EntityTypeMapping TypeName="Model.ACTIVOSRESGUARDO">
+        <MappingFragment StoreEntitySet="ACTIVOSRESGUARDO">
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+          <ScalarProperty Name="ResgEmpCod" ColumnName="ResgEmpCod" />
+          <ScalarProperty Name="ResgEmpComCod" ColumnName="ResgEmpComCod" />
+          <ScalarProperty Name="ResgFch" ColumnName="ResgFch" />
+          <ScalarProperty Name="ResgAct" ColumnName="ResgAct" />
+          <ScalarProperty Name="ResgArc" ColumnName="ResgArc" />
+          <ScalarProperty Name="ResgArcTip" ColumnName="ResgArcTip" />
+          <ScalarProperty Name="ResgArcNom" ColumnName="ResgArcNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVOSZONAs">
+      <EntityTypeMapping TypeName="Model.ACTIVOSZONA">
+        <MappingFragment StoreEntitySet="ACTIVOSZONA">
+          <ScalarProperty Name="ActAntCod" ColumnName="ActAntCod" />
+          <ScalarProperty Name="ActAnt" ColumnName="ActAnt" />
+          <ScalarProperty Name="ActSubAnt" ColumnName="ActSubAnt" />
+          <ScalarProperty Name="ActSubAct" ColumnName="ActSubAct" />
+          <ScalarProperty Name="ActActu" ColumnName="ActActu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADJUNTO_CAPA">
+      <EntityTypeMapping TypeName="Model.ADJUNTO_CAPA">
+        <MappingFragment StoreEntitySet="ADJUNTO_CAPA">
+          <ScalarProperty Name="AdCapCod" ColumnName="AdCapCod" />
+          <ScalarProperty Name="CapCod" ColumnName="CapCod" />
+          <ScalarProperty Name="AdCapFch" ColumnName="AdCapFch" />
+          <ScalarProperty Name="AdCapArc" ColumnName="AdCapArc" />
+          <ScalarProperty Name="AdCapArcTip" ColumnName="AdCapArcTip" />
+          <ScalarProperty Name="AdCapArcNom" ColumnName="AdCapArcNom" />
+          <ScalarProperty Name="AdCapTip" ColumnName="AdCapTip" />
+          <ScalarProperty Name="AdCapUsuCodCre" ColumnName="AdCapUsuCodCre" />
+          <ScalarProperty Name="AdCapFchCre" ColumnName="AdCapFchCre" />
+          <ScalarProperty Name="AdCapUsuCodMod" ColumnName="AdCapUsuCodMod" />
+          <ScalarProperty Name="AdCapFchMod" ColumnName="AdCapFchMod" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AFECTACIONES">
+      <EntityTypeMapping TypeName="Model.AFECTACIONE">
+        <MappingFragment StoreEntitySet="AFECTACIONES">
+          <ScalarProperty Name="AfeConCod" ColumnName="AfeConCod" />
+          <ScalarProperty Name="AfePedCod" ColumnName="AfePedCod" />
+          <ScalarProperty Name="AfeFch" ColumnName="AfeFch" />
+          <ScalarProperty Name="AfeIncCod" ColumnName="AfeIncCod" />
+          <ScalarProperty Name="AfeObs" ColumnName="AfeObs" />
+          <ScalarProperty Name="AfeUsuCod" ColumnName="AfeUsuCod" />
+          <ScalarProperty Name="AfeUsuFchCre" ColumnName="AfeUsuFchCre" />
+          <ScalarProperty Name="AfeUsuMod" ColumnName="AfeUsuMod" />
+          <ScalarProperty Name="AfeUsuFchMod" ColumnName="AfeUsuFchMod" />
+          <ScalarProperty Name="AcoCod" ColumnName="AcoCod" />
+          <ScalarProperty Name="AfeEstCod" ColumnName="AfeEstCod" />
+          <ScalarProperty Name="AfeProg" ColumnName="AfeProg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALMACENES">
+      <EntityTypeMapping TypeName="Model.ALMACENE">
+        <MappingFragment StoreEntitySet="ALMACENES">
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="AlmNom" ColumnName="AlmNom" />
+          <ScalarProperty Name="AlmTip" ColumnName="AlmTip" />
+          <ScalarProperty Name="AlmSubAlmCod" ColumnName="AlmSubAlmCod" />
+          <ScalarProperty Name="AlmFchCre" ColumnName="AlmFchCre" />
+          <ScalarProperty Name="AlmUsuCodCre" ColumnName="AlmUsuCodCre" />
+          <ScalarProperty Name="AlmFchMod" ColumnName="AlmFchMod" />
+          <ScalarProperty Name="AlmUsuCodMod" ColumnName="AlmUsuCodMod" />
+          <ScalarProperty Name="AlmConcod" ColumnName="AlmConcod" />
+          <ScalarProperty Name="TConCod" ColumnName="TConCod" />
+          <ScalarProperty Name="AlmBasCod" ColumnName="AlmBasCod" />
+          <ScalarProperty Name="AlmAli" ColumnName="AlmAli" />
+          <ScalarProperty Name="AlmCla" ColumnName="AlmCla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARTICULOSEDIS">
+      <EntityTypeMapping TypeName="Model.ARTICULOSEDI">
+        <MappingFragment StoreEntitySet="ARTICULOSEDIS">
+          <ScalarProperty Name="EdyCod" ColumnName="EdyCod" />
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="EdyDCan" ColumnName="EdyDCan" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTOMATICOes">
+      <EntityTypeMapping TypeName="Model.AUTOMATICO">
+        <MappingFragment StoreEntitySet="AUTOMATICO">
+          <ScalarProperty Name="AutCod" ColumnName="AutCod" />
+          <ScalarProperty Name="MovTipDoc" ColumnName="MovTipDoc" />
+          <ScalarProperty Name="AutFchCre" ColumnName="AutFchCre" />
+          <ScalarProperty Name="AutUsuCod" ColumnName="AutUsuCod" />
+          <ScalarProperty Name="AutFchMod" ColumnName="AutFchMod" />
+          <ScalarProperty Name="AutUsuCodMod" ColumnName="AutUsuCodMod" />
+          <ScalarProperty Name="AutLin" ColumnName="AutLin" />
+          <ScalarProperty Name="AutTie" ColumnName="AutTie" />
+          <ScalarProperty Name="AutTip" ColumnName="AutTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTOMATICOCORREOAUTs">
+      <EntityTypeMapping TypeName="Model.AUTOMATICOCORREOAUT">
+        <MappingFragment StoreEntitySet="AUTOMATICOCORREOAUT">
+          <ScalarProperty Name="AutCod" ColumnName="AutCod" />
+          <ScalarProperty Name="AutCorCod" ColumnName="AutCorCod" />
+          <ScalarProperty Name="AutCor" ColumnName="AutCor" />
+          <ScalarProperty Name="AutCorNom" ColumnName="AutCorNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANCOes">
+      <EntityTypeMapping TypeName="Model.BANCO">
+        <MappingFragment StoreEntitySet="BANCO">
+          <ScalarProperty Name="BanCod" ColumnName="BanCod" />
+          <ScalarProperty Name="BanNom" ColumnName="BanNom" />
+          <ScalarProperty Name="BanFchCre" ColumnName="BanFchCre" />
+          <ScalarProperty Name="BanUsuCodCre" ColumnName="BanUsuCodCre" />
+          <ScalarProperty Name="BanFchMod" ColumnName="BanFchMod" />
+          <ScalarProperty Name="BanUsuCodMod" ColumnName="BanUsuCodMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BASEs">
+      <EntityTypeMapping TypeName="Model.BASE">
+        <MappingFragment StoreEntitySet="BASE">
+          <ScalarProperty Name="BasCod" ColumnName="BasCod" />
+          <ScalarProperty Name="BasNom" ColumnName="BasNom" />
+          <ScalarProperty Name="BasFchCre" ColumnName="BasFchCre" />
+          <ScalarProperty Name="BasUsuCodCre" ColumnName="BasUsuCodCre" />
+          <ScalarProperty Name="BasFchMod" ColumnName="BasFchMod" />
+          <ScalarProperty Name="BasUsuCodMod" ColumnName="BasUsuCodMod" />
+          <ScalarProperty Name="BasAbr" ColumnName="BasAbr" />
+          <ScalarProperty Name="BasDim" ColumnName="BasDim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BASEBASECOORDs">
+      <EntityTypeMapping TypeName="Model.BASEBASECOORD">
+        <MappingFragment StoreEntitySet="BASEBASECOORD">
+          <ScalarProperty Name="BasCod" ColumnName="BasCod" />
+          <ScalarProperty Name="BasEmpCod" ColumnName="BasEmpCod" />
+          <ScalarProperty Name="BasEmpComCod" ColumnName="BasEmpComCod" />
+          <ScalarProperty Name="BasFchIni" ColumnName="BasFchIni" />
+          <ScalarProperty Name="BasFchTer" ColumnName="BasFchTer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAPACITACIONES">
+      <EntityTypeMapping TypeName="Model.CAPACITACIONE">
+        <MappingFragment StoreEntitySet="CAPACITACIONES">
+          <ScalarProperty Name="CapCod" ColumnName="CapCod" />
+          <ScalarProperty Name="CapConCod" ColumnName="CapConCod" />
+          <ScalarProperty Name="CapFol" ColumnName="CapFol" />
+          <ScalarProperty Name="CapFch" ColumnName="CapFch" />
+          <ScalarProperty Name="CapEst" ColumnName="CapEst" />
+          <ScalarProperty Name="CurCod" ColumnName="CurCod" />
+          <ScalarProperty Name="CapProEmpCod" ColumnName="CapProEmpCod" />
+          <ScalarProperty Name="CapRevEmpCod" ColumnName="CapRevEmpCod" />
+          <ScalarProperty Name="CapAutEmpCod" ColumnName="CapAutEmpCod" />
+          <ScalarProperty Name="CapInsEmpCod" ColumnName="CapInsEmpCod" />
+          <ScalarProperty Name="CapEqu" ColumnName="CapEqu" />
+          <ScalarProperty Name="CapLocCod" ColumnName="CapLocCod" />
+          <ScalarProperty Name="CapFchIni" ColumnName="CapFchIni" />
+          <ScalarProperty Name="CapFchTer" ColumnName="CapFchTer" />
+          <ScalarProperty Name="CapNotPro" ColumnName="CapNotPro" />
+          <ScalarProperty Name="CapNot" ColumnName="CapNot" />
+          <ScalarProperty Name="CapTecEmpCod" ColumnName="CapTecEmpCod" />
+          <ScalarProperty Name="CapFchNot" ColumnName="CapFchNot" />
+          <ScalarProperty Name="CapResEmpCod" ColumnName="CapResEmpCod" />
+          <ScalarProperty Name="CapAteEmpCod" ColumnName="CapAteEmpCod" />
+          <ScalarProperty Name="CapAct" ColumnName="CapAct" />
+          <ScalarProperty Name="CapCon" ColumnName="CapCon" />
+          <ScalarProperty Name="CapFirEmpCod" ColumnName="CapFirEmpCod" />
+          <ScalarProperty Name="CapUsuCodCre" ColumnName="CapUsuCodCre" />
+          <ScalarProperty Name="CapFchCre" ColumnName="CapFchCre" />
+          <ScalarProperty Name="CapUsuCodMod" ColumnName="CapUsuCodMod" />
+          <ScalarProperty Name="CapFchMod" ColumnName="CapFchMod" />
+          <ScalarProperty Name="CapProEmpComCod" ColumnName="CapProEmpComCod" />
+          <ScalarProperty Name="CapRevEmpComCod" ColumnName="CapRevEmpComCod" />
+          <ScalarProperty Name="CapAutEmpComCod" ColumnName="CapAutEmpComCod" />
+          <ScalarProperty Name="CapInsEmpComCod" ColumnName="CapInsEmpComCod" />
+          <ScalarProperty Name="CapTecEmpComCod" ColumnName="CapTecEmpComCod" />
+          <ScalarProperty Name="CapResEmpComCod" ColumnName="CapResEmpComCod" />
+          <ScalarProperty Name="CapAteEmpComCod" ColumnName="CapAteEmpComCod" />
+          <ScalarProperty Name="CapFirEmpComCod" ColumnName="CapFirEmpComCod" />
+          <ScalarProperty Name="CapaCod" ColumnName="CapaCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAPACITACIONESASISTENCIAs">
+      <EntityTypeMapping TypeName="Model.CAPACITACIONESASISTENCIA">
+        <MappingFragment StoreEntitySet="CAPACITACIONESASISTENCIA">
+          <ScalarProperty Name="CapCod" ColumnName="CapCod" />
+          <ScalarProperty Name="AsiEmpCod" ColumnName="AsiEmpCod" />
+          <ScalarProperty Name="AsiEmpComCod" ColumnName="AsiEmpComCod" />
+          <ScalarProperty Name="AsiAsi" ColumnName="AsiAsi" />
+          <ScalarProperty Name="AsiApr" ColumnName="AsiApr" />
+          <ScalarProperty Name="AsiNot" ColumnName="AsiNot" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAPACITARs">
+      <EntityTypeMapping TypeName="Model.CAPACITAR">
+        <MappingFragment StoreEntitySet="CAPACITAR">
+          <ScalarProperty Name="CapaCod" ColumnName="CapaCod" />
+          <ScalarProperty Name="CapaMes" ColumnName="CapaMes" />
+          <ScalarProperty Name="CapaAno" ColumnName="CapaAno" />
+          <ScalarProperty Name="CapaUsuCod" ColumnName="CapaUsuCod" />
+          <ScalarProperty Name="CapaResEmpCod" ColumnName="CapaResEmpCod" />
+          <ScalarProperty Name="CapaSupEmpCod" ColumnName="CapaSupEmpCod" />
+          <ScalarProperty Name="CapaRepEmpCod" ColumnName="CapaRepEmpCod" />
+          <ScalarProperty Name="CapaResComCod" ColumnName="CapaResComCod" />
+          <ScalarProperty Name="CapaSupComCod" ColumnName="CapaSupComCod" />
+          <ScalarProperty Name="CapaRepComCod" ColumnName="CapaRepComCod" />
+          <ScalarProperty Name="CapaAct" ColumnName="CapaAct" />
+          <ScalarProperty Name="CapaCon" ColumnName="CapaCon" />
+          <ScalarProperty Name="CapaBasCod" ColumnName="CapaBasCod" />
+          <ScalarProperty Name="CapaCurCod" ColumnName="CapaCurCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAPACITARPDAS">
+      <EntityTypeMapping TypeName="Model.CAPACITARPDA">
+        <MappingFragment StoreEntitySet="CAPACITARPDAS">
+          <ScalarProperty Name="CapaCod" ColumnName="CapaCod" />
+          <ScalarProperty Name="CapaDProCod" ColumnName="CapaDProCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAPTURAPRESUPUESTOes">
+      <EntityTypeMapping TypeName="Model.CAPTURAPRESUPUESTO">
+        <MappingFragment StoreEntitySet="CAPTURAPRESUPUESTO">
+          <ScalarProperty Name="PreCod" ColumnName="PreCod" />
+          <ScalarProperty Name="PreFch" ColumnName="PreFch" />
+          <ScalarProperty Name="PreLocCod" ColumnName="PreLocCod" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="PreMon" ColumnName="PreMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAUSAS">
+      <EntityTypeMapping TypeName="Model.CAUSA">
+        <MappingFragment StoreEntitySet="CAUSAS">
+          <ScalarProperty Name="CauCod" ColumnName="CauCod" />
+          <ScalarProperty Name="CauDsc" ColumnName="CauDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIERREs">
+      <EntityTypeMapping TypeName="Model.CIERRE">
+        <MappingFragment StoreEntitySet="CIERRE">
+          <ScalarProperty Name="CieAno" ColumnName="CieAno" />
+          <ScalarProperty Name="CieEne" ColumnName="CieEne" />
+          <ScalarProperty Name="CieFeb" ColumnName="CieFeb" />
+          <ScalarProperty Name="CieMar" ColumnName="CieMar" />
+          <ScalarProperty Name="CieAbr" ColumnName="CieAbr" />
+          <ScalarProperty Name="CieMay" ColumnName="CieMay" />
+          <ScalarProperty Name="CieJun" ColumnName="CieJun" />
+          <ScalarProperty Name="CieJul" ColumnName="CieJul" />
+          <ScalarProperty Name="CieAgo" ColumnName="CieAgo" />
+          <ScalarProperty Name="CieSep" ColumnName="CieSep" />
+          <ScalarProperty Name="CieOct" ColumnName="CieOct" />
+          <ScalarProperty Name="CieNov" ColumnName="CieNov" />
+          <ScalarProperty Name="CieDic" ColumnName="CieDic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIUDADES">
+      <EntityTypeMapping TypeName="Model.CIUDADE">
+        <MappingFragment StoreEntitySet="CIUDADES">
+          <ScalarProperty Name="CiuCod" ColumnName="CiuCod" />
+          <ScalarProperty Name="CiuFchCre" ColumnName="CiuFchCre" />
+          <ScalarProperty Name="CiuUsuCodCre" ColumnName="CiuUsuCodCre" />
+          <ScalarProperty Name="CiuFchMod" ColumnName="CiuFchMod" />
+          <ScalarProperty Name="CiuUsuCodMod" ColumnName="CiuUsuCodMod" />
+          <ScalarProperty Name="MunCod" ColumnName="MunCod" />
+          <ScalarProperty Name="CiuDsc" ColumnName="CiuDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLASIVTAs">
+      <EntityTypeMapping TypeName="Model.CLASIVTA">
+        <MappingFragment StoreEntitySet="CLASIVTA">
+          <ScalarProperty Name="ClaVtaCod" ColumnName="ClaVtaCod" />
+          <ScalarProperty Name="ClaVtaDsc" ColumnName="ClaVtaDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANIAs">
+      <EntityTypeMapping TypeName="Model.COMPANIA">
+        <MappingFragment StoreEntitySet="COMPANIA">
+          <ScalarProperty Name="ComCod" ColumnName="ComCod" />
+          <ScalarProperty Name="ComDoc" ColumnName="ComDoc" />
+          <ScalarProperty Name="ComTip" ColumnName="ComTip" />
+          <ScalarProperty Name="ComFchCre" ColumnName="ComFchCre" />
+          <ScalarProperty Name="ComUsuCodCre" ColumnName="ComUsuCodCre" />
+          <ScalarProperty Name="ComFchMod" ColumnName="ComFchMod" />
+          <ScalarProperty Name="ComUsuCodMod" ColumnName="ComUsuCodMod" />
+          <ScalarProperty Name="ComNom" ColumnName="ComNom" />
+          <ScalarProperty Name="ComLog" ColumnName="ComLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTENEDORES">
+      <EntityTypeMapping TypeName="Model.CONTENEDORE">
+        <MappingFragment StoreEntitySet="CONTENEDORES">
+          <ScalarProperty Name="ContCod" ColumnName="ContCod" />
+          <ScalarProperty Name="RegLocCod" ColumnName="RegLocCod" />
+          <ScalarProperty Name="UniLocCod" ColumnName="UniLocCod" />
+          <ScalarProperty Name="ContNum" ColumnName="ContNum" />
+          <ScalarProperty Name="ContTbx" ColumnName="ContTbx" />
+          <ScalarProperty Name="ContTip" ColumnName="ContTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRATOes">
+      <EntityTypeMapping TypeName="Model.CONTRATO">
+        <MappingFragment StoreEntitySet="CONTRATO">
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="ConNum" ColumnName="ConNum" />
+          <ScalarProperty Name="ConDsc" ColumnName="ConDsc" />
+          <ScalarProperty Name="ConFchIni" ColumnName="ConFchIni" />
+          <ScalarProperty Name="ConFchTer" ColumnName="ConFchTer" />
+          <ScalarProperty Name="ConMon" ColumnName="ConMon" />
+          <ScalarProperty Name="ConFchCre" ColumnName="ConFchCre" />
+          <ScalarProperty Name="ConUsuCodCre" ColumnName="ConUsuCodCre" />
+          <ScalarProperty Name="ConFchMod" ColumnName="ConFchMod" />
+          <ScalarProperty Name="ConUsuCodMod" ColumnName="ConUsuCodMod" />
+          <ScalarProperty Name="ComCod" ColumnName="ComCod" />
+          <ScalarProperty Name="ConTipMon" ColumnName="ConTipMon" />
+          <ScalarProperty Name="ConAcrSAP" ColumnName="ConAcrSAP" />
+          <ScalarProperty Name="ConNumSAP" ColumnName="ConNumSAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRATOCONVENIOs">
+      <EntityTypeMapping TypeName="Model.CONTRATOCONVENIO">
+        <MappingFragment StoreEntitySet="CONTRATOCONVENIO">
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="ConvCod" ColumnName="ConvCod" />
+          <ScalarProperty Name="ConvMon" ColumnName="ConvMon" />
+          <ScalarProperty Name="ConvFchIni" ColumnName="ConvFchIni" />
+          <ScalarProperty Name="ConvFchTer" ColumnName="ConvFchTer" />
+          <ScalarProperty Name="ConvDsc" ColumnName="ConvDsc" />
+          <ScalarProperty Name="ConvTip" ColumnName="ConvTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COORDINADORES">
+      <EntityTypeMapping TypeName="Model.COORDINADORE">
+        <MappingFragment StoreEntitySet="COORDINADORES">
+          <ScalarProperty Name="LocCod" ColumnName="LocCod" />
+          <ScalarProperty Name="CooAni" ColumnName="CooAni" />
+          <ScalarProperty Name="CooMes" ColumnName="CooMes" />
+          <ScalarProperty Name="CooNom" ColumnName="CooNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURSOS">
+      <EntityTypeMapping TypeName="Model.CURSO">
+        <MappingFragment StoreEntitySet="CURSOS">
+          <ScalarProperty Name="CurCod" ColumnName="CurCod" />
+          <ScalarProperty Name="CurConCod" ColumnName="CurConCod" />
+          <ScalarProperty Name="CurCve" ColumnName="CurCve" />
+          <ScalarProperty Name="CurNom" ColumnName="CurNom" />
+          <ScalarProperty Name="CurTip" ColumnName="CurTip" />
+          <ScalarProperty Name="CurObj" ColumnName="CurObj" />
+          <ScalarProperty Name="CurAut" ColumnName="CurAut" />
+          <ScalarProperty Name="CurUsuCodCre" ColumnName="CurUsuCodCre" />
+          <ScalarProperty Name="CurFchCre" ColumnName="CurFchCre" />
+          <ScalarProperty Name="CurUsuCodMod" ColumnName="CurUsuCodMod" />
+          <ScalarProperty Name="CurFchMod" ColumnName="CurFchMod" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CURSOSDETALLEs">
+      <EntityTypeMapping TypeName="Model.CURSOSDETALLE">
+        <MappingFragment StoreEntitySet="CURSOSDETALLE">
+          <ScalarProperty Name="CurCod" ColumnName="CurCod" />
+          <ScalarProperty Name="CurDProCod" ColumnName="CurDProCod" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOes">
+      <EntityTypeMapping TypeName="Model.DEPARTAMENTO">
+        <MappingFragment StoreEntitySet="DEPARTAMENTO">
+          <ScalarProperty Name="DepCod" ColumnName="DepCod" />
+          <ScalarProperty Name="DepDsc" ColumnName="DepDsc" />
+          <ScalarProperty Name="DepConCod" ColumnName="DepConCod" />
+          <ScalarProperty Name="DepFchCre" ColumnName="DepFchCre" />
+          <ScalarProperty Name="DepUsuCodCre" ColumnName="DepUsuCodCre" />
+          <ScalarProperty Name="DepFchMod" ColumnName="DepFchMod" />
+          <ScalarProperty Name="DepUsuCodMod" ColumnName="DepUsuCodMod" />
+          <ScalarProperty Name="DepAbr" ColumnName="DepAbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLELOGs">
+      <EntityTypeMapping TypeName="Model.DETALLELOG">
+        <MappingFragment StoreEntitySet="DETALLELOG">
+          <ScalarProperty Name="DloCod" ColumnName="DloCod" />
+          <ScalarProperty Name="LogCod" ColumnName="LogCod" />
+          <ScalarProperty Name="LogMov" ColumnName="LogMov" />
+          <ScalarProperty Name="DloFch" ColumnName="DloFch" />
+          <ScalarProperty Name="LogConCod" ColumnName="LogConCod" />
+          <ScalarProperty Name="LogAlmCod" ColumnName="LogAlmCod" />
+          <ScalarProperty Name="LogUsuCod" ColumnName="LogUsuCod" />
+          <ScalarProperty Name="LogFecIni" ColumnName="LogFecIni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIPLOMAS">
+      <EntityTypeMapping TypeName="Model.DIPLOMA">
+        <MappingFragment StoreEntitySet="DIPLOMAS">
+          <ScalarProperty Name="DipCod" ColumnName="DipCod" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="DipCom" ColumnName="DipCom" />
+          <ScalarProperty Name="DipDip" ColumnName="DipDip" />
+          <ScalarProperty Name="DipDipNom" ColumnName="DipDipNom" />
+          <ScalarProperty Name="DipDipTip" ColumnName="DipDipTip" />
+          <ScalarProperty Name="DipFchCre" ColumnName="DipFchCre" />
+          <ScalarProperty Name="DipUsuCre" ColumnName="DipUsuCre" />
+          <ScalarProperty Name="DipFchUpd" ColumnName="DipFchUpd" />
+          <ScalarProperty Name="DipUsuUpd" ColumnName="DipUsuUpd" />
+          <ScalarProperty Name="DipCla" ColumnName="DipCla" />
+          <ScalarProperty Name="DipConCod" ColumnName="DipConCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISTRIBUCIONCONVENIOs">
+      <EntityTypeMapping TypeName="Model.DISTRIBUCIONCONVENIO">
+        <MappingFragment StoreEntitySet="DISTRIBUCIONCONVENIO">
+          <ScalarProperty Name="DisCod" ColumnName="DisCod" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="ConvCod" ColumnName="ConvCod" />
+          <ScalarProperty Name="LocUniCod" ColumnName="LocUniCod" />
+          <ScalarProperty Name="DisMon" ColumnName="DisMon" />
+          <ScalarProperty Name="DisFch" ColumnName="DisFch" />
+          <ScalarProperty Name="DisTip" ColumnName="DisTip" />
+          <ScalarProperty Name="DisLocNom" ColumnName="DisLocNom" />
+          <ScalarProperty Name="DisDisCod" ColumnName="DisDisCod" />
+          <ScalarProperty Name="DisLocTip" ColumnName="DisLocTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCUMENTOS">
+      <EntityTypeMapping TypeName="Model.DOCUMENTO">
+        <MappingFragment StoreEntitySet="DOCUMENTOS">
+          <ScalarProperty Name="DocCod" ColumnName="DocCod" />
+          <ScalarProperty Name="DocFch" ColumnName="DocFch" />
+          <ScalarProperty Name="DocDsc" ColumnName="DocDsc" />
+          <ScalarProperty Name="DocArc" ColumnName="DocArc" />
+          <ScalarProperty Name="DocTip" ColumnName="DocTip" />
+          <ScalarProperty Name="DocNom" ColumnName="DocNom" />
+          <ScalarProperty Name="TidCod" ColumnName="TidCod" />
+          <ScalarProperty Name="DocDepCod" ColumnName="DocDepCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCUMENTOSPERMISOS">
+      <EntityTypeMapping TypeName="Model.DOCUMENTOSPERMISO">
+        <MappingFragment StoreEntitySet="DOCUMENTOSPERMISOS">
+          <ScalarProperty Name="DocCod" ColumnName="DocCod" />
+          <ScalarProperty Name="DocDepCodPer" ColumnName="DocDepCodPer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EDIs">
+      <EntityTypeMapping TypeName="Model.EDI">
+        <MappingFragment StoreEntitySet="EDI">
+          <ScalarProperty Name="EdyCod" ColumnName="EdyCod" />
+          <ScalarProperty Name="EdySer" ColumnName="EdySer" />
+          <ScalarProperty Name="EdyFchCre" ColumnName="EdyFchCre" />
+          <ScalarProperty Name="EdyUsuCodCre" ColumnName="EdyUsuCodCre" />
+          <ScalarProperty Name="EdyFchMod" ColumnName="EdyFchMod" />
+          <ScalarProperty Name="EdyUsuCodMod" ColumnName="EdyUsuCodMod" />
+          <ScalarProperty Name="EdyConCod" ColumnName="EdyConCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPCONTRATOS">
+      <EntityTypeMapping TypeName="Model.EMPCONTRATO">
+        <MappingFragment StoreEntitySet="EMPCONTRATOS">
+          <ScalarProperty Name="EmCCod" ColumnName="EmCCod" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="EmCFchIni" ColumnName="EmCFchIni" />
+          <ScalarProperty Name="EmCFchTer" ColumnName="EmCFchTer" />
+          <ScalarProperty Name="EmCUsuCodCre" ColumnName="EmCUsuCodCre" />
+          <ScalarProperty Name="EmCFchCre" ColumnName="EmCFchCre" />
+          <ScalarProperty Name="EmCUsuCodMod" ColumnName="EmCUsuCodMod" />
+          <ScalarProperty Name="EmCFchMod" ColumnName="EmCFchMod" />
+          <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOS">
+      <EntityTypeMapping TypeName="Model.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADOS">
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="EmpFot" ColumnName="EmpFot" />
+          <ScalarProperty Name="EmpFotNom" ColumnName="EmpFotNom" />
+          <ScalarProperty Name="EmpFotTip" ColumnName="EmpFotTip" />
+          <ScalarProperty Name="EmpFic" ColumnName="EmpFic" />
+          <ScalarProperty Name="EmpEst" ColumnName="EmpEst" />
+          <ScalarProperty Name="EmpNom" ColumnName="EmpNom" />
+          <ScalarProperty Name="EmpApePat" ColumnName="EmpApePat" />
+          <ScalarProperty Name="EmpApeMat" ColumnName="EmpApeMat" />
+          <ScalarProperty Name="PueCod" ColumnName="PueCod" />
+          <ScalarProperty Name="EmpCenCos" ColumnName="EmpCenCos" />
+          <ScalarProperty Name="EmpBasCod" ColumnName="EmpBasCod" />
+          <ScalarProperty Name="EmpSueMen" ColumnName="EmpSueMen" />
+          <ScalarProperty Name="EmpFchIng" ColumnName="EmpFchIng" />
+          <ScalarProperty Name="EmpFchBaj" ColumnName="EmpFchBaj" />
+          <ScalarProperty Name="EmpMotBaj" ColumnName="EmpMotBaj" />
+          <ScalarProperty Name="EmpNSSAlt" ColumnName="EmpNSSAlt" />
+          <ScalarProperty Name="EmpNSS" ColumnName="EmpNSS" />
+          <ScalarProperty Name="EmpTipSan" ColumnName="EmpTipSan" />
+          <ScalarProperty Name="EmpAle" ColumnName="EmpAle" />
+          <ScalarProperty Name="EmpFchNac" ColumnName="EmpFchNac" />
+          <ScalarProperty Name="CiuCod" ColumnName="CiuCod" />
+          <ScalarProperty Name="EmpEstCiv" ColumnName="EmpEstCiv" />
+          <ScalarProperty Name="EmpDom" ColumnName="EmpDom" />
+          <ScalarProperty Name="EmpNoExt" ColumnName="EmpNoExt" />
+          <ScalarProperty Name="EmpNoInt" ColumnName="EmpNoInt" />
+          <ScalarProperty Name="EmpCol" ColumnName="EmpCol" />
+          <ScalarProperty Name="EmprCP" ColumnName="EmprCP" />
+          <ScalarProperty Name="EmpCiuCod" ColumnName="EmpCiuCod" />
+          <ScalarProperty Name="EmpSex" ColumnName="EmpSex" />
+          <ScalarProperty Name="EmpRFCHom" ColumnName="EmpRFCHom" />
+          <ScalarProperty Name="EmpCurHom" ColumnName="EmpCurHom" />
+          <ScalarProperty Name="BanCod" ColumnName="BanCod" />
+          <ScalarProperty Name="EmpNumTar" ColumnName="EmpNumTar" />
+          <ScalarProperty Name="EmpCtaBan" ColumnName="EmpCtaBan" />
+          <ScalarProperty Name="EmpCLABE" ColumnName="EmpCLABE" />
+          <ScalarProperty Name="EmBen" ColumnName="EmBen" />
+          <ScalarProperty Name="EmpTelCas" ColumnName="EmpTelCas" />
+          <ScalarProperty Name="EmpTelCel" ColumnName="EmpTelCel" />
+          <ScalarProperty Name="EmpTalBot" ColumnName="EmpTalBot" />
+          <ScalarProperty Name="EmpTalOve" ColumnName="EmpTalOve" />
+          <ScalarProperty Name="EmpTalCam" ColumnName="EmpTalCam" />
+          <ScalarProperty Name="EmpCorEle" ColumnName="EmpCorEle" />
+          <ScalarProperty Name="EmpGra" ColumnName="EmpGra" />
+          <ScalarProperty Name="EmpTit" ColumnName="EmpTit" />
+          <ScalarProperty Name="EmpCed" ColumnName="EmpCed" />
+          <ScalarProperty Name="EmpRefEmeNom" ColumnName="EmpRefEmeNom" />
+          <ScalarProperty Name="EmpRefEmeTel" ColumnName="EmpRefEmeTel" />
+          <ScalarProperty Name="EmpCreInf" ColumnName="EmpCreInf" />
+          <ScalarProperty Name="EmpCreDat" ColumnName="EmpCreDat" />
+          <ScalarProperty Name="EmpFchCre" ColumnName="EmpFchCre" />
+          <ScalarProperty Name="EmpUsuCod" ColumnName="EmpUsuCod" />
+          <ScalarProperty Name="EmpFchMod" ColumnName="EmpFchMod" />
+          <ScalarProperty Name="EmpUsuCodMod" ColumnName="EmpUsuCodMod" />
+          <ScalarProperty Name="EmpAut" ColumnName="EmpAut" />
+          <ScalarProperty Name="EmpSalDia" ColumnName="EmpSalDia" />
+          <ScalarProperty Name="EmpSalDiaInt" ColumnName="EmpSalDiaInt" />
+          <ScalarProperty Name="EmpDepCod" ColumnName="EmpDepCod" />
+          <ScalarProperty Name="EmpComCodNom" ColumnName="EmpComCodNom" />
+          <ScalarProperty Name="EmpIFE" ColumnName="EmpIFE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOSFAMILIAs">
+      <EntityTypeMapping TypeName="Model.EMPLEADOSFAMILIA">
+        <MappingFragment StoreEntitySet="EMPLEADOSFAMILIA">
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="PerFamCod" ColumnName="PerFamCod" />
+          <ScalarProperty Name="PerFamSex" ColumnName="PerFamSex" />
+          <ScalarProperty Name="PerFamNom" ColumnName="PerFamNom" />
+          <ScalarProperty Name="PerFamFchNac" ColumnName="PerFamFchNac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENVIARCORREOS">
+      <EntityTypeMapping TypeName="Model.ENVIARCORREO">
+        <MappingFragment StoreEntitySet="ENVIARCORREOS">
+          <ScalarProperty Name="EnvCod" ColumnName="EnvCod" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTADOes">
+      <EntityTypeMapping TypeName="Model.ESTADO">
+        <MappingFragment StoreEntitySet="ESTADO">
+          <ScalarProperty Name="EstaCod" ColumnName="EstaCod" />
+          <ScalarProperty Name="EstaNom" ColumnName="EstaNom" />
+          <ScalarProperty Name="EstaFchCre" ColumnName="EstaFchCre" />
+          <ScalarProperty Name="EstaUsuCodCre" ColumnName="EstaUsuCodCre" />
+          <ScalarProperty Name="EstaFchMod" ColumnName="EstaFchMod" />
+          <ScalarProperty Name="EstaUsuCodMod" ColumnName="EstaUsuCodMod" />
+          <ScalarProperty Name="EstaAbr" ColumnName="EstaAbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTATUS">
+      <EntityTypeMapping TypeName="Model.ESTATU">
+        <MappingFragment StoreEntitySet="ESTATUS">
+          <ScalarProperty Name="EstCod" ColumnName="EstCod" />
+          <ScalarProperty Name="EstDsc" ColumnName="EstDsc" />
+          <ScalarProperty Name="EstFchCre" ColumnName="EstFchCre" />
+          <ScalarProperty Name="EstUsuCodCre" ColumnName="EstUsuCodCre" />
+          <ScalarProperty Name="EstFchMod" ColumnName="EstFchMod" />
+          <ScalarProperty Name="EstUsuCodMod" ColumnName="EstUsuCodMod" />
+          <ScalarProperty Name="EstMod" ColumnName="EstMod" />
+          <ScalarProperty Name="EstConCod" ColumnName="EstConCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTIMACIONs">
+      <EntityTypeMapping TypeName="Model.ESTIMACION">
+        <MappingFragment StoreEntitySet="ESTIMACION">
+          <ScalarProperty Name="EstiCod" ColumnName="EstiCod" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="EstiPedCod" ColumnName="EstiPedCod" />
+          <ScalarProperty Name="EstFol" ColumnName="EstFol" />
+          <ScalarProperty Name="EstiTip" ColumnName="EstiTip" />
+          <ScalarProperty Name="EstiCenGest" ColumnName="EstiCenGest" />
+          <ScalarProperty Name="EstiCenCost" ColumnName="EstiCenCost" />
+          <ScalarProperty Name="EstiCenBen" ColumnName="EstiCenBen" />
+          <ScalarProperty Name="EstiRes" ColumnName="EstiRes" />
+          <ScalarProperty Name="EstiAvaFis" ColumnName="EstiAvaFis" />
+          <ScalarProperty Name="EstiProp" ColumnName="EstiProp" />
+          <ScalarProperty Name="EstiFon" ColumnName="EstiFon" />
+          <ScalarProperty Name="EstiPosFin" ColumnName="EstiPosFin" />
+          <ScalarProperty Name="EstiPos" ColumnName="EstiPos" />
+          <ScalarProperty Name="EstiAvaFin" ColumnName="EstiAvaFin" />
+          <ScalarProperty Name="EstiEPep" ColumnName="EstiEPep" />
+          <ScalarProperty Name="EstiCtaMay" ColumnName="EstiCtaMay" />
+          <ScalarProperty Name="EstiEmpCodRev" ColumnName="EstiEmpCodRev" />
+          <ScalarProperty Name="EstiEmpComCodRev" ColumnName="EstiEmpComCodRev" />
+          <ScalarProperty Name="EstiEmpCodAut" ColumnName="EstiEmpCodAut" />
+          <ScalarProperty Name="EstiEmpComCodAut" ColumnName="EstiEmpComCodAut" />
+          <ScalarProperty Name="EstiEmpCodEsti" ColumnName="EstiEmpCodEsti" />
+          <ScalarProperty Name="EstiEmpComCodEsti" ColumnName="EstiEmpComCodEsti" />
+          <ScalarProperty Name="EstiPueCodEsti" ColumnName="EstiPueCodEsti" />
+          <ScalarProperty Name="EstiEstCod" ColumnName="EstiEstCod" />
+          <ScalarProperty Name="EstiFchCre" ColumnName="EstiFchCre" />
+          <ScalarProperty Name="EstiFolReg" ColumnName="EstiFolReg" />
+          <ScalarProperty Name="EstiFchEst" ColumnName="EstiFchEst" />
+          <ScalarProperty Name="EstiFacFol" ColumnName="EstiFacFol" />
+          <ScalarProperty Name="EstiFchFac" ColumnName="EstiFchFac" />
+          <ScalarProperty Name="EstiFchIni" ColumnName="EstiFchIni" />
+          <ScalarProperty Name="EstiFchTer" ColumnName="EstiFchTer" />
+          <ScalarProperty Name="EstiNumOrdSer" ColumnName="EstiNumOrdSer" />
+          <ScalarProperty Name="EstiPedSAP" ColumnName="EstiPedSAP" />
+          <ScalarProperty Name="EstiSolGen" ColumnName="EstiSolGen" />
+          <ScalarProperty Name="EstiCopNum" ColumnName="EstiCopNum" />
+          <ScalarProperty Name="EstiRaf" ColumnName="EstiRaf" />
+          <ScalarProperty Name="EstFolOch" ColumnName="EstFolOch" />
+          <ScalarProperty Name="EstiNotCre" ColumnName="EstiNotCre" />
+          <ScalarProperty Name="EstiSop" ColumnName="EstiSop" />
+          <ScalarProperty Name="EstiSopEst" ColumnName="EstiSopEst" />
+          <ScalarProperty Name="EstiVen" ColumnName="EstiVen" />
+          <ScalarProperty Name="EstiHojEnt" ColumnName="EstiHojEnt" />
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="EstiPueCodRev" ColumnName="EstiPueCodRev" />
+          <ScalarProperty Name="EstiPueCodAut" ColumnName="EstiPueCodAut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTIMACIONDETALLEs">
+      <EntityTypeMapping TypeName="Model.ESTIMACIONDETALLE">
+        <MappingFragment StoreEntitySet="ESTIMACIONDETALLE">
+          <ScalarProperty Name="EstiCod" ColumnName="EstiCod" />
+          <ScalarProperty Name="EstiDProCod" ColumnName="EstiDProCod" />
+          <ScalarProperty Name="EstiDEst" ColumnName="EstiDEst" />
+          <ScalarProperty Name="EstiDAcu" ColumnName="EstiDAcu" />
+          <ScalarProperty Name="EstiDCos" ColumnName="EstiDCos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVIDENCIAS">
+      <EntityTypeMapping TypeName="Model.EVIDENCIA">
+        <MappingFragment StoreEntitySet="EVIDENCIAS">
+          <ScalarProperty Name="EviCod" ColumnName="EviCod" />
+          <ScalarProperty Name="EviConCod" ColumnName="EviConCod" />
+          <ScalarProperty Name="EviAlmCod" ColumnName="EviAlmCod" />
+          <ScalarProperty Name="EviFch" ColumnName="EviFch" />
+          <ScalarProperty Name="EviFol" ColumnName="EviFol" />
+          <ScalarProperty Name="EviEstCod" ColumnName="EviEstCod" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="EviAutEmpCod" ColumnName="EviAutEmpCod" />
+          <ScalarProperty Name="EviAutEmpComCod" ColumnName="EviAutEmpComCod" />
+          <ScalarProperty Name="EviTbx1EmpCod" ColumnName="EviTbx1EmpCod" />
+          <ScalarProperty Name="EviTbx1EmpComCod" ColumnName="EviTbx1EmpComCod" />
+          <ScalarProperty Name="EviTbx2EmpCod" ColumnName="EviTbx2EmpCod" />
+          <ScalarProperty Name="EviTbx2EmpComCod" ColumnName="EviTbx2EmpComCod" />
+          <ScalarProperty Name="EviTur" ColumnName="EviTur" />
+          <ScalarProperty Name="EviUsuCodCre" ColumnName="EviUsuCodCre" />
+          <ScalarProperty Name="EviFchCre" ColumnName="EviFchCre" />
+          <ScalarProperty Name="EviUsuCodMod" ColumnName="EviUsuCodMod" />
+          <ScalarProperty Name="EviFchMod" ColumnName="EviFchMod" />
+          <ScalarProperty Name="EviArc" ColumnName="EviArc" />
+          <ScalarProperty Name="EviArcTip" ColumnName="EviArcTip" />
+          <ScalarProperty Name="EviArcNom" ColumnName="EviArcNom" />
+          <ScalarProperty Name="EviEst" ColumnName="EviEst" />
+          <ScalarProperty Name="EstiCod" ColumnName="EstiCod" />
+          <ScalarProperty Name="EviNoFacEst" ColumnName="EviNoFacEst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAMILIAS">
+      <EntityTypeMapping TypeName="Model.FAMILIA">
+        <MappingFragment StoreEntitySet="FAMILIAS">
+          <ScalarProperty Name="FamCod" ColumnName="FamCod" />
+          <ScalarProperty Name="FamDsc" ColumnName="FamDsc" />
+          <ScalarProperty Name="FamAbr" ColumnName="FamAbr" />
+          <ScalarProperty Name="FamLin" ColumnName="FamLin" />
+          <ScalarProperty Name="FamConCod" ColumnName="FamConCod" />
+          <ScalarProperty Name="FamFchCre" ColumnName="FamFchCre" />
+          <ScalarProperty Name="FamUsuCodCre" ColumnName="FamUsuCodCre" />
+          <ScalarProperty Name="FamFchMod" ColumnName="FamFchMod" />
+          <ScalarProperty Name="FamUsuCodMod" ColumnName="FamUsuCodMod" />
+          <ScalarProperty Name="FamPorDep" ColumnName="FamPorDep" />
+          <ScalarProperty Name="FamCta" ColumnName="FamCta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAMILIASSUBFAMILIAs">
+      <EntityTypeMapping TypeName="Model.FAMILIASSUBFAMILIA">
+        <MappingFragment StoreEntitySet="FAMILIASSUBFAMILIA">
+          <ScalarProperty Name="FamCod" ColumnName="FamCod" />
+          <ScalarProperty Name="SFaCod" ColumnName="SFaCod" />
+          <ScalarProperty Name="SFaDsc" ColumnName="SFaDsc" />
+          <ScalarProperty Name="SfaAbr" ColumnName="SfaAbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FINIQUITOS">
+      <EntityTypeMapping TypeName="Model.FINIQUITO">
+        <MappingFragment StoreEntitySet="FINIQUITOS">
+          <ScalarProperty Name="FinCod" ColumnName="FinCod" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="FinFch" ColumnName="FinFch" />
+          <ScalarProperty Name="FinArc" ColumnName="FinArc" />
+          <ScalarProperty Name="FinArcTip" ColumnName="FinArcTip" />
+          <ScalarProperty Name="FinArcNom" ColumnName="FinArcNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GASOLINAs">
+      <EntityTypeMapping TypeName="Model.GASOLINA">
+        <MappingFragment StoreEntitySet="GASOLINA">
+          <ScalarProperty Name="GasCod" ColumnName="GasCod" />
+          <ScalarProperty Name="GasEmpCod" ColumnName="GasEmpCod" />
+          <ScalarProperty Name="GasFch" ColumnName="GasFch" />
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="GasKmAct" ColumnName="GasKmAct" />
+          <ScalarProperty Name="GasKmAnt" ColumnName="GasKmAnt" />
+          <ScalarProperty Name="GasPreLt" ColumnName="GasPreLt" />
+          <ScalarProperty Name="GasLts" ColumnName="GasLts" />
+          <ScalarProperty Name="GasEmpComCod" ColumnName="GasEmpComCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="GasArc" ColumnName="GasArc" />
+          <ScalarProperty Name="GasArcNom" ColumnName="GasArcNom" />
+          <ScalarProperty Name="GasArcTip" ColumnName="GasArcTip" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GERENCIAS">
+      <EntityTypeMapping TypeName="Model.GERENCIA">
+        <MappingFragment StoreEntitySet="GERENCIAS">
+          <ScalarProperty Name="GerCod" ColumnName="GerCod" />
+          <ScalarProperty Name="LocCod" ColumnName="LocCod" />
+          <ScalarProperty Name="GerFchCre" ColumnName="GerFchCre" />
+          <ScalarProperty Name="GerAbr" ColumnName="GerAbr" />
+          <ScalarProperty Name="GerDsc" ColumnName="GerDsc" />
+          <ScalarProperty Name="SubdCod" ColumnName="SubdCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUARDIAS">
+      <EntityTypeMapping TypeName="Model.GUARDIA">
+        <MappingFragment StoreEntitySet="GUARDIAS">
+          <ScalarProperty Name="GuaCod" ColumnName="GuaCod" />
+          <ScalarProperty Name="GuaDia" ColumnName="GuaDia" />
+          <ScalarProperty Name="GuaEmpCod" ColumnName="GuaEmpCod" />
+          <ScalarProperty Name="GuaEmpComCod" ColumnName="GuaEmpComCod" />
+          <ScalarProperty Name="GuaUsuCodCre" ColumnName="GuaUsuCodCre" />
+          <ScalarProperty Name="GuaFchCre" ColumnName="GuaFchCre" />
+          <ScalarProperty Name="GuaUsuMod" ColumnName="GuaUsuMod" />
+          <ScalarProperty Name="GuaFchMod" ColumnName="GuaFchMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUARDIASUBICACIONs">
+      <EntityTypeMapping TypeName="Model.GUARDIASUBICACION">
+        <MappingFragment StoreEntitySet="GUARDIASUBICACION">
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="GubFch" ColumnName="GubFch" />
+          <ScalarProperty Name="AcoCod" ColumnName="AcoCod" />
+          <ScalarProperty Name="GubUsuCodCre" ColumnName="GubUsuCodCre" />
+          <ScalarProperty Name="GubFchCre" ColumnName="GubFchCre" />
+          <ScalarProperty Name="GubUsuCodMod" ColumnName="GubUsuCodMod" />
+          <ScalarProperty Name="GubFchMod" ColumnName="GubFchMod" />
+          <ScalarProperty Name="GubDia" ColumnName="GubDia" />
+          <ScalarProperty Name="GubEqu" ColumnName="GubEqu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INCIDENCIAs">
+      <EntityTypeMapping TypeName="Model.INCIDENCIA">
+        <MappingFragment StoreEntitySet="INCIDENCIA">
+          <ScalarProperty Name="IncCod" ColumnName="IncCod" />
+          <ScalarProperty Name="IncAbr" ColumnName="IncAbr" />
+          <ScalarProperty Name="IncDsc" ColumnName="IncDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTARIOs">
+      <EntityTypeMapping TypeName="Model.INVENTARIO">
+        <MappingFragment StoreEntitySet="INVENTARIO">
+          <ScalarProperty Name="InvCod" ColumnName="InvCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="InvFch" ColumnName="InvFch" />
+          <ScalarProperty Name="SprCod" ColumnName="SprCod" />
+          <ScalarProperty Name="InvConCod" ColumnName="InvConCod" />
+          <ScalarProperty Name="InvSalAju" ColumnName="InvSalAju" />
+          <ScalarProperty Name="InvEnt" ColumnName="InvEnt" />
+          <ScalarProperty Name="InvEntAju" ColumnName="InvEntAju" />
+          <ScalarProperty Name="InvVen" ColumnName="InvVen" />
+          <ScalarProperty Name="InvDan" ColumnName="InvDan" />
+          <ScalarProperty Name="InvPer" ColumnName="InvPer" />
+          <ScalarProperty Name="InvTra" ColumnName="InvTra" />
+          <ScalarProperty Name="InvTraRec" ColumnName="InvTraRec" />
+          <ScalarProperty Name="InvTrs" ColumnName="InvTrs" />
+          <ScalarProperty Name="InvPre" ColumnName="InvPre" />
+          <ScalarProperty Name="InvCon" ColumnName="InvCon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVENTARIOTEMPs">
+      <EntityTypeMapping TypeName="Model.INVENTARIOTEMP">
+        <MappingFragment StoreEntitySet="INVENTARIOTEMP">
+          <ScalarProperty Name="InvCod" ColumnName="InvCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="InvFch" ColumnName="InvFch" />
+          <ScalarProperty Name="SprCod" ColumnName="SprCod" />
+          <ScalarProperty Name="InvConCod" ColumnName="InvConCod" />
+          <ScalarProperty Name="InvSalAju" ColumnName="InvSalAju" />
+          <ScalarProperty Name="InvEnt" ColumnName="InvEnt" />
+          <ScalarProperty Name="InvEntAju" ColumnName="InvEntAju" />
+          <ScalarProperty Name="InvVen" ColumnName="InvVen" />
+          <ScalarProperty Name="InvDan" ColumnName="InvDan" />
+          <ScalarProperty Name="InvPer" ColumnName="InvPer" />
+          <ScalarProperty Name="InvTra" ColumnName="InvTra" />
+          <ScalarProperty Name="InvTraRec" ColumnName="InvTraRec" />
+          <ScalarProperty Name="InvTrs" ColumnName="InvTrs" />
+          <ScalarProperty Name="InvPre" ColumnName="InvPre" />
+          <ScalarProperty Name="InvCon" ColumnName="InvCon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICENCIAS">
+      <EntityTypeMapping TypeName="Model.LICENCIA">
+        <MappingFragment StoreEntitySet="LICENCIAS">
+          <ScalarProperty Name="LicCod" ColumnName="LicCod" />
+          <ScalarProperty Name="PerVigLic" ColumnName="PerVigLic" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="PerConCod" ColumnName="PerConCod" />
+          <ScalarProperty Name="PerTipLic" ColumnName="PerTipLic" />
+          <ScalarProperty Name="PerNoLic" ColumnName="PerNoLic" />
+          <ScalarProperty Name="LicEstaCod" ColumnName="LicEstaCod" />
+          <ScalarProperty Name="LicTip" ColumnName="LicTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCALIZACIONES">
+      <EntityTypeMapping TypeName="Model.LOCALIZACIONE">
+        <MappingFragment StoreEntitySet="LOCALIZACIONES">
+          <ScalarProperty Name="LocCod" ColumnName="LocCod" />
+          <ScalarProperty Name="LocNom" ColumnName="LocNom" />
+          <ScalarProperty Name="LocAbr" ColumnName="LocAbr" />
+          <ScalarProperty Name="LocLocCod" ColumnName="LocLocCod" />
+          <ScalarProperty Name="LocConCod" ColumnName="LocConCod" />
+          <ScalarProperty Name="LocFchCre" ColumnName="LocFchCre" />
+          <ScalarProperty Name="LocUsuCodCre" ColumnName="LocUsuCodCre" />
+          <ScalarProperty Name="LocFchMod" ColumnName="LocFchMod" />
+          <ScalarProperty Name="LocUsuCodMod" ColumnName="LocUsuCodMod" />
+          <ScalarProperty Name="LocTip" ColumnName="LocTip" />
+          <ScalarProperty Name="ActiLocCod" ColumnName="ActiLocCod" />
+          <ScalarProperty Name="LocDim" ColumnName="LocDim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGs">
+      <EntityTypeMapping TypeName="Model.LOG">
+        <MappingFragment StoreEntitySet="LOG">
+          <ScalarProperty Name="LogCod" ColumnName="LogCod" />
+          <ScalarProperty Name="LogConCod" ColumnName="LogConCod" />
+          <ScalarProperty Name="LogAlmCod" ColumnName="LogAlmCod" />
+          <ScalarProperty Name="LogUsuCod" ColumnName="LogUsuCod" />
+          <ScalarProperty Name="LogFecIni" ColumnName="LogFecIni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logers">
+      <EntityTypeMapping TypeName="Model.Loger">
+        <MappingFragment StoreEntitySet="Logers">
+          <ScalarProperty Name="LogeCod" ColumnName="LogeCod" />
+          <ScalarProperty Name="LogeFch" ColumnName="LogeFch" />
+          <ScalarProperty Name="LogeUsuCod" ColumnName="LogeUsuCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogersDetalles">
+      <EntityTypeMapping TypeName="Model.LogersDetalle">
+        <MappingFragment StoreEntitySet="LogersDetalle">
+          <ScalarProperty Name="LogeCod" ColumnName="LogeCod" />
+          <ScalarProperty Name="LogDHor" ColumnName="LogDHor" />
+          <ScalarProperty Name="LogDMov" ColumnName="LogDMov" />
+          <ScalarProperty Name="LogDApl" ColumnName="LogDApl" />
+          <ScalarProperty Name="LogDTip" ColumnName="LogDTip" />
+          <ScalarProperty Name="LogDAlmCod" ColumnName="LogDAlmCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MANTTOEVIDENCIAs">
+      <EntityTypeMapping TypeName="Model.MANTTOEVIDENCIA">
+        <MappingFragment StoreEntitySet="MANTTOEVIDENCIA">
+          <ScalarProperty Name="EmaCod" ColumnName="EmaCod" />
+          <ScalarProperty Name="EmaFol" ColumnName="EmaFol" />
+          <ScalarProperty Name="EmaFch" ColumnName="EmaFch" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="EmaObs" ColumnName="EmaObs" />
+          <ScalarProperty Name="EmaCom" ColumnName="EmaCom" />
+          <ScalarProperty Name="EmaAlmCod" ColumnName="EmaAlmCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MANTTOEVIDENCIADETALLEs">
+      <EntityTypeMapping TypeName="Model.MANTTOEVIDENCIADETALLE">
+        <MappingFragment StoreEntitySet="MANTTOEVIDENCIADETALLE">
+          <ScalarProperty Name="EmaCod" ColumnName="EmaCod" />
+          <ScalarProperty Name="EmaFFamCod" ColumnName="EmaFFamCod" />
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="EmaFFot" ColumnName="EmaFFot" />
+          <ScalarProperty Name="EmaFFotTip" ColumnName="EmaFFotTip" />
+          <ScalarProperty Name="EmaFFotNom" ColumnName="EmaFFotNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MANTTOPROGRAMADAS">
+      <EntityTypeMapping TypeName="Model.MANTTOPROGRAMADA">
+        <MappingFragment StoreEntitySet="MANTTOPROGRAMADAS">
+          <ScalarProperty Name="MproCod" ColumnName="MproCod" />
+          <ScalarProperty Name="MproFch" ColumnName="MproFch" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="MproAte" ColumnName="MproAte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MANTTOREFs">
+      <EntityTypeMapping TypeName="Model.MANTTOREF">
+        <MappingFragment StoreEntitySet="MANTTOREF">
+          <ScalarProperty Name="MreCod" ColumnName="MreCod" />
+          <ScalarProperty Name="NotCod" ColumnName="NotCod" />
+          <ScalarProperty Name="MreProCod" ColumnName="MreProCod" />
+          <ScalarProperty Name="MreCos" ColumnName="MreCos" />
+          <ScalarProperty Name="MreCan" ColumnName="MreCan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MARCAs">
+      <EntityTypeMapping TypeName="Model.MARCA">
+        <MappingFragment StoreEntitySet="MARCA">
+          <ScalarProperty Name="MarCod" ColumnName="MarCod" />
+          <ScalarProperty Name="MarDsc" ColumnName="MarDsc" />
+          <ScalarProperty Name="MarFchCre" ColumnName="MarFchCre" />
+          <ScalarProperty Name="MarUsuCodCre" ColumnName="MarUsuCodCre" />
+          <ScalarProperty Name="MarFchMod" ColumnName="MarFchMod" />
+          <ScalarProperty Name="MarUsuCodMod" ColumnName="MarUsuCodMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDIDAS">
+      <EntityTypeMapping TypeName="Model.MEDIDA">
+        <MappingFragment StoreEntitySet="MEDIDAS">
+          <ScalarProperty Name="UniCod" ColumnName="UniCod" />
+          <ScalarProperty Name="UniDsc" ColumnName="UniDsc" />
+          <ScalarProperty Name="UniAbr" ColumnName="UniAbr" />
+          <ScalarProperty Name="UniFchCre" ColumnName="UniFchCre" />
+          <ScalarProperty Name="UniUsuCodCre" ColumnName="UniUsuCodCre" />
+          <ScalarProperty Name="UniFchMod" ColumnName="UniFchMod" />
+          <ScalarProperty Name="UniUsuCodMod" ColumnName="UniUsuCodMod" />
+          <ScalarProperty Name="UniRed" ColumnName="UniRed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENUS">
+      <EntityTypeMapping TypeName="Model.MENU">
+        <MappingFragment StoreEntitySet="MENUS">
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="MenuDescription" ColumnName="MenuDescription" />
+          <ScalarProperty Name="MenuFatherId" ColumnName="MenuFatherId" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
+          <ScalarProperty Name="MenuTarget" ColumnName="MenuTarget" />
+          <ScalarProperty Name="MenuOrd" ColumnName="MenuOrd" />
+          <ScalarProperty Name="MenuUrl4" ColumnName="MenuUrl4" />
+          <ScalarProperty Name="MenuUrl2" ColumnName="MenuUrl2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIMIENTOS">
+      <EntityTypeMapping TypeName="Model.MOVIMIENTO">
+        <MappingFragment StoreEntitySet="MOVIMIENTOS">
+          <ScalarProperty Name="MovCon" ColumnName="MovCon" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="MovTipDoc" ColumnName="MovTipDoc" />
+          <ScalarProperty Name="MovFch" ColumnName="MovFch" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="MovCod" ColumnName="MovCod" />
+          <ScalarProperty Name="MovFol" ColumnName="MovFol" />
+          <ScalarProperty Name="MovHr" ColumnName="MovHr" />
+          <ScalarProperty Name="MovFac" ColumnName="MovFac" />
+          <ScalarProperty Name="MovObs" ColumnName="MovObs" />
+          <ScalarProperty Name="POP10100PONUMBER2" ColumnName="POP10100PONUMBER2" />
+          <ScalarProperty Name="MovEmpCod" ColumnName="MovEmpCod" />
+          <ScalarProperty Name="MovEmpComCod" ColumnName="MovEmpComCod" />
+          <ScalarProperty Name="MovEmpPueCod" ColumnName="MovEmpPueCod" />
+          <ScalarProperty Name="MovCliEmpCod" ColumnName="MovCliEmpCod" />
+          <ScalarProperty Name="MovCliEmpComCod" ColumnName="MovCliEmpComCod" />
+          <ScalarProperty Name="MovCliEmpPueCod" ColumnName="MovCliEmpPueCod" />
+          <ScalarProperty Name="MovFchCre" ColumnName="MovFchCre" />
+          <ScalarProperty Name="MovUsuCodCre" ColumnName="MovUsuCodCre" />
+          <ScalarProperty Name="MovFchMod" ColumnName="MovFchMod" />
+          <ScalarProperty Name="MovUsuCodMod" ColumnName="MovUsuCodMod" />
+          <ScalarProperty Name="EstCod" ColumnName="EstCod" />
+          <ScalarProperty Name="MovAlmCod" ColumnName="MovAlmCod" />
+          <ScalarProperty Name="MovMovCon" ColumnName="MovMovCon" />
+          <ScalarProperty Name="MovMovConCod" ColumnName="MovMovConCod" />
+          <ScalarProperty Name="MovMovAlmCod" ColumnName="MovMovAlmCod" />
+          <ScalarProperty Name="MovMovTipDoc" ColumnName="MovMovTipDoc" />
+          <ScalarProperty Name="MovMovFch" ColumnName="MovMovFch" />
+          <ScalarProperty Name="MovVer" ColumnName="MovVer" />
+          <ScalarProperty Name="MovEsp" ColumnName="MovEsp" />
+          <ScalarProperty Name="EstiCod" ColumnName="EstiCod" />
+          <ScalarProperty Name="MovMovTprCod" ColumnName="MovMovTprCod" />
+          <ScalarProperty Name="MovFchMer" ColumnName="MovFchMer" />
+          <ScalarProperty Name="MovExp" ColumnName="MovExp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIMIENTOSDETALLEs">
+      <EntityTypeMapping TypeName="Model.MOVIMIENTOSDETALLE">
+        <MappingFragment StoreEntitySet="MOVIMIENTOSDETALLE">
+          <ScalarProperty Name="MovCon" ColumnName="MovCon" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="MovTipDoc" ColumnName="MovTipDoc" />
+          <ScalarProperty Name="MovFch" ColumnName="MovFch" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="MovDProCod" ColumnName="MovDProCod" />
+          <ScalarProperty Name="MovDNumSer" ColumnName="MovDNumSer" />
+          <ScalarProperty Name="MovdOrd" ColumnName="MovdOrd" />
+          <ScalarProperty Name="MovdVNDITNUM" ColumnName="MovdVNDITNUM" />
+          <ScalarProperty Name="MovdCan" ColumnName="MovdCan" />
+          <ScalarProperty Name="MovDCanCon" ColumnName="MovDCanCon" />
+          <ScalarProperty Name="MovDPer" ColumnName="MovDPer" />
+          <ScalarProperty Name="MovDDwg" ColumnName="MovDDwg" />
+          <ScalarProperty Name="MovdCos" ColumnName="MovdCos" />
+          <ScalarProperty Name="MovdTra" ColumnName="MovdTra" />
+          <ScalarProperty Name="MovdNotEnv" ColumnName="MovdNotEnv" />
+          <ScalarProperty Name="MovDTieUso" ColumnName="MovDTieUso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIMIENTOSDETALLESUBPDAs">
+      <EntityTypeMapping TypeName="Model.MOVIMIENTOSDETALLESUBPDA">
+        <MappingFragment StoreEntitySet="MOVIMIENTOSDETALLESUBPDA">
+          <ScalarProperty Name="MovCon" ColumnName="MovCon" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="MovTipDoc" ColumnName="MovTipDoc" />
+          <ScalarProperty Name="MovFch" ColumnName="MovFch" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="MovDProCod" ColumnName="MovDProCod" />
+          <ScalarProperty Name="SprCod" ColumnName="SprCod" />
+          <ScalarProperty Name="MovSCanOk" ColumnName="MovSCanOk" />
+          <ScalarProperty Name="MovSCanPer" ColumnName="MovSCanPer" />
+          <ScalarProperty Name="MovSCanDwg" ColumnName="MovSCanDwg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUNICIPIOS">
+      <EntityTypeMapping TypeName="Model.MUNICIPIO">
+        <MappingFragment StoreEntitySet="MUNICIPIOS">
+          <ScalarProperty Name="MunCod" ColumnName="MunCod" />
+          <ScalarProperty Name="MunDsc" ColumnName="MunDsc" />
+          <ScalarProperty Name="MunFchCre" ColumnName="MunFchCre" />
+          <ScalarProperty Name="MunUsuCod" ColumnName="MunUsuCod" />
+          <ScalarProperty Name="MunFchMod" ColumnName="MunFchMod" />
+          <ScalarProperty Name="MunUsuCodMod" ColumnName="MunUsuCodMod" />
+          <ScalarProperty Name="EstaCod" ColumnName="EstaCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOMINAs">
+      <EntityTypeMapping TypeName="Model.NOMINA">
+        <MappingFragment StoreEntitySet="NOMINA">
+          <ScalarProperty Name="NomCod" ColumnName="NomCod" />
+          <ScalarProperty Name="NomDsc" ColumnName="NomDsc" />
+          <ScalarProperty Name="NomFchIni" ColumnName="NomFchIni" />
+          <ScalarProperty Name="NomFchTer" ColumnName="NomFchTer" />
+          <ScalarProperty Name="NomCer" ColumnName="NomCer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOMINAEMPRESAs">
+      <EntityTypeMapping TypeName="Model.NOMINAEMPRESA">
+        <MappingFragment StoreEntitySet="NOMINAEMPRESA">
+          <ScalarProperty Name="NomCod" ColumnName="NomCod" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+          <ScalarProperty Name="NoeBon" ColumnName="NoeBon" />
+          <ScalarProperty Name="NoeSDR" ColumnName="NoeSDR" />
+          <ScalarProperty Name="NoeSD" ColumnName="NoeSD" />
+          <ScalarProperty Name="NoeSDI" ColumnName="NoeSDI" />
+          <ScalarProperty Name="NoeDiaQui" ColumnName="NoeDiaQui" />
+          <ScalarProperty Name="NoeSub" ColumnName="NoeSub" />
+          <ScalarProperty Name="NoePriVac" ColumnName="NoePriVac" />
+          <ScalarProperty Name="NoeCreInf" ColumnName="NoeCreInf" />
+          <ScalarProperty Name="NoeRes" ColumnName="NoeRes" />
+          <ScalarProperty Name="NoeCreFon" ColumnName="NoeCreFon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTAINFORMATIVAs">
+      <EntityTypeMapping TypeName="Model.NOTAINFORMATIVA">
+        <MappingFragment StoreEntitySet="NOTAINFORMATIVA">
+          <ScalarProperty Name="NotCod" ColumnName="NotCod" />
+          <ScalarProperty Name="NotConCod" ColumnName="NotConCod" />
+          <ScalarProperty Name="NotAlmCod" ColumnName="NotAlmCod" />
+          <ScalarProperty Name="NotFchSol" ColumnName="NotFchSol" />
+          <ScalarProperty Name="NotFchRec" ColumnName="NotFchRec" />
+          <ScalarProperty Name="NotTip" ColumnName="NotTip" />
+          <ScalarProperty Name="NotFol" ColumnName="NotFol" />
+          <ScalarProperty Name="NotFolNot" ColumnName="NotFolNot" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="NotSupEmpCod" ColumnName="NotSupEmpCod" />
+          <ScalarProperty Name="NotSupEmpComCod" ColumnName="NotSupEmpComCod" />
+          <ScalarProperty Name="NotAteEmpCod" ColumnName="NotAteEmpCod" />
+          <ScalarProperty Name="NotAteEmpComCod" ColumnName="NotAteEmpComCod" />
+          <ScalarProperty Name="NotFchNot" ColumnName="NotFchNot" />
+          <ScalarProperty Name="NotVal" ColumnName="NotVal" />
+          <ScalarProperty Name="NotEstCod" ColumnName="NotEstCod" />
+          <ScalarProperty Name="NotObs" ColumnName="NotObs" />
+          <ScalarProperty Name="NotMovCon" ColumnName="NotMovCon" />
+          <ScalarProperty Name="NotMovConCod" ColumnName="NotMovConCod" />
+          <ScalarProperty Name="NotMovAlmCod" ColumnName="NotMovAlmCod" />
+          <ScalarProperty Name="NotMovTipDoc" ColumnName="NotMovTipDoc" />
+          <ScalarProperty Name="NotMovTprCod" ColumnName="NotMovTprCod" />
+          <ScalarProperty Name="NotMovFch" ColumnName="NotMovFch" />
+          <ScalarProperty Name="NotVer" ColumnName="NotVer" />
+          <ScalarProperty Name="NotArcValPre" ColumnName="NotArcValPre" />
+          <ScalarProperty Name="NotArcValPreNom" ColumnName="NotArcValPreNom" />
+          <ScalarProperty Name="NotArcValPreTip" ColumnName="NotArcValPreTip" />
+          <ScalarProperty Name="NotArcValDev" ColumnName="NotArcValDev" />
+          <ScalarProperty Name="NotArcValDevNom" ColumnName="NotArcValDevNom" />
+          <ScalarProperty Name="NotArcValDevTip" ColumnName="NotArcValDevTip" />
+          <ScalarProperty Name="NotUsuCodCre" ColumnName="NotUsuCodCre" />
+          <ScalarProperty Name="NotFchCre" ColumnName="NotFchCre" />
+          <ScalarProperty Name="NotUsuCodMod" ColumnName="NotUsuCodMod" />
+          <ScalarProperty Name="NotFchMod" ColumnName="NotFchMod" />
+          <ScalarProperty Name="NotNot" ColumnName="NotNot" />
+          <ScalarProperty Name="NotMovFolTra" ColumnName="NotMovFolTra" />
+          <ScalarProperty Name="NotMovFolTraFch" ColumnName="NotMovFolTraFch" />
+          <ScalarProperty Name="NotMovFolTraMan" ColumnName="NotMovFolTraMan" />
+          <ScalarProperty Name="NotMovFolTraManFch" ColumnName="NotMovFolTraManFch" />
+          <ScalarProperty Name="NotMovFolSolRef" ColumnName="NotMovFolSolRef" />
+          <ScalarProperty Name="NotMovFolSolRefFch" ColumnName="NotMovFolSolRefFch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTAINFORMATIVADETALLEs">
+      <EntityTypeMapping TypeName="Model.NOTAINFORMATIVADETALLE">
+        <MappingFragment StoreEntitySet="NOTAINFORMATIVADETALLE">
+          <ScalarProperty Name="NotCod" ColumnName="NotCod" />
+          <ScalarProperty Name="NoDProCod" ColumnName="NoDProCod" />
+          <ScalarProperty Name="NoDCan" ColumnName="NoDCan" />
+          <ScalarProperty Name="NoDArc" ColumnName="NoDArc" />
+          <ScalarProperty Name="NoDArcTip" ColumnName="NoDArcTip" />
+          <ScalarProperty Name="NoDArcNom" ColumnName="NoDArcNom" />
+          <ScalarProperty Name="NoDCauDan" ColumnName="NoDCauDan" />
+          <ScalarProperty Name="CauCod" ColumnName="CauCod" />
+          <ScalarProperty Name="NoDCauObs" ColumnName="NoDCauObs" />
+          <ScalarProperty Name="NoDDia" ColumnName="NoDDia" />
+          <ScalarProperty Name="NoDTipMan" ColumnName="NoDTipMan" />
+          <ScalarProperty Name="NoDOrdSusDes" ColumnName="NoDOrdSusDes" />
+          <ScalarProperty Name="NoDOrdLub" ColumnName="NoDOrdLub" />
+          <ScalarProperty Name="NoDOrdCal" ColumnName="NoDOrdCal" />
+          <ScalarProperty Name="NoDOrdRef" ColumnName="NoDOrdRef" />
+          <ScalarProperty Name="NodOrdSusDan" ColumnName="NodOrdSusDan" />
+          <ScalarProperty Name="NoDOrdRee" ColumnName="NoDOrdRee" />
+          <ScalarProperty Name="NoDOrdPru" ColumnName="NoDOrdPru" />
+          <ScalarProperty Name="NoDOrdAco" ColumnName="NoDOrdAco" />
+          <ScalarProperty Name="NoDDscMan" ColumnName="NoDDscMan" />
+          <ScalarProperty Name="NoDObsMan" ColumnName="NoDObsMan" />
+          <ScalarProperty Name="NoDEviMan" ColumnName="NoDEviMan" />
+          <ScalarProperty Name="NoDEviManNom" ColumnName="NoDEviManNom" />
+          <ScalarProperty Name="NoDEviManTip" ColumnName="NoDEviManTip" />
+          <ScalarProperty Name="NodUsuCodMan" ColumnName="NodUsuCodMan" />
+          <ScalarProperty Name="NoDFchMan" ColumnName="NoDFchMan" />
+          <ScalarProperty Name="NoDEstCod" ColumnName="NoDEstCod" />
+          <ScalarProperty Name="NoDFol" ColumnName="NoDFol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTAINFORMATIVADETALLESUBPDAs">
+      <EntityTypeMapping TypeName="Model.NOTAINFORMATIVADETALLESUBPDA">
+        <MappingFragment StoreEntitySet="NOTAINFORMATIVADETALLESUBPDA">
+          <ScalarProperty Name="NotCod" ColumnName="NotCod" />
+          <ScalarProperty Name="NoDProCod" ColumnName="NoDProCod" />
+          <ScalarProperty Name="SubSprCod" ColumnName="SubSprCod" />
+          <ScalarProperty Name="SubCan" ColumnName="SubCan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OCUPACIONCONTENEDORES">
+      <EntityTypeMapping TypeName="Model.OCUPACIONCONTENEDORE">
+        <MappingFragment StoreEntitySet="OCUPACIONCONTENEDORES">
+          <ScalarProperty Name="OcuCont" ColumnName="OcuCont" />
+          <ScalarProperty Name="OcuAlmCod" ColumnName="OcuAlmCod" />
+          <ScalarProperty Name="ContCod" ColumnName="ContCod" />
+          <ScalarProperty Name="OcuAct" ColumnName="OcuAct" />
+          <ScalarProperty Name="OcuFch" ColumnName="OcuFch" />
+          <ScalarProperty Name="OcuObsr" ColumnName="OcuObsr" />
+          <ScalarProperty Name="OcuOpe" ColumnName="OcuOpe" />
+          <ScalarProperty Name="OcuFchPro" ColumnName="OcuFchPro" />
+          <ScalarProperty Name="OcuUsuCod" ColumnName="OcuUsuCod" />
+          <ScalarProperty Name="OcuFchCre" ColumnName="OcuFchCre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERATIVOes">
+      <EntityTypeMapping TypeName="Model.OPERATIVO">
+        <MappingFragment StoreEntitySet="OPERATIVO">
+          <ScalarProperty Name="OpeCod" ColumnName="OpeCod" />
+          <ScalarProperty Name="OpeConCod" ColumnName="OpeConCod" />
+          <ScalarProperty Name="OpeFch" ColumnName="OpeFch" />
+          <ScalarProperty Name="OpeMsg" ColumnName="OpeMsg" />
+          <ScalarProperty Name="OpeEqu" ColumnName="OpeEqu" />
+          <ScalarProperty Name="OpeFchCre" ColumnName="OpeFchCre" />
+          <ScalarProperty Name="OpeFchHr" ColumnName="OpeFchHr" />
+          <ScalarProperty Name="OpeUsuCod" ColumnName="OpeUsuCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenServicios">
+      <EntityTypeMapping TypeName="Model.OrdenServicio">
+        <MappingFragment StoreEntitySet="OrdenServicio">
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="OrdSerFch" ColumnName="OrdSerFch" />
+          <ScalarProperty Name="OrdSerLocCodUO" ColumnName="OrdSerLocCodUO" />
+          <ScalarProperty Name="GerCod" ColumnName="GerCod" />
+          <ScalarProperty Name="OrdSerLocCod" ColumnName="OrdSerLocCod" />
+          <ScalarProperty Name="OrdSerEqu" ColumnName="OrdSerEqu" />
+          <ScalarProperty Name="OrdSerProPre" ColumnName="OrdSerProPre" />
+          <ScalarProperty Name="OrdSerElePep" ColumnName="OrdSerElePep" />
+          <ScalarProperty Name="OrdSerCenGes" ColumnName="OrdSerCenGes" />
+          <ScalarProperty Name="OrdSerCtaMay" ColumnName="OrdSerCtaMay" />
+          <ScalarProperty Name="OrdSerFchCre" ColumnName="OrdSerFchCre" />
+          <ScalarProperty Name="OrdSerUsuCod" ColumnName="OrdSerUsuCod" />
+          <ScalarProperty Name="OrdSerFchMod" ColumnName="OrdSerFchMod" />
+          <ScalarProperty Name="OrdSerUsuCodMod" ColumnName="OrdSerUsuCodMod" />
+          <ScalarProperty Name="OrdSerNot" ColumnName="OrdSerNot" />
+          <ScalarProperty Name="OrdSerArc" ColumnName="OrdSerArc" />
+          <ScalarProperty Name="OrdSerArcTip" ColumnName="OrdSerArcTip" />
+          <ScalarProperty Name="OrdSerArcNom" ColumnName="OrdSerArcNom" />
+          <ScalarProperty Name="OrdSerPedVta" ColumnName="OrdSerPedVta" />
+          <ScalarProperty Name="OrdSerLin" ColumnName="OrdSerLin" />
+          <ScalarProperty Name="OrdSerEstOch" ColumnName="OrdSerEstOch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenServicioDesgloses">
+      <EntityTypeMapping TypeName="Model.OrdenServicioDesglose">
+        <MappingFragment StoreEntitySet="OrdenServicioDesglose">
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="OrdSerGProCod" ColumnName="OrdSerGProCod" />
+          <ScalarProperty Name="OrdSerGCan" ColumnName="OrdSerGCan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenServicioMontoes">
+      <EntityTypeMapping TypeName="Model.OrdenServicioMonto">
+        <MappingFragment StoreEntitySet="OrdenServicioMonto">
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="ClaVtaCod" ColumnName="ClaVtaCod" />
+          <ScalarProperty Name="OrdSerMMon" ColumnName="OrdSerMMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenServicioRafs">
+      <EntityTypeMapping TypeName="Model.OrdenServicioRaf">
+        <MappingFragment StoreEntitySet="OrdenServicioRaf">
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="OrdSerFolRaf" ColumnName="OrdSerFolRaf" />
+          <ScalarProperty Name="OrdSerFchRaf" ColumnName="OrdSerFchRaf" />
+          <ScalarProperty Name="OrdSerRafMon" ColumnName="OrdSerRafMon" />
+          <ScalarProperty Name="OrdSerRafMonAct" ColumnName="OrdSerRafMonAct" />
+          <ScalarProperty Name="OrdSerRafArc" ColumnName="OrdSerRafArc" />
+          <ScalarProperty Name="OrdSerRafArcTip" ColumnName="OrdSerRafArcTip" />
+          <ScalarProperty Name="OrdSerRafArcNom" ColumnName="OrdSerRafArcNom" />
+          <ScalarProperty Name="OrdSerRafSup" ColumnName="OrdSerRafSup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenServicioRafEstatus">
+      <EntityTypeMapping TypeName="Model.OrdenServicioRafEstatu">
+        <MappingFragment StoreEntitySet="OrdenServicioRafEstatus">
+          <ScalarProperty Name="OrdSerFol" ColumnName="OrdSerFol" />
+          <ScalarProperty Name="OrdSerFolRaf" ColumnName="OrdSerFolRaf" />
+          <ScalarProperty Name="OrdSerEstCod" ColumnName="OrdSerEstCod" />
+          <ScalarProperty Name="OrdSerEstClaRaf" ColumnName="OrdSerEstClaRaf" />
+          <ScalarProperty Name="OrdSerEstFch" ColumnName="OrdSerEstFch" />
+          <ScalarProperty Name="OrdSerEstMon" ColumnName="OrdSerEstMon" />
+          <ScalarProperty Name="OrdSerEst" ColumnName="OrdSerEst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedidos">
+      <EntityTypeMapping TypeName="Model.Pedido">
+        <MappingFragment StoreEntitySet="Pedidos">
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="PedFol" ColumnName="PedFol" />
+          <ScalarProperty Name="PedFch" ColumnName="PedFch" />
+          <ScalarProperty Name="PedFchIni" ColumnName="PedFchIni" />
+          <ScalarProperty Name="PedFchTer" ColumnName="PedFchTer" />
+          <ScalarProperty Name="PedAlmCod" ColumnName="PedAlmCod" />
+          <ScalarProperty Name="PedTConCod" ColumnName="PedTConCod" />
+          <ScalarProperty Name="PedEdyCod" ColumnName="PedEdyCod" />
+          <ScalarProperty Name="PedEqu" ColumnName="PedEqu" />
+          <ScalarProperty Name="PedLocCod" ColumnName="PedLocCod" />
+          <ScalarProperty Name="PedSolEmpCod" ColumnName="PedSolEmpCod" />
+          <ScalarProperty Name="PedSolEmpComCod" ColumnName="PedSolEmpComCod" />
+          <ScalarProperty Name="PedAutEmpCod" ColumnName="PedAutEmpCod" />
+          <ScalarProperty Name="PedAutEmpComCod" ColumnName="PedAutEmpComCod" />
+          <ScalarProperty Name="PedTbxEmpCod" ColumnName="PedTbxEmpCod" />
+          <ScalarProperty Name="PedTbxEmpComCod" ColumnName="PedTbxEmpComCod" />
+          <ScalarProperty Name="PedUsuCodCre" ColumnName="PedUsuCodCre" />
+          <ScalarProperty Name="PedFchCre" ColumnName="PedFchCre" />
+          <ScalarProperty Name="PedUsuCodMod" ColumnName="PedUsuCodMod" />
+          <ScalarProperty Name="PedFchMod" ColumnName="PedFchMod" />
+          <ScalarProperty Name="PedBasCod" ColumnName="PedBasCod" />
+          <ScalarProperty Name="PedOrdSer" ColumnName="PedOrdSer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERFILES">
+      <EntityTypeMapping TypeName="Model.PERFILE">
+        <MappingFragment StoreEntitySet="PERFILES">
+          <ScalarProperty Name="PerCod" ColumnName="PerCod" />
+          <ScalarProperty Name="PerDsc" ColumnName="PerDsc" />
+          <ScalarProperty Name="PerMan" ColumnName="PerMan" />
+          <ScalarProperty Name="PerConCod" ColumnName="PerConCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERFILESAPLICATIVOes">
+      <EntityTypeMapping TypeName="Model.PERFILESAPLICATIVO">
+        <MappingFragment StoreEntitySet="PERFILESAPLICATIVO">
+          <ScalarProperty Name="PerCod" ColumnName="PerCod" />
+          <ScalarProperty Name="AplCod" ColumnName="AplCod" />
+          <ScalarProperty Name="AplDsc" ColumnName="AplDsc" />
+          <ScalarProperty Name="PerUpd" ColumnName="PerUpd" />
+          <ScalarProperty Name="PerDel" ColumnName="PerDel" />
+          <ScalarProperty Name="PerCon" ColumnName="PerCon" />
+          <ScalarProperty Name="PerIns" ColumnName="PerIns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISOSMENUs">
+      <EntityTypeMapping TypeName="Model.PERMISOSMENU">
+        <MappingFragment StoreEntitySet="PERMISOSMENU">
+          <ScalarProperty Name="PmeCod" ColumnName="PmeCod" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="UsuCod" ColumnName="UsuCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLITICAS">
+      <EntityTypeMapping TypeName="Model.POLITICA">
+        <MappingFragment StoreEntitySet="POLITICAS">
+          <ScalarProperty Name="PolCod" ColumnName="PolCod" />
+          <ScalarProperty Name="PueCod" ColumnName="PueCod" />
+          <ScalarProperty Name="PolComCod" ColumnName="PolComCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLITICASENTREGAs">
+      <EntityTypeMapping TypeName="Model.POLITICASENTREGA">
+        <MappingFragment StoreEntitySet="POLITICASENTREGA">
+          <ScalarProperty Name="PolCod" ColumnName="PolCod" />
+          <ScalarProperty Name="FamCod" ColumnName="FamCod" />
+          <ScalarProperty Name="SFaCod" ColumnName="SFaCod" />
+          <ScalarProperty Name="PolEppCan" ColumnName="PolEppCan" />
+          <ScalarProperty Name="PolEppVig" ColumnName="PolEppVig" />
+          <ScalarProperty Name="PolEppFch" ColumnName="PolEppFch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOS">
+      <EntityTypeMapping TypeName="Model.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTOS">
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="ProTprCod" ColumnName="ProTprCod" />
+          <ScalarProperty Name="ProConCod" ColumnName="ProConCod" />
+          <ScalarProperty Name="ProPda" ColumnName="ProPda" />
+          <ScalarProperty Name="ProPdaInt" ColumnName="ProPdaInt" />
+          <ScalarProperty Name="ProCodPro" ColumnName="ProCodPro" />
+          <ScalarProperty Name="ProDsc" ColumnName="ProDsc" />
+          <ScalarProperty Name="UniCod" ColumnName="UniCod" />
+          <ScalarProperty Name="MarCod" ColumnName="MarCod" />
+          <ScalarProperty Name="ProvCod" ColumnName="ProvCod" />
+          <ScalarProperty Name="FamCod" ColumnName="FamCod" />
+          <ScalarProperty Name="SFaCod" ColumnName="SFaCod" />
+          <ScalarProperty Name="ProMod" ColumnName="ProMod" />
+          <ScalarProperty Name="ProVis" ColumnName="ProVis" />
+          <ScalarProperty Name="ProNoSer" ColumnName="ProNoSer" />
+          <ScalarProperty Name="ProFot" ColumnName="ProFot" />
+          <ScalarProperty Name="ProFotNom" ColumnName="ProFotNom" />
+          <ScalarProperty Name="ProFotTip" ColumnName="ProFotTip" />
+          <ScalarProperty Name="ProLin" ColumnName="ProLin" />
+          <ScalarProperty Name="ProFchAlt" ColumnName="ProFchAlt" />
+          <ScalarProperty Name="ProUsuCodCre" ColumnName="ProUsuCodCre" />
+          <ScalarProperty Name="ProFchMod" ColumnName="ProFchMod" />
+          <ScalarProperty Name="ProUsuCodMod" ColumnName="ProUsuCodMod" />
+          <ScalarProperty Name="ProComMin" ColumnName="ProComMin" />
+          <ScalarProperty Name="ProPreUni" ColumnName="ProPreUni" />
+          <ScalarProperty Name="ProTipMon" ColumnName="ProTipMon" />
+          <ScalarProperty Name="UbiCod" ColumnName="UbiCod" />
+          <ScalarProperty Name="ProAcu" ColumnName="ProAcu" />
+          <ScalarProperty Name="ProRefProCod" ColumnName="ProRefProCod" />
+          <ScalarProperty Name="ProMan" ColumnName="ProMan" />
+          <ScalarProperty Name="ProCos" ColumnName="ProCos" />
+          <ScalarProperty Name="ProTal" ColumnName="ProTal" />
+          <ScalarProperty Name="ProComMax" ColumnName="ProComMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOSSUBPRODUCTOes">
+      <EntityTypeMapping TypeName="Model.PRODUCTOSSUBPRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTOSSUBPRODUCTO">
+          <ScalarProperty Name="ProCod" ColumnName="ProCod" />
+          <ScalarProperty Name="SprCod" ColumnName="SprCod" />
+          <ScalarProperty Name="SprDsc" ColumnName="SprDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOSUBICACIONs">
+      <EntityTypeMapping TypeName="Model.PRODUCTOSUBICACION">
+        <MappingFragment StoreEntitySet="PRODUCTOSUBICACION">
+          <ScalarProperty Name="ProUbiCod" ColumnName="ProUbiCod" />
+          <ScalarProperty Name="ProUbiFch" ColumnName="ProUbiFch" />
+          <ScalarProperty Name="ProUbiFolAct" ColumnName="ProUbiFolAct" />
+          <ScalarProperty Name="ProUbiAlmCod" ColumnName="ProUbiAlmCod" />
+          <ScalarProperty Name="ProUbiFolAnt" ColumnName="ProUbiFolAnt" />
+          <ScalarProperty Name="ProUbiAlmCodAnt" ColumnName="ProUbiAlmCodAnt" />
+          <ScalarProperty Name="ProUbiProCod" ColumnName="ProUbiProCod" />
+          <ScalarProperty Name="ProUbiFchAct" ColumnName="ProUbiFchAct" />
+          <ScalarProperty Name="ProUbiFchAnt" ColumnName="ProUbiFchAnt" />
+          <ScalarProperty Name="ProUbiEstCod" ColumnName="ProUbiEstCod" />
+          <ScalarProperty Name="ProUbiObs" ColumnName="ProUbiObs" />
+          <ScalarProperty Name="ProUbiMovDNumSer" ColumnName="ProUbiMovDNumSer" />
+          <ScalarProperty Name="ProUbiModelo" ColumnName="ProUbiModelo" />
+          <ScalarProperty Name="ProUbiOdo" ColumnName="ProUbiOdo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOSUBICACIONODOMETROes">
+      <EntityTypeMapping TypeName="Model.PRODUCTOSUBICACIONODOMETRO">
+        <MappingFragment StoreEntitySet="PRODUCTOSUBICACIONODOMETRO">
+          <ScalarProperty Name="ProUbiCod" ColumnName="ProUbiCod" />
+          <ScalarProperty Name="OdoFch" ColumnName="OdoFch" />
+          <ScalarProperty Name="OdoMed" ColumnName="OdoMed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDORs">
+      <EntityTypeMapping TypeName="Model.PROVEEDOR">
+        <MappingFragment StoreEntitySet="PROVEEDOR">
+          <ScalarProperty Name="ProvCod" ColumnName="ProvCod" />
+          <ScalarProperty Name="ProvNom" ColumnName="ProvNom" />
+          <ScalarProperty Name="ProvDir" ColumnName="ProvDir" />
+          <ScalarProperty Name="ProvRFC" ColumnName="ProvRFC" />
+          <ScalarProperty Name="ProvTel1" ColumnName="ProvTel1" />
+          <ScalarProperty Name="ProvTel2" ColumnName="ProvTel2" />
+          <ScalarProperty Name="ProvMail" ColumnName="ProvMail" />
+          <ScalarProperty Name="ProvHttp" ColumnName="ProvHttp" />
+          <ScalarProperty Name="ProvPag" ColumnName="ProvPag" />
+          <ScalarProperty Name="ProvMon" ColumnName="ProvMon" />
+          <ScalarProperty Name="ProvCon" ColumnName="ProvCon" />
+          <ScalarProperty Name="ProvTelCon" ColumnName="ProvTelCon" />
+          <ScalarProperty Name="ProvMailCon" ColumnName="ProvMailCon" />
+          <ScalarProperty Name="ProvFchCre" ColumnName="ProvFchCre" />
+          <ScalarProperty Name="ProvUsuCodCre" ColumnName="ProvUsuCodCre" />
+          <ScalarProperty Name="ProvFchMod" ColumnName="ProvFchMod" />
+          <ScalarProperty Name="ProvUsuCodMod" ColumnName="ProvUsuCodMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUESTOes">
+      <EntityTypeMapping TypeName="Model.PUESTO">
+        <MappingFragment StoreEntitySet="PUESTO">
+          <ScalarProperty Name="PueCod" ColumnName="PueCod" />
+          <ScalarProperty Name="PueDsc" ColumnName="PueDsc" />
+          <ScalarProperty Name="PueFchCre" ColumnName="PueFchCre" />
+          <ScalarProperty Name="PueUsuCodCre" ColumnName="PueUsuCodCre" />
+          <ScalarProperty Name="PueFchMod" ColumnName="PueFchMod" />
+          <ScalarProperty Name="PueUsuCodMod" ColumnName="PueUsuCodMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGISTROes">
+      <EntityTypeMapping TypeName="Model.REGISTRO">
+        <MappingFragment StoreEntitySet="REGISTRO">
+          <ScalarProperty Name="RegCod" ColumnName="RegCod" />
+          <ScalarProperty Name="RegUsuCod" ColumnName="RegUsuCod" />
+          <ScalarProperty Name="RegFch" ColumnName="RegFch" />
+          <ScalarProperty Name="RegAni" ColumnName="RegAni" />
+          <ScalarProperty Name="RegMes" ColumnName="RegMes" />
+          <ScalarProperty Name="RegCie" ColumnName="RegCie" />
+          <ScalarProperty Name="RegObs" ColumnName="RegObs" />
+          <ScalarProperty Name="RegTip" ColumnName="RegTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REQUISICIONs">
+      <EntityTypeMapping TypeName="Model.REQUISICION">
+        <MappingFragment StoreEntitySet="REQUISICION">
+          <ScalarProperty Name="ReqCod" ColumnName="ReqCod" />
+          <ScalarProperty Name="ReqConCod" ColumnName="ReqConCod" />
+          <ScalarProperty Name="ReqFch" ColumnName="ReqFch" />
+          <ScalarProperty Name="ReqTip" ColumnName="ReqTip" />
+          <ScalarProperty Name="ReqFol" ColumnName="ReqFol" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="ReqAlmCod" ColumnName="ReqAlmCod" />
+          <ScalarProperty Name="ReqProvCod" ColumnName="ReqProvCod" />
+          <ScalarProperty Name="ReqObsCom" ColumnName="ReqObsCom" />
+          <ScalarProperty Name="ReqObs" ColumnName="ReqObs" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="UsuFchMod" ColumnName="UsuFchMod" />
+          <ScalarProperty Name="UsuCodMod" ColumnName="UsuCodMod" />
+          <ScalarProperty Name="UsuFchCre" ColumnName="UsuFchCre" />
+          <ScalarProperty Name="UsuCodCre" ColumnName="UsuCodCre" />
+          <ScalarProperty Name="ReqFchOC" ColumnName="ReqFchOC" />
+          <ScalarProperty Name="NumCot" ColumnName="NumCot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REQUISICIONDETALLEs">
+      <EntityTypeMapping TypeName="Model.REQUISICIONDETALLE">
+        <MappingFragment StoreEntitySet="REQUISICIONDETALLE">
+          <ScalarProperty Name="ReqCod" ColumnName="ReqCod" />
+          <ScalarProperty Name="ReqConCod" ColumnName="ReqConCod" />
+          <ScalarProperty Name="ReqFch" ColumnName="ReqFch" />
+          <ScalarProperty Name="ReqTip" ColumnName="ReqTip" />
+          <ScalarProperty Name="ReqDProCod" ColumnName="ReqDProCod" />
+          <ScalarProperty Name="ReqDCan" ColumnName="ReqDCan" />
+          <ScalarProperty Name="RedDCon" ColumnName="RedDCon" />
+          <ScalarProperty Name="ReqDITEMNMBR" ColumnName="ReqDITEMNMBR" />
+          <ScalarProperty Name="ReqDCanOC" ColumnName="ReqDCanOC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REQUISICIONESTATUS">
+      <EntityTypeMapping TypeName="Model.REQUISICIONESTATU">
+        <MappingFragment StoreEntitySet="REQUISICIONESTATUS">
+          <ScalarProperty Name="ReqCod" ColumnName="ReqCod" />
+          <ScalarProperty Name="ReqConCod" ColumnName="ReqConCod" />
+          <ScalarProperty Name="ReqFch" ColumnName="ReqFch" />
+          <ScalarProperty Name="ReqTip" ColumnName="ReqTip" />
+          <ScalarProperty Name="EstCod" ColumnName="EstCod" />
+          <ScalarProperty Name="ReqEFch" ColumnName="ReqEFch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RES_ACTIVOS">
+      <EntityTypeMapping TypeName="Model.RES_ACTIVOS">
+        <MappingFragment StoreEntitySet="RES_ACTIVOS">
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+          <ScalarProperty Name="ResEmpCod" ColumnName="ResEmpCod" />
+          <ScalarProperty Name="ResEmpComCod" ColumnName="ResEmpComCod" />
+          <ScalarProperty Name="ResFch" ColumnName="ResFch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESGUARDOS">
+      <EntityTypeMapping TypeName="Model.RESGUARDO">
+        <MappingFragment StoreEntitySet="RESGUARDOS">
+          <ScalarProperty Name="RguCod" ColumnName="RguCod" />
+          <ScalarProperty Name="RguFch" ColumnName="RguFch" />
+          <ScalarProperty Name="EdyCod" ColumnName="EdyCod" />
+          <ScalarProperty Name="RguEqu" ColumnName="RguEqu" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="RguObs" ColumnName="RguObs" />
+          <ScalarProperty Name="RguUsuCodAut" ColumnName="RguUsuCodAut" />
+          <ScalarProperty Name="RguUsuCodTec1" ColumnName="RguUsuCodTec1" />
+          <ScalarProperty Name="RguUsuCodTec2" ColumnName="RguUsuCodTec2" />
+          <ScalarProperty Name="RguTip" ColumnName="RguTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESGUARDOSDETALLERES">
+      <EntityTypeMapping TypeName="Model.RESGUARDOSDETALLERE">
+        <MappingFragment StoreEntitySet="RESGUARDOSDETALLERES">
+          <ScalarProperty Name="RguCod" ColumnName="RguCod" />
+          <ScalarProperty Name="ActCod" ColumnName="ActCod" />
+          <ScalarProperty Name="ActConCod" ColumnName="ActConCod" />
+          <ScalarProperty Name="ActFamCod" ColumnName="ActFamCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEGURIDADs">
+      <EntityTypeMapping TypeName="Model.SEGURIDAD">
+        <MappingFragment StoreEntitySet="SEGURIDAD">
+          <ScalarProperty Name="SegCod" ColumnName="SegCod" />
+          <ScalarProperty Name="SegFch" ColumnName="SegFch" />
+          <ScalarProperty Name="PedCod" ColumnName="PedCod" />
+          <ScalarProperty Name="SegEviInsArc" ColumnName="SegEviInsArc" />
+          <ScalarProperty Name="SegEviInsArcTip" ColumnName="SegEviInsArcTip" />
+          <ScalarProperty Name="SegEviInsArcNom" ColumnName="SegEviInsArcNom" />
+          <ScalarProperty Name="SegEviDinArc" ColumnName="SegEviDinArc" />
+          <ScalarProperty Name="SegEviDInArcTip" ColumnName="SegEviDInArcTip" />
+          <ScalarProperty Name="SegEviDInArcNom" ColumnName="SegEviDInArcNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEGURIDADORDENs">
+      <EntityTypeMapping TypeName="Model.SEGURIDADORDEN">
+        <MappingFragment StoreEntitySet="SEGURIDADORDEN">
+          <ScalarProperty Name="SegCod" ColumnName="SegCod" />
+          <ScalarProperty Name="SegOrdFch" ColumnName="SegOrdFch" />
+          <ScalarProperty Name="SegOrdObs" ColumnName="SegOrdObs" />
+          <ScalarProperty Name="SegOrdDsc" ColumnName="SegOrdDsc" />
+          <ScalarProperty Name="SegOrdArc" ColumnName="SegOrdArc" />
+          <ScalarProperty Name="SegOrdArcTip" ColumnName="SegOrdArcTip" />
+          <ScalarProperty Name="SegOrdArcNom" ColumnName="SegOrdArcNom" />
+          <ScalarProperty Name="SegOrdTip" ColumnName="SegOrdTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLICITUDESPEMEXes">
+      <EntityTypeMapping TypeName="Model.SOLICITUDESPEMEX">
+        <MappingFragment StoreEntitySet="SOLICITUDESPEMEX">
+          <ScalarProperty Name="SolCod" ColumnName="SolCod" />
+          <ScalarProperty Name="SolUniOpe" ColumnName="SolUniOpe" />
+          <ScalarProperty Name="SolOfiRaf" ColumnName="SolOfiRaf" />
+          <ScalarProperty Name="SolSup" ColumnName="SolSup" />
+          <ScalarProperty Name="SiolSit" ColumnName="SiolSit" />
+          <ScalarProperty Name="SolMon" ColumnName="SolMon" />
+          <ScalarProperty Name="SolFchPer" ColumnName="SolFchPer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLICITUVs">
+      <EntityTypeMapping TypeName="Model.SOLICITUV">
+        <MappingFragment StoreEntitySet="SOLICITUV">
+          <ScalarProperty Name="SvaCod" ColumnName="SvaCod" />
+          <ScalarProperty Name="SvaConCod" ColumnName="SvaConCod" />
+          <ScalarProperty Name="SvaFch" ColumnName="SvaFch" />
+          <ScalarProperty Name="SvaDiaSol" ColumnName="SvaDiaSol" />
+          <ScalarProperty Name="SvaFchIni" ColumnName="SvaFchIni" />
+          <ScalarProperty Name="SvaFchFin" ColumnName="SvaFchFin" />
+          <ScalarProperty Name="SvaFchRea" ColumnName="SvaFchRea" />
+          <ScalarProperty Name="SvaFchPag" ColumnName="SvaFchPag" />
+          <ScalarProperty Name="SvaCooEmpCod" ColumnName="SvaCooEmpCod" />
+          <ScalarProperty Name="SvaJefEmpCod" ColumnName="SvaJefEmpCod" />
+          <ScalarProperty Name="SvaCooComCod" ColumnName="SvaCooComCod" />
+          <ScalarProperty Name="SvaJefComCod" ColumnName="SvaJefComCod" />
+          <ScalarProperty Name="SvaObs" ColumnName="SvaObs" />
+          <ScalarProperty Name="SvaUsuCodCre" ColumnName="SvaUsuCodCre" />
+          <ScalarProperty Name="SvaUsuFchCre" ColumnName="SvaUsuFchCre" />
+          <ScalarProperty Name="SvaUsuCodUpd" ColumnName="SvaUsuCodUpd" />
+          <ScalarProperty Name="SvaUsuFchUpd" ColumnName="SvaUsuFchUpd" />
+          <ScalarProperty Name="SvaEmpCod" ColumnName="SvaEmpCod" />
+          <ScalarProperty Name="SvaEmpComCod" ColumnName="SvaEmpComCod" />
+          <ScalarProperty Name="SvaArc" ColumnName="SvaArc" />
+          <ScalarProperty Name="SvaArcNom" ColumnName="SvaArcNom" />
+          <ScalarProperty Name="SvaArcTip" ColumnName="SvaArcTip" />
+          <ScalarProperty Name="SvaPerFin" ColumnName="SvaPerFin" />
+          <ScalarProperty Name="SvaPerIni" ColumnName="SvaPerIni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUSRAFs">
+      <EntityTypeMapping TypeName="Model.STATUSRAF">
+        <MappingFragment StoreEntitySet="STATUSRAF">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoCon" ColumnName="NoCon" />
+          <ScalarProperty Name="FchReg" ColumnName="FchReg" />
+          <ScalarProperty Name="NumCtrInt" ColumnName="NumCtrInt" />
+          <ScalarProperty Name="EstAct" ColumnName="EstAct" />
+          <ScalarProperty Name="PedSap" ColumnName="PedSap" />
+          <ScalarProperty Name="ActGer" ColumnName="ActGer" />
+          <ScalarProperty Name="Mont" ColumnName="Mont" />
+          <ScalarProperty Name="Paquete" ColumnName="Paquete" />
+          <ScalarProperty Name="ClaRaf" ColumnName="ClaRaf" />
+          <ScalarProperty Name="ClaGral" ColumnName="ClaGral" />
+          <ScalarProperty Name="Clasi" ColumnName="Clasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subdirecciones">
+      <EntityTypeMapping TypeName="Model.Subdireccione">
+        <MappingFragment StoreEntitySet="Subdirecciones">
+          <ScalarProperty Name="SubdCod" ColumnName="SubdCod" />
+          <ScalarProperty Name="SubdDsc" ColumnName="SubdDsc" />
+          <ScalarProperty Name="SubdAbr" ColumnName="SubdAbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOCONDETALLEs">
+      <EntityTypeMapping TypeName="Model.TIPOCONDETALLE">
+        <MappingFragment StoreEntitySet="TIPOCONDETALLE">
+          <ScalarProperty Name="TConCod" ColumnName="TConCod" />
+          <ScalarProperty Name="TDeProCod" ColumnName="TDeProCod" />
+          <ScalarProperty Name="TDeCan" ColumnName="TDeCan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOCONTs">
+      <EntityTypeMapping TypeName="Model.TIPOCONT">
+        <MappingFragment StoreEntitySet="TIPOCONT">
+          <ScalarProperty Name="TConCod" ColumnName="TConCod" />
+          <ScalarProperty Name="TconTip" ColumnName="TconTip" />
+          <ScalarProperty Name="TConDsc" ColumnName="TConDsc" />
+          <ScalarProperty Name="TConMon" ColumnName="TConMon" />
+          <ScalarProperty Name="TConConCod" ColumnName="TConConCod" />
+          <ScalarProperty Name="TConFchCre" ColumnName="TConFchCre" />
+          <ScalarProperty Name="TConUsuCodCre" ColumnName="TConUsuCodCre" />
+          <ScalarProperty Name="TConFchMod" ColumnName="TConFchMod" />
+          <ScalarProperty Name="TConUsuCodMod" ColumnName="TConUsuCodMod" />
+          <ScalarProperty Name="TConUniCod" ColumnName="TConUniCod" />
+          <ScalarProperty Name="TConProCod" ColumnName="TConProCod" />
+          <ScalarProperty Name="TConCan" ColumnName="TConCan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPODOCs">
+      <EntityTypeMapping TypeName="Model.TIPODOC">
+        <MappingFragment StoreEntitySet="TIPODOC">
+          <ScalarProperty Name="TidCod" ColumnName="TidCod" />
+          <ScalarProperty Name="TidDsc" ColumnName="TidDsc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOPRODs">
+      <EntityTypeMapping TypeName="Model.TIPOPROD">
+        <MappingFragment StoreEntitySet="TIPOPROD">
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="TPrDsc" ColumnName="TPrDsc" />
+          <ScalarProperty Name="TPrFchCre" ColumnName="TPrFchCre" />
+          <ScalarProperty Name="TPrUsuCodCre" ColumnName="TPrUsuCodCre" />
+          <ScalarProperty Name="TPrFchMod" ColumnName="TPrFchMod" />
+          <ScalarProperty Name="TPrUsuCodMod" ColumnName="TPrUsuCodMod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UBICACIONs">
+      <EntityTypeMapping TypeName="Model.UBICACION">
+        <MappingFragment StoreEntitySet="UBICACION">
+          <ScalarProperty Name="UbiCod" ColumnName="UbiCod" />
+          <ScalarProperty Name="UbiConCod" ColumnName="UbiConCod" />
+          <ScalarProperty Name="UbiDsc" ColumnName="UbiDsc" />
+          <ScalarProperty Name="UbiDscCor" ColumnName="UbiDscCor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNEGOCIOs">
+      <EntityTypeMapping TypeName="Model.UNEGOCIO">
+        <MappingFragment StoreEntitySet="UNEGOCIO">
+          <ScalarProperty Name="UneCod" ColumnName="UneCod" />
+          <ScalarProperty Name="UneDsc" ColumnName="UneDsc" />
+          <ScalarProperty Name="UneAbr" ColumnName="UneAbr" />
+          <ScalarProperty Name="UneTip" ColumnName="UneTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="UsuCod" ColumnName="UsuCod" />
+          <ScalarProperty Name="UsuNom" ColumnName="UsuNom" />
+          <ScalarProperty Name="UsuUse" ColumnName="UsuUse" />
+          <ScalarProperty Name="UsuPas" ColumnName="UsuPas" />
+          <ScalarProperty Name="PerCod" ColumnName="PerCod" />
+          <ScalarProperty Name="UsuFchVig" ColumnName="UsuFchVig" />
+          <ScalarProperty Name="UsuVer" ColumnName="UsuVer" />
+          <ScalarProperty Name="EmpCod" ColumnName="EmpCod" />
+          <ScalarProperty Name="UsuAut" ColumnName="UsuAut" />
+          <ScalarProperty Name="UsuAlmCod" ColumnName="UsuAlmCod" />
+          <ScalarProperty Name="UsuConCod" ColumnName="UsuConCod" />
+          <ScalarProperty Name="EmpComCod" ColumnName="EmpComCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOSCOMPONENTEs">
+      <EntityTypeMapping TypeName="Model.USUARIOSCOMPONENTE">
+        <MappingFragment StoreEntitySet="USUARIOSCOMPONENTE">
+          <ScalarProperty Name="UsuCod" ColumnName="UsuCod" />
+          <ScalarProperty Name="WCompNro" ColumnName="WCompNro" />
+          <ScalarProperty Name="DusOrd" ColumnName="DusOrd" />
+          <ScalarProperty Name="DusIzq" ColumnName="DusIzq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VALESAUTORIZADOS">
+      <EntityTypeMapping TypeName="Model.VALESAUTORIZADO">
+        <MappingFragment StoreEntitySet="VALESAUTORIZADOS">
+          <ScalarProperty Name="ValCod" ColumnName="ValCod" />
+          <ScalarProperty Name="MovCon" ColumnName="MovCon" />
+          <ScalarProperty Name="ConCod" ColumnName="ConCod" />
+          <ScalarProperty Name="AlmCod" ColumnName="AlmCod" />
+          <ScalarProperty Name="MovTipDoc" ColumnName="MovTipDoc" />
+          <ScalarProperty Name="MovFch" ColumnName="MovFch" />
+          <ScalarProperty Name="TPrCod" ColumnName="TPrCod" />
+          <ScalarProperty Name="ValFchSol" ColumnName="ValFchSol" />
+          <ScalarProperty Name="ValFchAut" ColumnName="ValFchAut" />
+          <ScalarProperty Name="UsuCod" ColumnName="UsuCod" />
+          <ScalarProperty Name="ValAut" ColumnName="ValAut" />
+          <ScalarProperty Name="ValUsuCodSol" ColumnName="ValUsuCodSol" />
+          <ScalarProperty Name="MovDProCod" ColumnName="MovDProCod" />
+          <ScalarProperty Name="ValArcAut" ColumnName="ValArcAut" />
+          <ScalarProperty Name="ValArcTip" ColumnName="ValArcTip" />
+          <ScalarProperty Name="ValArcNom" ColumnName="ValArcNom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEBCOMPONENTES">
+      <EntityTypeMapping TypeName="Model.WEBCOMPONENTE">
+        <MappingFragment StoreEntitySet="WEBCOMPONENTES">
+          <ScalarProperty Name="WCompNro" ColumnName="WCompNro" />
+          <ScalarProperty Name="WCompDsc" ColumnName="WCompDsc" />
+          <ScalarProperty Name="WcompObj" ColumnName="WcompObj" />
+          <ScalarProperty Name="WConCod" ColumnName="WConCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
