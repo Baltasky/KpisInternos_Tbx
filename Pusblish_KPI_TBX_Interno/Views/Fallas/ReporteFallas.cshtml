@@ -1,0 +1,241 @@
+﻿@using KPI_System.Models.Fallas
+@model FallasViewModel
+
+@{
+    ViewBag.Title = "REPORTE FALLAS";
+}
+
+
+<div class=" d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+        <div class="card mb-5">
+            <div class="card p-5 mb-0">
+                <form id="FormReporteVentas" method="post">
+                    <div class="row g-8 mb-5">
+                        <div class="col-lg-2 fv-row">
+                            <input value="1" name="TabPanel" type="hidden" />
+                            <label class="fs-7 form-label fw-bolder text-dark">
+                                PERIODO:
+                            </label>
+                            <div class="fv-row">
+                                <div class="position-relative d-flex align-items-center fv-row">
+                                    <span class="svg-icon svg-icon-2 position-absolute ms-2"><i class="fas fa-calendar-alt fs-3"></i></span>
+                                    <input name="RangoFechas" id="RangoFechas" onchange="DeseleccionarUOP()" class="form-control form-control-sm ps-8 p-2 fs-7" placeholder="Fecha Inicial - Fecha Fin" />
+                                </div>
+                            </div>
+                        </div>
+                        <input id="EquiposSelect" name="EquiposSelect" type="hidden" />
+                        <div class="col-lg-2 fv-row">
+                            <div class="position-relative d-flex align-items-center fv-row">
+                                <button type="button" id="FormReporteVentasButton" class="btn btn-primary p-2 fs-7 me-3 mt-8" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tiene opción de traerse el reporte solo por equipo o .">
+                                    <i class="fas fa-chart-line"></i>Generar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion accordion-icon-toggle" id="kt_accordion_2">
+                        <div class="mb-5">
+                            <div class="accordion-header py-3 d-flex collapsed" data-bs-toggle="collapse" data-bs-target="#kt_accordion_2_item_2">
+                                <span class="accordion-icon">
+                                    <i class="ki-duotone ki-arrow-right fs-4"><span class="path1"></span><span class="path2"></span></i>
+                                </span>
+                                <h3 class="fs-4 fw-semibold mb-0 ms-4"> Filtros por Zona, UOP y Equipo.</h3>
+                            </div>
+                            <div id="kt_accordion_2_item_2" class="collapse fs-6 ps-10" data-bs-parent="#kt_accordion_2">
+
+                                <div class="row">
+                                    <div class="col-md-4 mb-4">
+                                        <label class="fs-6 form-label fw-bolder text-dark me-4">ZONA:</label>
+                                        <div class="d-flex align-items-center position-relative">
+                                            <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                            <input type="text" id="SearchDivision" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                        </div>
+                                        <div class="border">
+                                            <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                <input type="checkbox" id="IdDivisionTodo" name="IdDivisionTodo" class="form-check-input border border-dark me-2" />
+                                                <label for="IdDivisionTodo">Todos</label>
+                                            </div>
+                                            <div class=" card-scroll h-100px">
+                                                <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                    <tbody id="TablaFiltroDivision">
+                                                        @if (Model.Divisiones.Any())
+                                                        {
+                                                            foreach (var item in Model.Divisiones)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-custom form-check-sm">
+                                                                            <input type="checkbox" name="Zona_@item.id" id="Zona_@item.id" value="@item.id" class="form-check-input border border-dark me-2"><label for="Zona_@item.id">@item.text</label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 mb-4">
+                                        <label class="fs-6 form-label fw-bolder text-dark me-4">UNIDAD OPERATIVA:</label>
+                                        <div class="d-flex align-items-center position-relative">
+                                            <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                            <input type="text" id="SearchZona" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                        </div>
+                                        <div class="border">
+                                            <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                <input type="checkbox" id="IdZonaTodo" name="IdZonaTodo" class="form-check-input border border-dark me-2" />
+                                                <label for="IdZonaTodo">Todos</label>
+                                            </div>
+                                            <div class=" card-scroll h-100px">
+                                                <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                    <tbody id="TablaFiltroZona">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-4">
+                                        <label class="fs-6 form-label fw-bolder text-dark me-4">EQUIPO:</label>
+                                        <div class="d-flex align-items-center position-relative">
+                                            <span class="svg-icon svg-icon-3 position-absolute ms-3"><i class="fas fa-search"></i> </span>
+                                            <input type="text" id="SearchEquipo" class="form-control form-control-white form-control-sm  ps-9" placeholder="Buscar" />
+                                        </div>
+                                        <div class="border">
+                                            <div class="form-check form-check-custom form-check-sm ps-2 pt-2 p-2 bg-secondary ">
+                                                <input type="checkbox" id="IdEquipoTodo" name="IdEquipoTodo" class="form-check-input border border-dark me-2" />
+                                                <label for="IdEquipoTodo">Todos</label>
+                                            </div>
+                                            <div class="card-scroll h-100px">
+                                                <table class="table table-hover table-rounded table-row-bordered gy-2 gs-2">
+                                                    <tbody id="TablaFiltroEquipo">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card pt-0 card-flush ">
+                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                    <div class="card-title">
+                        <select id="S2_Equipos" name="S2_Equipos" class="form-select form-select-sm  w-250px me-3" data-control="select2" data-placeholder="Selecciona un equipo" data-allow-clear="true">
+                            <option></option>
+                            @if (Model.Equipos.Any())
+                            {
+                                foreach (var item in Model.Equipos)
+                                {
+                                    <option value="@item.text">@item.text</option>
+                                }
+                            }
+                        </select>
+
+                        <select id="S2_EmpPXM" name="S2_EmpPXM" class="form-select form-select-sm  w-350px" data-control="select2" data-placeholder="Selecciona un solicitante PMX" data-allow-clear="true">
+                            <option></option>
+                            @if (Model.EmpleadosPMX.Any())
+                            {
+                                foreach (var item in Model.EmpleadosPMX)
+                                {
+                                    <option value="@item.id">@item.text</option>
+                                }
+                            }
+                        </select>
+                        <div id="TablaReporteVentas_export" class="d-none"></div>
+                    </div>
+                    <div class="text-center fw-bold fs-1">@Model.ReportePerido </div>
+                    <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                            <span class="svg-icon svg-icon-1 position-absolute ms-4"></span>
+                            <i class="fas fa-download"></i> Exportar Reporte
+                        </button>
+                        <div id="TablaReporteVentas_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                            <div class="menu-item px-3">
+                                <a href="#" class="menu-link px-3" Ventas-export="excel">
+                                    Export as excel &nbsp;&nbsp; <i class="fas fa-file-excel text-success fs-3"></i>
+                                </a>
+                            </div>
+                            <div class="menu-item px-3">
+                                <a href="#" class="menu-link px-3" Ventas-export="csv">
+                                    Export as csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-file-csv text-info fs-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="TablaReporteVentas_buttons" class="d-none"></div>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="my-5">
+                        <table id="TablaReporteVentas" class="table table-bordered table-striped border-gray-300 gy-2 gs-2">
+                            <thead>
+                                <tr class="fw-bold fs-7 text-uppercase text-dark bg-light-primary">
+                                    <th class="min-w-150px">ZONA</th>
+                                    <th class="min-w-300px">UNIDAD OPERATIVA</th>
+                                    <th class="min-w-150px">LOCALIZACION</th>
+                                    <th class="min-w-100px">EQUIPO</th>
+                                    <th class="min-w-100px">FECHA</th>
+                                    <th class="min-w-100px">HORA</th>
+                                    <th class="min-w-100px">ESTATUS</th>
+                                    <th class="min-w-200px">FOLIO</th>
+                                    <th class="min-w-100px">CANTIDAD</th>
+                                    <th class="min-w-100px">PARTIDA</th>
+                                    <th class="min-w-900px">DESCRIPCION</th>
+                                    <th class="min-w-300px">SOLICITANTE PMX</th>
+                                    <th class="min-w-250px">PUESTO DEL SOLICITANTE PMX</th>
+                                    <th class="min-w-300px">AUTORIZADOR PMX</th>
+                                    <th class="min-w-250px">PUESTO AUTORIZADOR PMX</th>
+                                    <th class="min-w-450px border-end">TECNICO SUMIMSA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model.ReporteFallas.Any())
+                                {
+                                    foreach (var item in Model.ReporteFallas)
+                                    {
+                                        <tr>
+                                            <td>@item.DIVISION</td>
+                                            <td>@item.UOP</td>
+                                            <td>@item.LOCALIZACION</td>
+                                            <td>@item.EQUIPO</td>
+                                            <td>@item.FECHA</td>
+                                            <td>@item.HORA</td>
+                                            <td>@item.ESTATUS</td>
+                                            <td>@item.FOLIO</td>
+                                            <td>@item.CANTIDAD</td>
+                                            <td>@item.PARTIDA</td>
+                                            <td>@item.DESCRIPCION</td>
+                                            <td>@item.PERSONALPMX</td>
+                                            <td>@item.PUESTO</td>
+                                            <td>@item.AUTORIZA</td>
+                                            <td>@item.PUESTOAUT</td>
+                                            <td>@item.FICHA - @item.TECNICO</td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript" src="~/Scripts/Fallas/ReporteFallas.js"></script>
+
+
+}
+

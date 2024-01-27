@@ -11,20 +11,14 @@ var chartIngresosZona;
 var ExportarDataZona;
 am5.ready(function () {
 
-    // Create root element
-    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new("GraficaFallas");
 
-    // Set themes
-    // https://www.amcharts.com/docs/v5/concepts/themes/
     root.setThemes([
-        am5themes_Animated.new(root)
+        am5themes_Kelly.new(root)
     ]);
 
     root._logo.dispose();
 
-    // Create chart
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/
     chartIngresosZona = root.container.children.push(
         am5xy.XYChart.new(root, {
             panX: true,
@@ -36,17 +30,13 @@ am5.ready(function () {
         })
     );
 
-    // Add cursor
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
     var cursor = chartIngresosZona.set("cursor", am5xy.XYCursor.new(root, {
         behavior: "none"
     }));
     cursor.lineY.set("visible", false);
 
-    // The data
     var data = [];
 
-    //Exportar
     function ExportarData(datos) {
         var exporting = am5plugins_exporting.Exporting.new(root, {
             menu: am5plugins_exporting.ExportingMenu.new(root, {}),
@@ -56,7 +46,6 @@ am5.ready(function () {
 
     ExportarDataZona = ExportarData;
 
-    // Create axes
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
     xRenderer.labels.template.setAll({
@@ -166,20 +155,23 @@ am5.ready(function () {
 function IngresosTotalesZona(nuevosDatos) {
 
     chartIngresosZona.series.clear();
+    legendIngresosZona.data.setAll(chartIngresosZona.series.values);
 
     xAxisIngresosZona.data.setAll(nuevosDatos);
     CrearSeriesZona("Perdidas", "Perdidas");
 
     seriesIngresosZona.data.setAll(nuevosDatos);
     seriesIngresosZona.appear(1000);
+    legendIngresosZona.data.setAll(chartIngresosZona.series.values);
 
     CrearSeriesZona("Dañadas", "Danadas");
     seriesIngresosZona.data.setAll(nuevosDatos);
     seriesIngresosZona.appear(1000);
+    legendIngresosZona.data.setAll(chartIngresosZona.series.values);
 
     ExportarDataZona(nuevosDatos)
 
-    legendIngresosZona.data.setAll(chartIngresosZona.series.values);
+    //legendIngresosZona.data.setAll(chartIngresosZona.series.values);
 }
 //********* End Ingresos Totales por Zona ****************************************************************************************
 
