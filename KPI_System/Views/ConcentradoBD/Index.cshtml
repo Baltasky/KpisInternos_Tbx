@@ -1,0 +1,150 @@
+﻿@using KPI_System.Models.ConcentradoBD
+@model ConcentradoBD_ViewModel
+
+@{
+    ViewBag.Title = "Concentrado BDs";
+}
+
+<div class="post d-flex flex-column-fluid">
+    <div id="kt_content_container" class="container-fluid">
+        <form id="FormReporteVentas" method="post">
+            <div class="row g-3 g-xl-8">
+                <div class="col-12">
+                    <div class="card card-xl-stretch mb-5 mb-xl-8">
+                        <div class="card-body py-3">
+                            <div class="tab-content">
+                                <div class="row">
+                                    <div class="col-lg-5 fv-row">
+                                        <div class="row">
+                                            <div class="col-lg-4 fv-row mb-6">
+                                                <label class="fs-7 form-label fw-bolder text-dark">Tipo de Paquete:</label>
+                                                <select id="TipoPaquete" name="TipoPaquete" class="form-select form-select-sm" data-control="select2" data-placeholder="Seleccione un Tipo" data-allow-clear="true" data-close-on-select="false">
+                                                    <option></option>
+                                                    <option value="A">A - PERFORACIÓN</option>
+                                                    <option value="B">B - REPARACIÓN </option>
+                                                    <option value="C">C - PERF. MARINA </option>
+                                                    <option value="D">D - EMERGENCIA </option>
+                                                    <option value="E">E - TALLER SERV. POZOS</option>
+                                                    <option value="F">F - TALLER DE MANTTO</option>
+                                                    <option value="G">G - FLUSH BY</option>
+                                                    <option value="H">H - OFICINA</option>
+                                                    <option value="I">I - PRODUCCIÓN</option>
+                                                </select>
+                                            </div>
+                                            <input id="EquiposSelect" name="EquiposSelect" type="hidden" />
+                                            <div class="col-2 fv-row mb-2 pt-8">
+                                                <button type="button" id="FormReporteVentasButton" class="btn btn-success p-3 fs-8 me-3"><i class="fas fa-chart-line"></i>Mostrar Reporte</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        @if (Model.PartidasDescripcion.Any())
+        {
+            <div class="card mb-5">
+                <div class="card pt-0 card-flush ">
+                    <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                        <div class="card-title">
+                            <div class="d-flex align-items-center position-relative my-1">
+                                <span class="svg-icon svg-icon-1 position-absolute ms-4"><i class="fas fa-search"></i></span>
+                                <input type="text" Ventas-filter="search" class="form-control w-250px ps-13 p-2 me-20" placeholder="Filtrar en la tabla" />
+                            </div>
+                            <div id="TablaReporteVentas_export" class="d-none"></div>
+                        </div>
+                        <div class="text-center fw-bold fs-1">@Model.Paquete.First().Descripcion </div>
+                        <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                            <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                <span class="svg-icon svg-icon-1 position-absolute ms-4"></span>
+                                <i class="fas fa-download"></i> Exportar Reporte
+                            </button>
+                            <div id="TablaReporteVentas_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3" Ventas-export="excel">
+                                        Export as excel &nbsp;&nbsp; <i class="fas fa-file-excel text-success fs-3"></i>
+                                    </a>
+                                </div>
+                                <div class="menu-item px-3">
+                                    <a href="#" class="menu-link px-3" Ventas-export="csv">
+                                        Export as csv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-file-csv text-info fs-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="TablaReporteVentas_buttons" class="d-none"></div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="my-5">
+                            <table id="ConcentradoBds" class="table table-hover table-bordered border-gray-300 gy-2 gs-2">
+                                <thead>
+                                    <tr class="fw-bold text-uppercase fs-7 px-7 text-white bg-primary align-middle">
+                                        <th class="min-w-100px ps-2">Partida</th>
+                                        <th class="min-w-150px ">SMI</th>
+                                        <th class="min-w-800px">Descripción</th>
+                                        <th class="min-w-100px">Marca</th>
+                                        <th class="min-w-100px">U / M</th>
+                                        <th class="min-w-100px text-center">Paquete @Model.Tipo</th>
+                                        @foreach (var item in Model.InfoBases.Where(B => B.Tipo == Model.Tipo))
+                                        {
+                                            <th class="min-w-50px text-center">@item.Base @item.Contenedor </th>
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var Part in Model.PartidasDescripcion)
+                                    {
+                                        <tr class="align-middle">
+                                            <td>@Part.Partida</td>
+                                            <td>@Part.SMI </td>
+                                            <td>@Part.Descripcion</td>
+                                            <td>@Part.Marca</td>
+                                            <td>@Part.TipoMedida</td>
+                                            <td class="text-center">@Part.Cantidad</td>
+                                            @foreach (var Cont in Model.InfoBases.Where(B => B.Tipo == Model.Tipo))
+                                            {
+                                                if (Model.PartidasInf.Where(Inv => Inv.Almacen == Cont.Contenedor && Inv.Partida == Part.Partida).Any())
+                                                {
+                                                    foreach (var Invent in Model.PartidasInf.Where(Inv => Inv.Almacen == Cont.Contenedor && Inv.Partida == Part.Partida))
+                                                    {
+                                                        var color = Part.Cantidad == Invent.Existencia ? "bg-light-success"
+                                                         : Part.Cantidad > Invent.Existencia ? "bg-light-danger" : "bg-light-warning";
+
+                                                        <td class="text-center @color">@Invent.Existencia</td>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <td class="text-center bg-light-danger">0</td>
+                                                }
+
+                                            }
+
+                                        </tr>
+                                    }
+                                    
+
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+       
+</div>
+
+
+@section scripts {
+    <script src="~/Scripts/ConcentradoBD/ConcentradoBD.js"></script>
+}
+

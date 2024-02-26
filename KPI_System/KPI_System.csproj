@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConcentradoBD\ConcentradoBDController.cs" />
     <Compile Include="Controllers\Cumplimiento\CumplimientoController.cs" />
     <Compile Include="Controllers\DataBaseController.cs" />
     <Compile Include="Controllers\Disponibilidad\DisponibilidadController.cs" />
@@ -267,6 +268,10 @@
     <Compile Include="Models\COMPANIA.cs">
       <DependentUpon>DataBaseTullbox4.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConcentradoBD\ConcentradoBD_ViewModel.cs" />
+    <Compile Include="Models\ConcentradoBD\InfoBases.cs" />
+    <Compile Include="Models\ConcentradoBD\PartidasDescripcion.cs" />
+    <Compile Include="Models\ConcentradoBD\PartidasInf.cs" />
     <Compile Include="Models\CONTENEDORE.cs">
       <DependentUpon>DataBaseTullbox4.tt</DependentUpon>
     </Compile>
@@ -2584,6 +2589,7 @@
     <Content Include="Content\Metronic\plugins\global\plugins.bundle.css" />
     <Content Include="Content\Metronic\plugins\global\plugins.bundle.js" />
     <Content Include="Content\SystemPictures\bg11.png" />
+    <Content Include="Content\SystemPictures\bg12.png" />
     <Content Include="Content\SystemPictures\blank.png" />
     <Content Include="Content\SystemPictures\fondo.png" />
     <Content Include="Content\SystemPictures\logo-light-sumimsa.png" />
@@ -2613,6 +2619,7 @@
     <Content Include="Models\DataBaseTullbox4.edmx.diagram">
       <DependentUpon>DataBaseTullbox4.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\ConcentradoBD\ConcentradoBD.js" />
     <Content Include="Scripts\Cumplimiento\Cumplimiento.js" />
     <Content Include="Scripts\Disponibilidad\Disponibilidad.js" />
     <Content Include="Scripts\Fallas\ReporteFallas.js" />
@@ -2699,6 +2706,7 @@
     <Content Include="Views\ReportesTemp\ReporteVentas.cshtml" />
     <Content Include="Views\ReportesTemp\ReporteRentas.cshtml" />
     <Content Include="Views\ReportesTemp\Index.cshtml" />
+    <Content Include="Views\ConcentradoBD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
