@@ -2,6 +2,7 @@
 using KPI_System.Models.ClassesGlobales;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -87,10 +88,11 @@ namespace KPI_System.Library
 
                     if (existUser.Any())
                     {
-
                         Result.Usuarios = existUser.First();
 
                         Result.Messege = password == existUser.First().Password ? Result.Messege = "" : "Correo o contraseña incorrecto!";
+                        Result.Usuarios.Menus = existUser.First().Menus;
+                        Result.Usuarios.MainRute = existUser.First().MainRute;
 
                         Result.Usuarios.Password = "";
 
@@ -117,7 +119,34 @@ namespace KPI_System.Library
             return Result;
         }
 
+        public string DecodificarPassword(string correo)
+        {
+            var Result = "";
 
+            var existUser = _dbTb4.Database.SqlQuery<System_User>("EXEC AppConfig_Login @ExecuteQuery=@ExecuteQuery, " +
+            "@Opcion=@Opcion, @Usuario=@Usuario  ", new object[]
+            {
+            new SqlParameter("ExecuteQuery", 1),
+            new SqlParameter("Opcion", 1),
+            new SqlParameter("Usuario",  correo)
+            }).ToList<System_User>();
+
+            if (existUser.Any())
+            {
+                var passwordCodificado = Decode64(existUser.First().Password);
+                passwordCodificado = Reverse(passwordCodificado);
+                passwordCodificado = Rot13(passwordCodificado);
+
+                Result = passwordCodificado;
+            }
+            else
+            {
+                //Result = "El usuario no existe, envía un correo al administrador.";
+                Result = "NoExiste";
+            }
+
+            return Result;
+        }
 
 
     }

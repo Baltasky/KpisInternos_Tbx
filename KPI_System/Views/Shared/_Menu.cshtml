@@ -3,6 +3,14 @@
 
 @{
     var System_User = (System_User)Session["UserData"];
+    var ListMenus = new List<string>();
+
+    if (System_User.Menus != null)
+    {
+        var menus = System_User.Menus;
+        ListMenus = menus.ToString().Split('-').ToList();
+    }
+
 }
 
 <div id="kt_aside" class="aside" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
@@ -47,171 +55,198 @@
     <div class="aside-menu flex-column-fluid">
         <div class="hover-scroll-overlay-y px-2 my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="{default: '#kt_aside_toolbar, #kt_aside_footer', lg: '#kt_header, #kt_aside_toolbar, #kt_aside_footer'}" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="5px" style="height: 267px;">
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
-
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                        <span class="menu-icon">
-                            <i class="fas fa-handshake fs-2 text-white"></i>
+                @if (ListMenus.Where(L => L == "1").Any())
+                {
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                            <span class="menu-icon">
+                                <i class="fas fa-handshake fs-2 text-white"></i>
+                            </span>
+                            <span class="menu-title text-white fs-7 fw-bold">
+                                A) Ventas y Rentas
+                            </span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title text-white fs-7 fw-bold">
-                            A) Ventas y Rentas
-                        </span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
 
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/VentasRentas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/VentasRentas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/VentasRentas/ReporteVentas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/VentasRentas/ReporteVentas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Reporte de Ventas</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Reporte de Ventas</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/VentasRentas/ReporteRentas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/VentasRentas/ReporteRentas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Reporte de Rentas</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Reporte de Rentas</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/ReporteConsumos">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/ReporteConsumos">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Reporte de Consumo Ejecutivo</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Reporte de Consumo Ejecutivo</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/ReporteEjecutivoRentas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/ReporteEjecutivoRentas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Reporte Ejecutivo de Rentas</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Reporte Ejecutivo de Rentas</span>
-                                </span>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
+                }
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <a href="/Cumplimiento">
+                @if (ListMenus.Where(L => L == "2").Any())
+                {
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <a href="/Cumplimiento">
+                            <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                <span class="menu-icon me-2">
+                                    <i class="fas fa-vote-yea fs-2 text-white"></i>
+                                </span>
+                                <span class="menu-title text-white fs-7 fw-bold">B) Mtto y C) Calibración</span>
+                            </span>
+                        </a>
+                    </div>
+                }
+
+                @if (ListMenus.Where(L => L == "3").Any())
+                {
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                            <span class="menu-icon">
+                                <i class="fas fa-exclamation-triangle fs-2 text-white"></i>
+                            </span>
+                            <span class="menu-title text-white fs-7 fw-bold">D) Fallas</span>
+                            <span class="menu-arrow"></span>
+                        </span>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/Fallas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/Fallas/ReporteFallas">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Reporte de Fallas</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/Fallas/SolicitantesMasPierden">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Solicitantes que más pierden Htts</span>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+                @if (ListMenus.Where(L => L == "4").Any())
+                {
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <a href="/Trazabilidad">
+                            <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                <span class="menu-icon me-2">
+                                    <i class="fas fa-ruler-combined fs-2 text-white"></i>
+                                </span>
+                                <span class="menu-title text-white fs-7 fw-bold">E) Trazabilidad</span>
+                            </span>
+                        </a>
+                    </div>
+                }
+
+                @if (ListMenus.Where(L => L == "5").Any())
+                {
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
                             <span class="menu-icon me-2">
-                                <i class="fas fa-vote-yea fs-2 text-white"></i>
+                                <i class="fas fa-business-time fs-2 text-white"></i>
                             </span>
-                            <span class="menu-title text-white fs-7 fw-bold">B) Mtto y C) Calibración</span>
+                            <span class="menu-title text-white fs-7 fw-bold">F) Disponibilidad de htts</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                    </a>
-                </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/Disponibilidad">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/Inventarios">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Inventarios</span>
+                                    </span>
+                                </a>
+                            </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                        <span class="menu-icon">
-                            <i class="fas fa-exclamation-triangle fs-2 text-white"></i>
-                        </span>
-                        <span class="menu-title text-white fs-7 fw-bold">D) Fallas</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/Fallas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <a href="/ConcentradoBD">
+                                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot bg-white"></span>
+                                        </span>
+                                        <span class="menu-title text-white fs-7 fw-bold">Porcentaje X BD</span>
                                     </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/Fallas/ReporteFallas">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
-                                    </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Reporte de Fallas</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/Fallas/SolicitantesMasPierden">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
-                                    </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Solicitantes que más pierden Htts</span>
-                                </span>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
 
-                    </div>
-                </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <a href="/Trazabilidad">
-                        <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                            <span class="menu-icon me-2">
-                                <i class="fas fa-ruler-combined fs-2 text-white"></i>
-                            </span>
-                            <span class="menu-title text-white fs-7 fw-bold">E) Trazabilidad</span>
-                        </span>
-                    </a>
-                </div>
-
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                        <span class="menu-icon me-2">
-                            <i class="fas fa-business-time fs-2 text-white"></i>
-                        </span>
-                        <span class="menu-title text-white fs-7 fw-bold">F) Disponibilidad de htts</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/Disponibilidad">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
-                                    </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Indicadores</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                            <a href="/Inventarios">
-                                <span class="menu-link text-white" text-white" onmouseover="this.style.backgroundColor='#009EF7';" onmouseout="this.style.backgroundColor='#1e1e2d';">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot bg-white"></span>
-                                    </span>
-                                    <span class="menu-title text-white fs-7 fw-bold">Inventarios</span>
-                                </span>
-                            </a>
                         </div>
                     </div>
-                </div>
+                }
 
-                @if (System_User.Id == 4 || System_User.Id == 7)
+                @if (ListMenus.Where(L => L == "6").Any())
                 {
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <a href="/ReporteGeneral">
@@ -224,7 +259,6 @@
                         </a>
                     </div>
                 }
-
             </div>
         </div>
     </div>

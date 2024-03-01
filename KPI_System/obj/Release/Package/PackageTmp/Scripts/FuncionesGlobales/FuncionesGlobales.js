@@ -63,3 +63,10 @@ function ResetearFormularios(IdFormulario) {
     $("input").removeClass("is-valid").removeClass("is-invalid");
     $('[data-field]').remove();
 }
+
+
+function SystemServerError() {
+    var ErrorMessege = "Error de servidor, por favor contacta al administrador!";
+
+    toastr.error(ErrorMessege);
+}
