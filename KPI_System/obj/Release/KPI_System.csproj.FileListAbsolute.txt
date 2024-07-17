@@ -286,6 +286,6 @@ C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\bin\Antlr3.Runtime.pdb
 C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.csproj.AssemblyReference.cache
 C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.csproj.CoreCompileInputs.cache
-C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.csproj.CopyComplete
 C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.dll
 C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.pdb
+C:\Users\bcastillo\Desktop\KPI_TBX_Interno\KPI_System\obj\Release\KPI_System.csproj.Up2Date
